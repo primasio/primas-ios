@@ -4,6 +4,7 @@ import SwiftIconFont
 import Kingfisher
 
 class HomeListCell: UITableViewCell {
+  static let registerIdentifier = "HomeListCell"
   let viewContainer: UIView = {
     let _view = UIView()
     _view.backgroundColor = UIColor.white

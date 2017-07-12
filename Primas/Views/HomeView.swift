@@ -51,7 +51,7 @@ class HomeView: UIView {
     let tableView: UITableView = {
         let tableView = UITableView()
         
-        tableView.register(HomeListCell.self, forCellReuseIdentifier: "HomeListCell")
+        tableView.register(HomeListCell.self, forCellReuseIdentifier: HomeListCell.registerIdentifier)
         tableView.separatorStyle = .none
         
         return tableView
