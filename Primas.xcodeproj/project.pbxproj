@@ -30,6 +30,13 @@
 		21AB3F721F14FB1D00F6C4FF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB3F6F1F14FB1D00F6C4FF /* HomeViewController.swift */; };
 		21AB3F731F14FB1D00F6C4FF /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB3F701F14FB1D00F6C4FF /* TestViewController.swift */; };
 		21AB3F751F14FB3000F6C4FF /* ArticleDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB3F741F14FB3000F6C4FF /* ArticleDetailModel.swift */; };
+		21AB3F771F15C58500F6C4FF /* ValueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB3F761F15C58500F6C4FF /* ValueModel.swift */; };
+		21AB3F791F15C5E100F6C4FF /* ValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB3F781F15C5E100F6C4FF /* ValueView.swift */; };
+		21AB3F7B1F15C61100F6C4FF /* ValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB3F7A1F15C61100F6C4FF /* ValueViewController.swift */; };
+		21AB3F7D1F15C64900F6C4FF /* ValueTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB3F7C1F15C64900F6C4FF /* ValueTopViewController.swift */; };
+		21AB3F7F1F15C66800F6C4FF /* ValueTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB3F7E1F15C66800F6C4FF /* ValueTopView.swift */; };
+		21AB3F811F15C68C00F6C4FF /* ValueTopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB3F801F15C68C00F6C4FF /* ValueTopModel.swift */; };
+		21AB3F831F15CAB800F6C4FF /* PrimasAwardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB3F821F15CAB800F6C4FF /* PrimasAwardType.swift */; };
 		21ECE4631F0E659500676E00 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ECE4621F0E659500676E00 /* TestView.swift */; };
 		CEBA54EDDE12F4CF939CDEE1 /* Pods_Primas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5E91BC55438CB2C3574D4A /* Pods_Primas.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +67,13 @@
 		21AB3F6F1F14FB1D00F6C4FF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Controllers/HomeViewController.swift; sourceTree = "<group>"; };
 		21AB3F701F14FB1D00F6C4FF /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestViewController.swift; path = Controllers/TestViewController.swift; sourceTree = "<group>"; };
 		21AB3F741F14FB3000F6C4FF /* ArticleDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleDetailModel.swift; path = Models/ArticleDetailModel.swift; sourceTree = "<group>"; };
+		21AB3F761F15C58500F6C4FF /* ValueModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValueModel.swift; path = Models/ValueModel.swift; sourceTree = "<group>"; };
+		21AB3F781F15C5E100F6C4FF /* ValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueView.swift; sourceTree = "<group>"; };
+		21AB3F7A1F15C61100F6C4FF /* ValueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValueViewController.swift; path = Controllers/ValueViewController.swift; sourceTree = "<group>"; };
+		21AB3F7C1F15C64900F6C4FF /* ValueTopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValueTopViewController.swift; path = Controllers/ValueTopViewController.swift; sourceTree = "<group>"; };
+		21AB3F7E1F15C66800F6C4FF /* ValueTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueTopView.swift; sourceTree = "<group>"; };
+		21AB3F801F15C68C00F6C4FF /* ValueTopModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValueTopModel.swift; path = Models/ValueTopModel.swift; sourceTree = "<group>"; };
+		21AB3F821F15CAB800F6C4FF /* PrimasAwardType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrimasAwardType.swift; path = Common/PrimasAwardType.swift; sourceTree = "<group>"; };
 		21ECE4621F0E659500676E00 /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		38EC2C6AA6F5FFBAE888AD4E /* Pods-Primas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Primas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Primas/Pods-Primas.release.xcconfig"; sourceTree = "<group>"; };
 		3A9FCD820F0968EFF113D929 /* Pods-Primas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Primas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Primas/Pods-Primas.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +104,8 @@
 		21419E611F0B335800006255 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				21AB3F7E1F15C66800F6C4FF /* ValueTopView.swift */,
+				21AB3F781F15C5E100F6C4FF /* ValueView.swift */,
 				21AB3F6A1F14991200F6C4FF /* ArticleDetailToolBar.swift */,
 				215720B61F0C7E240081B0DB /* HomeListCell.swift */,
 				215720BA1F0CBCF00081B0DB /* HomeView.swift */,
@@ -108,6 +124,7 @@
 				21AB3F591F129C2B00F6C4FF /* IconFont+Extensions.swift */,
 				2165FB861F11F03D00547588 /* PrimasColor.swift */,
 				2165FB881F12000C00547588 /* Define.swift */,
+				21AB3F821F15CAB800F6C4FF /* PrimasAwardType.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -151,6 +168,8 @@
 		2190CC751F0A5FBA0091778A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				21AB3F801F15C68C00F6C4FF /* ValueTopModel.swift */,
+				21AB3F761F15C58500F6C4FF /* ValueModel.swift */,
 				21AB3F741F14FB3000F6C4FF /* ArticleDetailModel.swift */,
 				212DF6851F0B8FCE0036A4B7 /* Home */,
 			);
@@ -160,6 +179,8 @@
 		2190CC761F0A5FC50091778A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				21AB3F7A1F15C61100F6C4FF /* ValueViewController.swift */,
+				21AB3F7C1F15C64900F6C4FF /* ValueTopViewController.swift */,
 				21AB3F6E1F14FB1D00F6C4FF /* ArticleDetailViewController.swift */,
 				21AB3F6F1F14FB1D00F6C4FF /* HomeViewController.swift */,
 				21AB3F701F14FB1D00F6C4FF /* TestViewController.swift */,
@@ -335,15 +356,22 @@
 				21AB3F711F14FB1D00F6C4FF /* ArticleDetailViewController.swift in Sources */,
 				21AB3F721F14FB1D00F6C4FF /* HomeViewController.swift in Sources */,
 				2190CC641F0A5FAF0091778A /* AppDelegate.swift in Sources */,
+				21AB3F7B1F15C61100F6C4FF /* ValueViewController.swift in Sources */,
 				215720BB1F0CBCF00081B0DB /* HomeView.swift in Sources */,
+				21AB3F811F15C68C00F6C4FF /* ValueTopModel.swift in Sources */,
+				21AB3F771F15C58500F6C4FF /* ValueModel.swift in Sources */,
 				215720BF1F0DD0590081B0DB /* ToolBar.swift in Sources */,
+				21AB3F7D1F15C64900F6C4FF /* ValueTopViewController.swift in Sources */,
 				2165FB871F11F03D00547588 /* PrimasColor.swift in Sources */,
+				21AB3F831F15CAB800F6C4FF /* PrimasAwardType.swift in Sources */,
 				21AB3F691F147B4500F6C4FF /* ViewTool.swift in Sources */,
 				215720C31F0E232A0081B0DB /* ArticleDetailView.swift in Sources */,
+				21AB3F7F1F15C66800F6C4FF /* ValueTopView.swift in Sources */,
 				212DF6871F0B8FCE0036A4B7 /* CellModel.swift in Sources */,
 				2165FB891F12000C00547588 /* Define.swift in Sources */,
 				21AB3F671F146EE400F6C4FF /* Extensions.swift in Sources */,
 				21AB3F6D1F14FAAE00F6C4FF /* TestSubViewController.swift in Sources */,
+				21AB3F791F15C5E100F6C4FF /* ValueView.swift in Sources */,
 				21AB3F751F14FB3000F6C4FF /* ArticleDetailModel.swift in Sources */,
 				21AB3F5A1F129C2B00F6C4FF /* IconFont+Extensions.swift in Sources */,
 			);
