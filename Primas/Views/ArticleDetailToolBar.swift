@@ -23,14 +23,14 @@ class ArticleDetailToolBar: ToolBar {
   }()
 
   let good: UIBarButtonItem = {
-    let _bar = ToolBar.makeButtonItem(Iconfont.good.rawValue, "赞563")
+    let _bar = ToolBar.makeButtonItem(Iconfont.good_off.rawValue, "赞563")
     _bar.tag = ArticleDetailToolBarItemType.good.rawValue
 
     return _bar
   }()
 
-  let at: UIBarButtonItem = {
-    let _bar = ToolBar.makeButtonItem(Iconfont.at.rawValue, "7日曲线")
+  let trend: UIBarButtonItem = {
+    let _bar = ToolBar.makeButtonItem(Iconfont.trend.rawValue, "7日曲线")
     _bar.tag = ArticleDetailToolBarItemType.at.rawValue
 
     return _bar
@@ -42,7 +42,7 @@ class ArticleDetailToolBar: ToolBar {
     let title = popular.customView!.subviews[0] as! UILabel
     title.textColor = UIColor.red
 
-    self.setItems([share, rights, good, at], animated: false)
+    self.setItems([share, rights, good, trend], animated: false)
   }
     
   required init?(coder aDecoder: NSCoder) {

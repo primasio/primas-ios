@@ -1,5 +1,5 @@
 //
-//  ValueTableViewCell.swift
+//  ValueTopTableViewCell.swift
 //  Primas
 //
 //  Created by wang on 12/07/2017.
@@ -7,23 +7,12 @@
 //
 
 import UIKit
-import SnapKit
 
-class ValueTableViewCell: UITableViewCell {
-    static let registerIdentifier = "ValueTableViewCell"
+class ValueTopTableViewCell: UITableViewCell {
+    static let registerIdentifier = "ValueTopTableViewCell"
     static let rowHeight: CGFloat = 60.0
 
-    static func generateSection(_ date: String) -> UIView {
-      let _view = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 35))
-      _view.backgroundColor = hexStringToUIColor("#efefef")
-      let _label = UILabel()
-      _label.text = date
-      _label.font = primasFont(12)
-      _label.textColor = PrimasColor.shared.main.sub_font_color
-      _view.addSubview(_label)
-      return _view
-    }
-
+   
     let viewContainer: UIView = {
       let _view = UIView()
       _view.backgroundColor = UIColor.white
@@ -68,7 +57,21 @@ class ValueTableViewCell: UITableViewCell {
       return _label
     }()
 
-    let createdAt: UILabel = {
+    let shared: UILabel = {
+      let _label = UILabel()
+      _label.font = primasFont(12)
+      _label.textColor = PrimasColor.shared.main.sub_font_color
+      return _label
+    }()
+
+    let praised: UILabel = {
+      let _label = UILabel()
+      _label.font = primasFont(12)
+      _label.textColor = PrimasColor.shared.main.sub_font_color
+      return _label
+    }()
+
+    let transfered: UILabel = {
       let _label = UILabel()
       _label.font = primasFont(12)
       _label.textColor = PrimasColor.shared.main.sub_font_color
@@ -92,7 +95,10 @@ class ValueTableViewCell: UITableViewCell {
       self.viewContainer.addSubview(self.value)
       self.viewContainer.addSubview(self.valueBadge)
       self.viewContainer.addSubview(self.title)
-      self.viewContainer.addSubview(self.createdAt)
+
+      self.viewContainer.addSubview(self.shared)
+      self.viewContainer.addSubview(self.praised)
+      self.viewContainer.addSubview(self.transfered)
 
       self.setupLayout()
     }
@@ -103,45 +109,53 @@ class ValueTableViewCell: UITableViewCell {
         make.edges.equalTo(self).inset(SIDE_MARGIN)
       }
 
-      plus.snp.makeConstraints {
+      PST.snp.makeConstraints {
         make in 
-        make.left.equalTo(viewContainer)
+        make.right.bottom.equalTo(viewContainer)
       }
+
 
       value.snp.makeConstraints {
         make in 
-        make.left.equalTo(plus.snp.right)
-        make.top.equalTo(viewContainer)
+        make.right.equalTo(PST.snp.left)
+        make.bottom.equalTo(viewContainer)
       }
 
       plus.snp.makeConstraints {
         make in 
-        make.bottom.equalTo(value.snp.bottom)
+        make.right.equalTo(value.snp.left)
+        make.bottom.equalTo(viewContainer)
       }
 
-      PST.snp.makeConstraints {
-        make in 
-        make.left.equalTo(value.snp.right)
-        make.bottom.equalTo(value)
-      }
-
+      
       title.snp.makeConstraints {
         make in 
-        make.left.equalTo(viewContainer).offset(90)
-        make.right.top.equalTo(viewContainer)
+        make.left.top.equalTo(viewContainer)
+        make.right.equalTo(viewContainer).offset(-100)
       }
 
-      createdAt.snp.makeConstraints {
+      transfered.snp.makeConstraints {
         make in 
-        make.left.equalTo(title)
+        make.left.bottom.equalTo(viewContainer)
+      }
+
+      shared.snp.makeConstraints {
+        make in 
+        make.left.equalTo(transfered.snp.right).offset(MAIN_PADDING)
+        make.bottom.equalTo(viewContainer)
+      }
+
+      praised.snp.makeConstraints {
+        make in 
+        make.left.equalTo(shared.snp.right).offset(MAIN_PADDING)
         make.bottom.equalTo(viewContainer)
       }
 
       valueBadge.snp.makeConstraints {
         make in 
-        make.left.equalTo(viewContainer)
-        make.bottom.equalTo(viewContainer)
-        make.size.equalTo(CGSize(width: 23, height: 13))
+        make.right.equalTo(viewContainer)
+        make.top.equalTo(viewContainer)
+        make.size.equalTo(CGSize(width: 14, height: 14))
       }
 
       let line = ViewTool.generateLine()
@@ -165,11 +179,31 @@ class ValueTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func bind(_ value: ValueModel) {
+    func bind(_ value: ValueTopModel, _ index: Int) {
+      let current = index + 1
+
       self.value.text = "\(value.award)"
       self.title.text = value.title
-      self.createdAt.text = primasDate("yyyy-MM-dd", value.createdAt)
-      self.valueBadge.backgroundColor = getPrimasAwardBackgroundColor(value.awardType)
-      self.valueBadge.text = PrimasAwardTypeDictionary[value.awardType]
+
+      self.shared.text = value.shared.toHumanString() + "转发"
+      self.praised.text = value.praised.toHumanString() + "赞"
+      self.transfered.text = value.transfered.toHumanString() + "转载"
+
+      var backgroundColor: UIColor = PrimasColor.shared.main.gray_font_color
+
+      switch current {
+        case 1:
+          backgroundColor = hexStringToUIColor("#ff9933")
+        case 2:
+          backgroundColor = hexStringToUIColor("#33cc99")
+        case 3:
+          backgroundColor = hexStringToUIColor("#3399ff")
+        default: 
+          break
+      }
+
+      self.valueBadge.backgroundColor = backgroundColor
+      self.valueBadge.text = "\(current)"
     }
+
 }

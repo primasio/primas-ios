@@ -35,6 +35,7 @@ class HomeViewController: UIViewController {
 
   override func viewDidAppear(_ animated: Bool) {
 //    navigationController?.pushViewController(TestViewController(), animated: false)
+   navigationController?.pushViewController(ProfileViewController(), animated: true)
   }
 
   func setup() {

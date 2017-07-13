@@ -9,12 +9,41 @@
 import UIKit
 
 class ValueTopViewController: UIViewController {
+    var valueList: [ValueTopModel] = []
+    var valueView: ValueTopView = ValueTopView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.valueList = ValueTopModel.generateTestData()
+        self.valueView.table.delegate = self
+        self.valueView.table.dataSource = self
+        self.valueView.headerBind()
+        
+        self.view.addSubview(valueView)
+        self.view.backgroundColor = UIColor.white
+
+        valueView.snp.makeConstraints {
+            make in 
+            make.edges.equalTo(self.view)
+        }
+
+       
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setToolbarHidden(true, animated: false)
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: primasFont(15)]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.topItem?.title = "";
+        self.navigationController?.navigationBar.backItem?.title = "";
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -32,4 +61,23 @@ class ValueTopViewController: UIViewController {
     }
     */
 
+}
+
+// MARK -- UITableViewDataSource UITableViewDelegate
+
+extension ValueTopViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return valueList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ValueTopTableViewCell.registerIdentifier) as! ValueTopTableViewCell
+        cell.bind(valueList[indexPath.row], indexPath.row)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return ValueTableViewCell.rowHeight
+    }
 }

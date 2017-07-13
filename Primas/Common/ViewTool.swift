@@ -3,7 +3,7 @@ import SnapKit
 import Foundation
 
 class ViewTool {
-  static func generateLine(_ background: UIColor? = PrimasColor.shared.main.line_background_color, _ height: CGFloat? = 1.0) -> UIView {
+  static func generateLine(_ background: UIColor? = PrimasColor.shared.main.content_line_background_color, _ height: CGFloat? = 0.5) -> UIView {
     let _view = UIView()
     _view.backgroundColor = background!
     _view.snp.makeConstraints {
@@ -11,5 +11,23 @@ class ViewTool {
       make.size.height.equalTo(height!)
     }
     return _view
+  }
+
+  static func generateIcon(_ code: Iconfont, _ size: CGFloat? = 12.0, _ color: UIColor? = UIColor.white ) -> UILabel {
+    let _label = UILabel()
+    _label.text = code.rawValue
+    _label.font = UIFont.iconfont(ofSize: size!)
+    _label.textColor = color!
+
+    return _label
+  }
+
+  static func generateLabel(_ text:String? = "", _ size: CGFloat? = 12.0, _ color: UIColor? = UIColor.white) -> UILabel {
+    let _label = UILabel()
+    _label.text = text
+    _label.font = primasFont(size!)
+    _label.textColor = color!
+
+    return _label
   }
 }

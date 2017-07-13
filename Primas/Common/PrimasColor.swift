@@ -34,10 +34,12 @@ protocol PriamsColorProtocol {
   var main_font_color: UIColor { get }
   var sub_font_color: UIColor { get }
   var light_font_color: UIColor { get }
+  var light_white_font_color: UIColor {get}
   var gray_font_color: UIColor {get}
   var main_background_color: UIColor {get}
   var light_background_color: UIColor {get}
   var line_background_color: UIColor {get}
+  var content_line_background_color: UIColor {get}
   var home_tool_bar_item_color: UIColor {get}
   var home_tool_bar_item_active_color: UIColor {get}
   var home_tool_bar_item_active_background_color: UIColor {get}
@@ -99,6 +101,12 @@ class PrimasDefaultColor: PriamsColorProtocol {
     }
   }
 
+  var content_line_background_color: UIColor {
+    get {
+      return hexStringToUIColor("#dddddd")
+    }
+  }
+
   var home_tool_bar_item_color: UIColor {
     get {
       return hexStringToUIColor("#666666")
@@ -126,6 +134,12 @@ class PrimasDefaultColor: PriamsColorProtocol {
   var infringement_background_color: UIColor {
     get {
       return hexStringToUIColor("#f9f7f7")
+    }
+  }
+
+  var light_white_font_color: UIColor {
+    get {
+      return hexStringToUIColor("#ffcccc")
     }
   }
 }
