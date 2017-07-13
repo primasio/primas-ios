@@ -18,6 +18,8 @@ class ToolBar: UIToolbar {
       case group, pen, value, myself
     }
 
+    var fixedItems: [UIBarButtonItem] = []
+
     static let itemColor: UIColor = PrimasColor.shared.main.home_tool_bar_item_color
     static let itemSize: CGFloat = 20.0
 
@@ -112,7 +114,16 @@ class ToolBar: UIToolbar {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        self.setItems([popular, group, pen, value, myself], animated: false)
+        let items = [popular, group, pen, value, myself]
+
+        for item in items {
+          item.customView?.isUserInteractionEnabled = true
+          let tapRecongnizer = UITapGestureRecognizer(target: self, action: #selector(selectTaped))
+          tapRecongnizer.numberOfTapsRequired = 1
+          item.customView?.addGestureRecognizer(tapRecongnizer)
+        }
+
+        self.setItems(items, animated: false)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -120,17 +131,16 @@ class ToolBar: UIToolbar {
     }
 
     func getItems() -> Array<UIBarButtonItem> {
+      if fixedItems.count != 0 {
+        return fixedItems
+      }
+
       let flexible = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
         
       var arr = [flexible]
 
       for item in items! {
-          item.customView?.isUserInteractionEnabled = true
-        
-          let tapRecongnizer = UITapGestureRecognizer(target: self, action: #selector(selectTaped))
-          tapRecongnizer.numberOfTapsRequired = 1
-        
-          item.customView?.addGestureRecognizer(tapRecongnizer)
+
 
           arr.append(item)
           arr.append(flexible)
@@ -146,21 +156,23 @@ class ToolBar: UIToolbar {
     }
     
     func selectTaped(gesture: UITapGestureRecognizer) {
-        print("taped..........")
-
         let _view = gesture.view!
-        let _icon = _view.subviews[0] as! UILabel
 
-
-        for item in self.items! {
-            if item.tag != 0 && item.tag != ToolBar.ItemType.pen.rawValue {
-                let icon = item.customView?.subviews[0] as! UILabel
-                if _icon != icon {
-                    icon.textColor = ToolBar.itemColor
-                } else {
-                    icon.textColor = UIColor.red
-                }
-            }
+        switch _view {
+            case popular.customView!:
+              toController(HomeViewController())
+            case group.customView!:
+              break;
+            case pen.customView!:
+              break;
+            case value.customView!:
+              toController(ValueViewController())
+            case myself.customView!:
+              toController(ProfileViewController())
+            default:
+              break;
         }
+
     }
+
 }

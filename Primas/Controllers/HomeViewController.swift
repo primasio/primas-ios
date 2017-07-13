@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
 
   override func viewDidAppear(_ animated: Bool) {
 //    navigationController?.pushViewController(TestViewController(), animated: false)
-   navigationController?.pushViewController(ProfileViewController(), animated: true)
+   // navigationController?.pushViewController(ProfileViewController(), animated: true)
   }
 
   func setup() {
@@ -46,9 +46,8 @@ class HomeViewController: UIViewController {
     homeView.tableView.dataSource = self
     homeView.tableView.delegate = self
 
-    let toobar = ToolBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: (navigationController?.toolbar.frame.height)!))
     self.navigationController?.toolbar.contentMode = .scaleToFill
-    self.toolbarItems = toobar.getItems()
+    self.toolbarItems = app().toolbar.getItems()
 
     forTest()
   }
@@ -75,15 +74,16 @@ class HomeViewController: UIViewController {
 
 // Mark: HomeViewController - UITableViewDataSource, UITableViewDelegate
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
-  
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.cellList?.count != 0 {
-          return (cellList?.count)!
+            return (cellList?.count)!
         }
-
+        
         return 0
     }
     
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: HomeListCell.registerIdentifier, for: indexPath) as! HomeListCell
       cell.bind((cellList?[indexPath.row])!)

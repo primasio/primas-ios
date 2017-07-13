@@ -33,3 +33,11 @@ func primasDate(_ format: String, _ time: Int) -> String {
   return formatter.string(from: date)
 }
 
+
+func app() -> AppDelegate {
+  return UIApplication.shared.delegate as! AppDelegate
+}
+
+func toController(_ controller: UIViewController) {
+  app().navigation.pushViewController(controller, animated: true)
+}

@@ -48,12 +48,12 @@ class ProfileView: UIView {
       return ViewTool.generateLine(hexStringToUIColor("#ff886c"), 36.0)
     }()
 
-    let hpIcon: UILabel = {
-      return ViewTool.generateIcon(Iconfont.ph, 14.0, hexStringToUIColor("#ffcec2"))
+    let hpIcon: UIImageView = {
+       return UIImageView(image: UIImage(named: "hp-icon"))
     }()
 
-    let primasIcon: UILabel = {
-      return ViewTool.generateIcon(Iconfont.primas_icon, 14.0, hexStringToUIColor("#ffcec2"))
+    let primasIcon: UIImageView = {
+      return UIImageView(image: UIImage(named: "pst-icon"))
     }()
 
     let hpLabel: UILabel = {
@@ -78,11 +78,12 @@ class ProfileView: UIView {
     }()
 
     let table: UITableView = {
-      let _table = UITableView(frame: .zero, style: .grouped)
-      _table.register(ValueTableViewCell.self, forCellReuseIdentifier: ValueTableViewCell.registerIdentifier)
-      _table.separatorStyle = .none
-      _table.backgroundColor = UIColor.white
-      return _table
+      let tableView = UITableView()
+        
+      tableView.register(HomeListCell.self, forCellReuseIdentifier: HomeListCell.registerIdentifier)
+      tableView.separatorStyle = .none
+        
+      return tableView
     }()
 
     override init(frame: CGRect) {
@@ -133,7 +134,7 @@ class ProfileView: UIView {
           make.top.equalTo(userImage.snp.bottom).offset(MAIN_PADDING)
           make.centerX.equalTo(self)
         }
-
+        
         profileIndex.snp.makeConstraints {
           make in 
           make.top.equalTo(username.snp.bottom).offset(8)
@@ -143,7 +144,7 @@ class ProfileView: UIView {
         vline.snp.makeConstraints {
           make in 
           make.top.equalTo(profileIndex.snp.bottom).offset(25)
-          make.size.width.equalTo(0.5)
+          make.size.equalTo(CGSize(width: 0.5, height: 36.0))
           make.centerX.equalTo(self)
         }
 
@@ -153,39 +154,47 @@ class ProfileView: UIView {
 
         _left_group.addSubview(hpLabel)
         _left_group.addSubview(hpIcon)
+        _left_group.addSubview(hpValue)
 
-        _left_group.center = headerViewContainer.center
-        _right_group.center = headerViewContainer.center
+         // hpIcon.backgroundColor = UIColor.yellow
+         // hpLabel.backgroundColor = UIColor.blue
+         // hpValue.backgroundColor = UIColor.gray
 
-        _left_group.backgroundColor = UIColor.yellow
-        _right_group.backgroundColor = UIColor.blue
+         // primasIcon.backgroundColor = UIColor.yellow
+         // primasLabel.backgroundColor = UIColor.blue
+         // pstValue.backgroundColor = UIColor.gray
+
+         // _left_group.backgroundColor = UIColor.green
+         // _right_group.backgroundColor = UIColor.orange
 
         _right_group.addSubview(primasIcon)
         _right_group.addSubview(primasLabel)
+        _right_group.addSubview(pstValue)
         
 
         headerViewContainer.addSubview(_left_group)
         headerViewContainer.addSubview(_right_group)
         
-
         _left_group.snp.makeConstraints {
           make in 
           make.top.equalTo(vline)
           make.left.equalTo(headerViewContainer)
-          make.size.equalTo(CGSize(width: width, height: 36.0))
+          make.size.equalTo(CGSize(width: width, height: 38.0))
         }
-        
-        hpIcon.center = _left_group.center
-        hpLabel.center = _left_group.center
 
+        let x = hpLabel.intrinsicContentSize.width / 2.0 
+        
         hpIcon.snp.makeConstraints {
           make in 
           make.top.equalTo(_left_group)
+          make.size.equalTo(14)
+          make.centerX.equalTo(_left_group).offset(-x - 2.5)
         }
 
         hpLabel.snp.makeConstraints {
           make in 
           make.top.equalTo(_left_group)
+          make.left.equalTo(hpIcon.snp.right).offset(5)
         }
 
         _right_group.snp.makeConstraints {
@@ -193,6 +202,32 @@ class ProfileView: UIView {
           make.top.equalTo(vline)
           make.right.equalTo(headerViewContainer)
           make.size.equalTo(CGSize(width: width, height: 36.0))
+        }
+
+        hpIcon.contentMode = .scaleToFill
+        
+        hpValue.snp.makeConstraints {
+          make in 
+          make.bottom.equalTo(_left_group)
+          make.centerX.equalTo(_left_group)
+        }
+
+        pstValue.snp.makeConstraints {
+          make in 
+          make.bottom.equalTo(_right_group)
+          make.centerX.equalTo(_right_group)
+        }
+
+        primasIcon.snp.makeConstraints {
+          make in 
+          make.top.equalTo(_right_group)
+          make.centerX.equalTo(_right_group).offset(-primasLabel.intrinsicContentSize.width / 2 - 2.5)
+        }
+
+        primasLabel.snp.makeConstraints {
+          make in 
+          make.top.equalTo(_right_group)
+          make.left.equalTo(primasIcon.snp.right).offset(5)
         }
 
         segment.snp.makeConstraints {

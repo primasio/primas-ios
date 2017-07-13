@@ -27,7 +27,12 @@ class ViewTool {
     _label.text = text
     _label.font = primasFont(size!)
     _label.textColor = color!
-
     return _label
+  }
+
+  static func generateNavigationBarItem(_ code: Iconfont, _ color: UIColor? = UIColor.white) -> UIBarButtonItem {
+    let _item = UIBarButtonItem(title: code.rawValue, style: .plain, target: nil, action: nil)
+    _item.setTitleTextAttributes([NSFontAttributeName: UIFont.iconfont(ofSize: 22.0)!, NSForegroundColorAttributeName: color!], for: .normal)
+    return _item
   }
 }
