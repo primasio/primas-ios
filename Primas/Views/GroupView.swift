@@ -10,6 +10,10 @@ import UIKit
 import SnapKit
 
 class GroupView: UIView {
+    
+    var collectionViewDataSource: UICollectionViewDataSource?
+    var collectionViewDelegate: UICollectionViewDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -60,6 +64,14 @@ class GroupView: UIView {
         
         navView.addSubview(navCollectionView)
         navView.addSubview(navGroupsView)
+        
+        let groupCollection = UICollectionView()
+        groupCollection.register(GroupViewCollectionCell.self, forCellWithReuseIdentifier: GroupViewCollectionCell.identifier)
+        groupCollection.dataSource = collectionViewDataSource
+        groupCollection.delegate = collectionViewDelegate
+        groupCollection.backgroundColor = UIColor.red
+        
+        self.addSubview(groupCollection)
         
         titleView.snp.makeConstraints {
             make in
@@ -119,6 +131,12 @@ class GroupView: UIView {
             make in
             make.bottom.left.right.equalTo(navGroupsView)
             make.size.height.equalTo(1.0)
+        }
+        
+        groupCollection.snp.makeConstraints {
+            make in
+            make.top.equalTo(titleView)
+            make.left.right.bottom.equalTo(self)
         }
     }
     
