@@ -6,13 +6,13 @@ PODS:
 DEPENDENCIES:
   - Kingfisher (~> 3.0)
   - SnapKit (~> 3.2.0)
-  - SwiftIconFont
+  - SwiftIconFont (~> 2.6)
 
 SPEC CHECKSUMS:
   Kingfisher: 7297492bf8cec9b2e2dee3519f2219948580d98e
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftIconFont: bbe1f32e1e16bac87dad8566afc80132cb8d072c
 
-PODFILE CHECKSUM: 1e0777d320a631759cbeff4c56c19cd829638457
+PODFILE CHECKSUM: c999baeb159745dbb5cce6812091665b9f8bd56b
 
 COCOAPODS: 1.2.1
