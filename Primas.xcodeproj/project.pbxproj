@@ -45,6 +45,9 @@
 		21AB3F8F1F17201700F6C4FF /* ybicon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21AB3F8E1F17201700F6C4FF /* ybicon.ttf */; };
 		21ECE4631F0E659500676E00 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ECE4621F0E659500676E00 /* TestView.swift */; };
 		CEBA54EDDE12F4CF939CDEE1 /* Pods_Primas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5E91BC55438CB2C3574D4A /* Pods_Primas.framework */; };
+		F6E684361F18B7F5008F4304 /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E684351F18B7F5008F4304 /* GroupView.swift */; };
+		F6E684381F18B82C008F4304 /* GroupViewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E684371F18B82C008F4304 /* GroupViewCollectionCell.swift */; };
+		F6E6843A1F18B837008F4304 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E684391F18B837008F4304 /* GroupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +93,9 @@
 		38EC2C6AA6F5FFBAE888AD4E /* Pods-Primas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Primas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Primas/Pods-Primas.release.xcconfig"; sourceTree = "<group>"; };
 		3A9FCD820F0968EFF113D929 /* Pods-Primas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Primas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Primas/Pods-Primas.debug.xcconfig"; sourceTree = "<group>"; };
 		4B5E91BC55438CB2C3574D4A /* Pods_Primas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Primas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6E684351F18B7F5008F4304 /* GroupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
+		F6E684371F18B82C008F4304 /* GroupViewCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewCollectionCell.swift; sourceTree = "<group>"; };
+		F6E684391F18B837008F4304 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupViewController.swift; path = Controllers/GroupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,8 @@
 		21419E611F0B335800006255 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F6E684371F18B82C008F4304 /* GroupViewCollectionCell.swift */,
+				F6E684351F18B7F5008F4304 /* GroupView.swift */,
 				21AB3F8A1F171E1900F6C4FF /* ProfileView.swift */,
 				21AB3F841F15EBAD00F6C4FF /* ValueTableViewCell.swift */,
 				21AB3F7E1F15C66800F6C4FF /* ValueTopView.swift */,
@@ -197,6 +205,7 @@
 		2190CC761F0A5FC50091778A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F6E684391F18B837008F4304 /* GroupViewController.swift */,
 				21AB3F8C1F171E3300F6C4FF /* ProfileViewController.swift */,
 				21AB3F7A1F15C61100F6C4FF /* ValueViewController.swift */,
 				21AB3F7C1F15C64900F6C4FF /* ValueTopViewController.swift */,
@@ -276,6 +285,7 @@
 				TargetAttributes = {
 					2190CC5F1F0A5FAF0091778A = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 8U7K5G3ZZF;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -380,12 +390,14 @@
 				21AB3F851F15EBAD00F6C4FF /* ValueTableViewCell.swift in Sources */,
 				21AB3F8D1F171E3300F6C4FF /* ProfileViewController.swift in Sources */,
 				215720BB1F0CBCF00081B0DB /* HomeView.swift in Sources */,
+				F6E684381F18B82C008F4304 /* GroupViewCollectionCell.swift in Sources */,
 				21AB3F811F15C68C00F6C4FF /* ValueTopModel.swift in Sources */,
 				21AB3F771F15C58500F6C4FF /* ValueModel.swift in Sources */,
 				215720BF1F0DD0590081B0DB /* ToolBar.swift in Sources */,
 				21AB3F7D1F15C64900F6C4FF /* ValueTopViewController.swift in Sources */,
 				2165FB871F11F03D00547588 /* PrimasColor.swift in Sources */,
 				21AB3F831F15CAB800F6C4FF /* PrimasAwardType.swift in Sources */,
+				F6E684361F18B7F5008F4304 /* GroupView.swift in Sources */,
 				21AB3F691F147B4500F6C4FF /* ViewTool.swift in Sources */,
 				215720C31F0E232A0081B0DB /* ArticleDetailView.swift in Sources */,
 				21AB3F7F1F15C66800F6C4FF /* ValueTopView.swift in Sources */,
@@ -398,6 +410,7 @@
 				21AB3F791F15C5E100F6C4FF /* ValueView.swift in Sources */,
 				21AB3F751F14FB3000F6C4FF /* ArticleDetailModel.swift in Sources */,
 				21AB3F5A1F129C2B00F6C4FF /* IconFont+Extensions.swift in Sources */,
+				F6E6843A1F18B837008F4304 /* GroupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +528,7 @@
 			baseConfigurationReference = 3A9FCD820F0968EFF113D929 /* Pods-Primas.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8U7K5G3ZZF;
 				INFOPLIST_FILE = Primas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.primas;
@@ -529,6 +543,7 @@
 			baseConfigurationReference = 38EC2C6AA6F5FFBAE888AD4E /* Pods-Primas.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8U7K5G3ZZF;
 				INFOPLIST_FILE = Primas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.primas;
