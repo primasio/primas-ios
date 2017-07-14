@@ -30,7 +30,7 @@ func hexStringToUIColor (_ hex:String, alpha: CGFloat? = 1.0) -> UIColor {
   )
 }
 
-protocol PriamsColorProtocol {
+protocol PrimasColorProtocol {
   var main_font_color: UIColor { get }
   var sub_font_color: UIColor { get }
   var light_font_color: UIColor { get }
@@ -49,16 +49,16 @@ protocol PriamsColorProtocol {
 }
 
 class PrimasColor {
-  var main: PriamsColorProtocol!
+  var main: PrimasColorProtocol!
   static var shared: PrimasColor = PrimasColor(main: PrimasDefaultColor())
 
-  init(main: PriamsColorProtocol) {
+  init(main: PrimasColorProtocol) {
     self.main = main 
   }
 }
 
 
-class PrimasDefaultColor: PriamsColorProtocol {
+class PrimasDefaultColor: PrimasColorProtocol {
   var main_font_color: UIColor {
     get {
       return hexStringToUIColor("#333333")

@@ -44,6 +44,8 @@ class ValueViewController: UIViewController {
         self.toolbarItems = self.navigationController?.toolbar.items
         self.navigationController?.setToolbarHidden(false, animated: false)
         self.navigationController?.navigationBar.isTranslucent = true
+
+        app().toolbar.current = .value
     }
     
     func tap() {

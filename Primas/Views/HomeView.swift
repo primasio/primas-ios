@@ -43,9 +43,7 @@ class HomeView: UIView {
     }()
 
     let bottomLine: UIView = {
-        let _line = UIView()
-        _line.backgroundColor = PrimasColor.shared.main.line_background_color
-        return _line
+        return ViewTool.generateLine(PrimasColor.shared.main.line_background_color)
     }()
 
     let tableView: UITableView = {
@@ -82,7 +80,6 @@ class HomeView: UIView {
             make in 
             make.top.equalTo(logoSection.snp.bottom)
             make.left.right.equalTo(self)
-            make.size.equalTo(1)
         }
 
         tableView.backgroundColor = PrimasColor.shared.main.main_background_color

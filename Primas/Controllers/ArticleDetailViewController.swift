@@ -31,8 +31,6 @@ class ArticleDetailViewController: UIViewController {
         self.view.addSubview(articleView)
         self.view.backgroundColor = UIColor.white
 
-        
-        
         let toolbar = ArticleDetailToolBar()
         self.toolbarItems = toolbar.getItems()
 
@@ -117,7 +115,10 @@ class ArticleDetailViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: primasFont(15)]
         self.navigationController?.navigationBar.tintColor = PrimasColor.shared.main.main_font_color
         self.navigationController?.navigationBar.topItem?.title = "";
+        self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(color: PrimasColor.shared.main.light_font_color)
+
     }
     
     func backToView() {

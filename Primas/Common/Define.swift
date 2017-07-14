@@ -26,8 +26,6 @@ enum ViewControllers {
           return ValueTopViewController()
         case .profile:
           return ProfileViewController()
-        default:
-            break
         }
     }
 }

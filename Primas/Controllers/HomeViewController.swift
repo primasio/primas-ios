@@ -31,6 +31,7 @@ class HomeViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.setToolbarHidden(false, animated: false)
     navigationController?.setNavigationBarHidden(true, animated: false)
+    app().toolbar.current = .popular
   }
 
   override func viewDidAppear(_ animated: Bool) {

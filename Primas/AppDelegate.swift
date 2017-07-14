@@ -23,8 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.frame = UIScreen.main.bounds
         self.window!.makeKeyAndVisible()
 
+        let homeViewController = ViewControllers.home.map()
+        self.cachedViewControllers[ViewControllers.home] =  homeViewController
+
         self.navigation = UINavigationController(navigationBarClass: UINavigationBar.self, toolbarClass: ToolBar.self)
-        self.navigation.pushViewController(HomeViewController(), animated: false)
+        self.navigation.pushViewController(homeViewController, animated: false)
         self.navigation.navigationBar.isTranslucent = false
         self.navigation.toolbar.isTranslucent = false
         

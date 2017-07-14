@@ -18,8 +18,6 @@ class ToolBar: UIToolbar {
       case group, pen, value, myself
     }
 
-
-
     var fixedItems: [UIBarButtonItem] = []
     var current: ItemType = .popular {
       didSet {
@@ -195,11 +193,25 @@ class ToolBar: UIToolbar {
     }
 
     func setActiveStyle(_ barItem: UIBarButtonItem) {
-      let _view = barItem.customView!
-      let _icon = _view.subviews[0] as! UILabel
-      let _title = _view.subviews[1] as! UILabel
+      if barItem.tag != ItemType.pen.rawValue {
+        let _view = barItem.customView!
+        let _icon = _view.subviews[0] as! UILabel
+        let _title = _view.subviews[1] as! UILabel
 
-      _icon.textColor = PrimasColor.shared.main.red_font_color
-      _title.textColor = PrimasColor.shared.main.red_font_color
+        _icon.textColor = PrimasColor.shared.main.red_font_color
+        _title.textColor = PrimasColor.shared.main.red_font_color
+      }
+
+      for item in self.items! {
+        if item.tag != barItem.tag && item.tag != ItemType.pen.rawValue {
+          let _item_icon = item.customView!.subviews[0] as! UILabel
+          let _item_title = item.customView!.subviews[1] as! UILabel
+
+          _item_title.textColor = ToolBar.itemColor
+          _item_icon.textColor = ToolBar.itemColor
+        }
+      }
+
     }
+
 }

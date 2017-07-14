@@ -33,11 +33,6 @@ class ProfileViewController: UIViewController {
         
         self.navigationItem.leftBarButtonItem = ViewTool.generateNavigationBarItem(Iconfont.setting)
         self.navigationItem.rightBarButtonItem = ViewTool.generateNavigationBarItem(Iconfont.add)
-
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,7 +46,10 @@ class ProfileViewController: UIViewController {
         self.toolbarItems = app().toolbar.getItems()
         self.navigationController?.setToolbarHidden(false, animated: false)
         self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
 
+        app().toolbar.current = .myself
     }
     
 
