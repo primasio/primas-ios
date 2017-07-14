@@ -21,29 +21,41 @@ class SegmentView: UIView {
     }
 
     var style: SegmentViewStyle = .single
-    var currentActive: ItemIndex = .left
+    var currentActive: ItemIndex = .left {
+      didSet {
+        switch currentActive {
+          case .left:
+            setActiveStyle(.left)
+          case .right:
+            setActiveStyle(.right)
+        }
+      }
+    }
 
     var width: CGFloat = 0
     var height: CGFloat = 0
     var padding: CGFloat = 0
 
+    var activeColor = PrimasColor.shared.main.red_font_color
+    var normalColor = PrimasColor.shared.main.light_font_color
+
     let leftContainer: UIView = UIView()
     let rightContainer: UIView = UIView()
 
     let leftTitleLabel: UILabel = {
-      return ViewTool.generateLabel("", 16.0, PrimasColor.shared.main.sub_font_color)
+      return ViewTool.generateLabel("", 16.0, PrimasColor.shared.main.light_font_color)
     }()
 
     let rightTitleLabel: UILabel = {
-      return ViewTool.generateLabel("", 16.0, PrimasColor.shared.main.sub_font_color)
+      return ViewTool.generateLabel("", 16.0, PrimasColor.shared.main.light_font_color)
     }()
 
     var leftSubTitleLabel: UILabel = {
-      return ViewTool.generateLabel("", 12.0, PrimasColor.shared.main.sub_font_color)
+      return ViewTool.generateLabel("", 12.0, PrimasColor.shared.main.light_font_color)
     }()
 
     var rightSubTitleLabel: UILabel = {
-      return ViewTool.generateLabel("", 12.0, PrimasColor.shared.main.sub_font_color)
+      return ViewTool.generateLabel("", 12.0, PrimasColor.shared.main.light_font_color)
     }()
 
     var leftActiveLine: UIView = {
@@ -64,6 +76,7 @@ class SegmentView: UIView {
       self.width = width!
       self.height = height!
       self.padding = padding!
+
     }
 
     override init(frame: CGRect) {
@@ -75,9 +88,12 @@ class SegmentView: UIView {
     }
 
     func setup() {
+      // leftContainer.backgroundColor =  UIColor.red
+      // rightContainer.backgroundColor = UIColor.green
+
+
       self.addSubview(leftContainer)
       self.addSubview(rightContainer)
-      self.addSubview(bottomLine)
 
       leftContainer.addSubview(leftTitleLabel)
       leftContainer.addSubview(leftActiveLine)
@@ -85,12 +101,16 @@ class SegmentView: UIView {
       rightContainer.addSubview(rightTitleLabel)
       rightContainer.addSubview(rightActiveLine)
 
+      self.addSubview(bottomLine)
+
       if self.style == .subtitle {
         leftContainer.addSubview(leftSubTitleLabel)
         rightContainer.addSubview(rightSubTitleLabel)
       }
 
       setupLayout()
+        
+      addEvent()
     }
 
     func setupLayout() {
@@ -102,7 +122,7 @@ class SegmentView: UIView {
       leftContainer.snp.makeConstraints {
         make in 
         make.left.equalTo(self).offset(self.padding)
-        make.right.equalTo(self.padding + self.width / 2)
+        make.size.width.equalTo((self.width - padding * 2) / 2)
         make.top.bottom.equalTo(self)
       }
 
@@ -163,12 +183,55 @@ class SegmentView: UIView {
       }
     }
 
-    func bind(style: SegmentViewStyle, leftTitle: String, rightTitle: String, _ leftSubTitle: String? = "", _ rightSubTitle: String? = "") {
-      self.style = style
+    func bind(leftTitle: String, rightTitle: String, _ leftSubTitle: String? = "", _ rightSubTitle: String? = "") {
       leftTitleLabel.text = leftTitle
       rightTitleLabel.text = rightTitle
       leftSubTitleLabel.text = leftSubTitle
       rightSubTitleLabel.text = rightSubTitle
+      
+      self.currentActive = .left
+      setup()
+    }
+
+    func addEvent() {
+        leftContainer.isUserInteractionEnabled = true
+        let leftTap = UITapGestureRecognizer(target: self, action: #selector(leftTaped))
+        leftTap.numberOfTapsRequired = 1
+        leftContainer.addGestureRecognizer(leftTap)
+        
+        rightContainer.isUserInteractionEnabled = true
+        let rightTap = UITapGestureRecognizer(target: self, action: #selector(rightTaped))
+        rightTap.numberOfTapsRequired = 1
+        rightContainer.addGestureRecognizer(rightTap)
+    }
+    
+    func leftTaped() {
+        self.currentActive = .left
+    }
+    
+    func rightTaped() {
+        self.currentActive = .right
+    }
+
+    func setActiveStyle(_ item: ItemIndex) {
+      switch item {
+        case .left:
+          leftTitleLabel.textColor = self.activeColor
+          leftSubTitleLabel.textColor = self.activeColor
+          leftActiveLine.backgroundColor = self.activeColor
+
+          rightTitleLabel.textColor = self.normalColor
+          rightSubTitleLabel.textColor = self.normalColor
+          rightActiveLine.backgroundColor = UIColor.clear
+        case .right:
+          leftTitleLabel.textColor = self.normalColor
+          leftSubTitleLabel.textColor = self.normalColor
+          leftActiveLine.backgroundColor = UIColor.clear
+
+          rightTitleLabel.textColor = self.activeColor
+          rightSubTitleLabel.textColor = self.activeColor
+          rightActiveLine.backgroundColor = self.activeColor
+      }
     }
 
 }
