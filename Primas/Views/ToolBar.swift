@@ -18,7 +18,25 @@ class ToolBar: UIToolbar {
       case group, pen, value, myself
     }
 
+
+
     var fixedItems: [UIBarButtonItem] = []
+    var current: ItemType = .popular {
+      didSet {
+        switch current {
+          case .popular:
+            self.setActiveStyle(popular)
+          case .group:
+            self.setActiveStyle(group)
+          case .pen:
+            break
+          case .value:
+            self.setActiveStyle(value)
+          case .myself:
+            self.setActiveStyle(myself)
+        }
+      }
+    }
 
     static let itemColor: UIColor = PrimasColor.shared.main.home_tool_bar_item_color
     static let itemSize: CGFloat = 20.0
@@ -160,19 +178,28 @@ class ToolBar: UIToolbar {
 
         switch _view {
             case popular.customView!:
-              toController(HomeViewController())
+              toController(.home)
             case group.customView!:
+              // toController(ViewControllers.group)
               break;
             case pen.customView!:
               break;
             case value.customView!:
-              toController(ValueViewController())
+              toController(.value)
             case myself.customView!:
-              toController(ProfileViewController())
+              toController(.profile)
             default:
               break;
         }
 
     }
 
+    func setActiveStyle(_ barItem: UIBarButtonItem) {
+      let _view = barItem.customView!
+      let _icon = _view.subviews[0] as! UILabel
+      let _title = _view.subviews[1] as! UILabel
+
+      _icon.textColor = PrimasColor.shared.main.red_font_color
+      _title.textColor = PrimasColor.shared.main.red_font_color
+    }
 }

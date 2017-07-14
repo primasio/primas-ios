@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var navigation: UINavigationController!
+    var cachedViewControllers: [ViewControllers: UIViewController] = [:]
     lazy var toolbar: ToolBar = { ToolBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: (self.navigation!.toolbar.frame.height))) }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
