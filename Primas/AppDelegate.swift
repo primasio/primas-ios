@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow()
         self.window!.frame = UIScreen.main.bounds
         self.window!.makeKeyAndVisible()
+        self.window?.backgroundColor = UIColor.white
 
         let homeViewController = ViewControllers.home.map()
         self.cachedViewControllers[ViewControllers.home] =  homeViewController

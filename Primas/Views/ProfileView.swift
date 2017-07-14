@@ -156,17 +156,6 @@ class ProfileView: UIView {
         _left_group.addSubview(hpIcon)
         _left_group.addSubview(hpValue)
 
-         // hpIcon.backgroundColor = UIColor.yellow
-         // hpLabel.backgroundColor = UIColor.blue
-         // hpValue.backgroundColor = UIColor.gray
-
-         // primasIcon.backgroundColor = UIColor.yellow
-         // primasLabel.backgroundColor = UIColor.blue
-         // pstValue.backgroundColor = UIColor.gray
-
-         // _left_group.backgroundColor = UIColor.green
-         // _right_group.backgroundColor = UIColor.orange
-
         _right_group.addSubview(primasIcon)
         _right_group.addSubview(primasLabel)
         _right_group.addSubview(pstValue)

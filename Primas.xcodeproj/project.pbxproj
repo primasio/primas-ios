@@ -15,6 +15,7 @@
 		215720C31F0E232A0081B0DB /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215720C21F0E232A0081B0DB /* ArticleDetailView.swift */; };
 		2165FB871F11F03D00547588 /* PrimasColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2165FB861F11F03D00547588 /* PrimasColor.swift */; };
 		2165FB891F12000C00547588 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2165FB881F12000C00547588 /* Define.swift */; };
+		217CC6E71F18A20800B8D2BA /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217CC6E61F18A20800B8D2BA /* SegmentView.swift */; };
 		2190CC641F0A5FAF0091778A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2190CC631F0A5FAF0091778A /* AppDelegate.swift */; };
 		2190CC661F0A5FAF0091778A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2190CC651F0A5FAF0091778A /* ViewController.swift */; };
 		2190CC6B1F0A5FAF0091778A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2190CC6A1F0A5FAF0091778A /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		215720C21F0E232A0081B0DB /* ArticleDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 		2165FB861F11F03D00547588 /* PrimasColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrimasColor.swift; path = Common/PrimasColor.swift; sourceTree = "<group>"; };
 		2165FB881F12000C00547588 /* Define.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Define.swift; path = Common/Define.swift; sourceTree = "<group>"; };
+		217CC6E61F18A20800B8D2BA /* SegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
 		2190CC601F0A5FAF0091778A /* Primas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Primas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2190CC631F0A5FAF0091778A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2190CC651F0A5FAF0091778A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				215720C21F0E232A0081B0DB /* ArticleDetailView.swift */,
 				21ECE4621F0E659500676E00 /* TestView.swift */,
 				21AB3F861F16686E00F6C4FF /* ValueTopTableViewCell.swift */,
+				217CC6E61F18A20800B8D2BA /* SegmentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				21AB3F8B1F171E1900F6C4FF /* ProfileView.swift in Sources */,
 				212DF6871F0B8FCE0036A4B7 /* CellModel.swift in Sources */,
 				2165FB891F12000C00547588 /* Define.swift in Sources */,
+				217CC6E71F18A20800B8D2BA /* SegmentView.swift in Sources */,
 				21AB3F671F146EE400F6C4FF /* Extensions.swift in Sources */,
 				21AB3F6D1F14FAAE00F6C4FF /* TestSubViewController.swift in Sources */,
 				21AB3F791F15C5E100F6C4FF /* ValueView.swift in Sources */,
