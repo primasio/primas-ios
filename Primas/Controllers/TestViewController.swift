@@ -22,12 +22,29 @@ class TestViewController: UIViewController {
     func setup() {
         self.title = "测试专供"
 
-        self.view.backgroundColor = UIColor.yellow
-        let subView = TestSubViewController()
-        subView.modalTransitionStyle = .crossDissolve
-        subView.modalPresentationStyle = .overCurrentContext
-        present(subView, animated: true)
+        // self.view.backgroundColor = UIColor.yellow
+        // let subView = TestSubViewController()
+        // subView.modalTransitionStyle = .crossDissolve
+        // subView.modalPresentationStyle = .overCurrentContext
+        // present(subView, animated: true)
+
+        let segment = SegmentView(style: .single)
+        segment.currentActive = .left
+        segment.normalColor = UIColor.yellow
+        segment.bind(leftTitle: "中国玩大了", rightTitle: "先锋队员", "222", "555")
+        segment.bind(leftTitle: "中国玩22大了", rightTitle: "先锋s队员", "2212", "555")
+
+
+        // segment.backgroundColor = UIColor.yellow
+        self.view.addSubview(segment)
         
+        segment.snp.makeConstraints {
+            make in
+            make.left.right.bottom.equalTo(self.view)
+            make.size.height.equalTo(50)
+        }
+        
+
     }
     
     func test() {

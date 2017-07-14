@@ -72,8 +72,8 @@ class ProfileView: UIView {
       return ViewTool.generateLabel("", 16.0)
     }()
 
-    let segment: UIView = {
-      let _view = UIView()
+    let segment: SegmentView = {
+      let _view = SegmentView(style: .subtitle)
       return _view
     }()
 
@@ -226,80 +226,12 @@ class ProfileView: UIView {
           make.size.height.equalTo(50)
         }
 
-        setupSegment()
-
         table.snp.makeConstraints {
             make in
             make.top.equalTo(segment.snp.bottom)
             make.left.right.bottom.equalTo(self)
         }
     }
-
-  func setupSegment() {
-    let _view = segment
-    let _left = UIView()
-    let _right = UIView()
-    
-    let _left_label = UILabel()
-    _left_label.text = "贡献内容 236"
-    _left_label.font = primasFont(16)
-    _left_label.textColor = PrimasColor.shared.main.red_font_color
-
-    let _right_label = UILabel()
-    _right_label.text = "我的社群 36"
-    _right_label.font = primasFont(16)
-    _right_label.textColor = PrimasColor.shared.main.gray_font_color
-
-    _left.addSubview(_left_label)
-    _right.addSubview(_right_label)
-
-    let _line = ViewTool.generateLine(PrimasColor.shared.main.red_font_color, 1.0)
-    _left.addSubview(_line)
-    _view.addSubview(_right)
-    _view.addSubview(_left)
-
-    let _viewLine = ViewTool.generateLine()
-    _view.addSubview(_viewLine)
-
-    
-    _viewLine.snp.makeConstraints {
-      make in 
-      make.left.right.bottom.equalTo(_view)
-    }
-
-    let width = (SCREEN_WIDTH - SIDE_MARGIN * 2) / 2
-
-    _left.snp.makeConstraints {
-      make in
-      make.top.bottom.equalTo(_view)
-      make.left.equalTo(_view).offset(SIDE_MARGIN)
-      make.size.width.equalTo(width)
-    }
-
-    _line.snp.makeConstraints {
-      make in 
-      make.left.equalTo(_view).offset(SIDE_MARGIN)
-      make.right.equalTo(_left.snp.right)
-      make.bottom.equalTo(_view).offset(-1)
-    }
-    
-    _right.snp.makeConstraints {
-        make in
-        make.top.bottom.equalTo(_view)
-        make.right.equalTo(_view).offset(-SIDE_MARGIN)
-        make.size.width.equalTo(width)
-    }
-
-    _left_label.snp.makeConstraints {
-      make in 
-      make.center.equalTo(_left)
-    }
-
-    _right_label.snp.makeConstraints {
-      make in 
-      make.center.equalTo(_right)
-    }
-  }
     
     func bind(_ profile: ProfileModel) {
       let url = URL(string: profile.userImageUrl)
@@ -308,6 +240,7 @@ class ProfileView: UIView {
       profileIndex.text = " 个人指数 \(profile.profileIndex) "
       hpValue.text = "\(profile.hp)"
       pstValue.text = "\(profile.pst)"
+      segment.bind(leftTitle: "贡献内容", rightTitle: "我的社群", "236", "36")
     }
     
     required init?(coder aDecoder: NSCoder) {
