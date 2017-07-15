@@ -104,7 +104,7 @@ class ToolBar: UIToolbar {
     }()
     
     let group: UIBarButtonItem = {
-        let _bar = ToolBar.makeButtonItem(Iconfont.group.rawValue, "圈子")
+        let _bar = ToolBar.makeButtonItem(Iconfont.group.rawValue, "社群")
         _bar.tag = ToolBar.ItemType.group.rawValue
         return _bar
     }()
@@ -178,7 +178,7 @@ class ToolBar: UIToolbar {
             case popular.customView!:
               toController(.home)
             case group.customView!:
-              // toController(ViewControllers.group)
+              toController(.group)
               break;
             case pen.customView!:
               toController(ViewControllers.pen)

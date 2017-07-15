@@ -15,7 +15,7 @@ let SIDE_MARGIN: CGFloat = 12.0
 let MAIN_PADDING: CGFloat = 10.0
 
 enum ViewControllers {
-  case home, value, valueTop, profile, pen
+  case home, group, value, valueTop, profile, pen
     func map() -> UIViewController {
         switch self {
         case .home:
@@ -28,6 +28,8 @@ enum ViewControllers {
           return ProfileViewController()
         case .pen:
           return EditorViewController()
+        case .group:
+            return GroupViewController()
         }
     }
 }

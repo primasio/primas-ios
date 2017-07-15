@@ -14,8 +14,11 @@ class GroupView: UIView {
     var collectionViewDataSource: UICollectionViewDataSource?
     var collectionViewDelegate: UICollectionViewDelegate?
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, dataSource: UICollectionViewDataSource, delegate: UICollectionViewDelegate) {
         super.init(frame: frame)
+        
+        collectionViewDelegate = delegate
+        collectionViewDataSource = dataSource
         
         setup()
     }
@@ -59,17 +62,23 @@ class GroupView: UIView {
         navGroupsView.addSubview(navGroupsLabel)
         
         let navItemBorder = UIView()
-        navItemBorder.backgroundColor = UIColor.red
         navGroupsView.addSubview(navItemBorder)
+        navItemBorder.backgroundColor = UIColor.red
         
         navView.addSubview(navCollectionView)
         navView.addSubview(navGroupsView)
         
-        let groupCollection = UICollectionView()
+        
+        let groupLayout = UICollectionViewFlowLayout()
+        groupLayout.scrollDirection = UICollectionViewScrollDirection.vertical
+        
+        let groupCollection = UICollectionView.init(frame: self.frame, collectionViewLayout: groupLayout)
         groupCollection.register(GroupViewCollectionCell.self, forCellWithReuseIdentifier: GroupViewCollectionCell.identifier)
         groupCollection.dataSource = collectionViewDataSource
         groupCollection.delegate = collectionViewDelegate
-        groupCollection.backgroundColor = UIColor.red
+        groupCollection.bounces = true
+        groupCollection.alwaysBounceVertical = true
+        groupCollection.backgroundColor = UIColor.white
         
         self.addSubview(groupCollection)
         
@@ -135,7 +144,7 @@ class GroupView: UIView {
         
         groupCollection.snp.makeConstraints {
             make in
-            make.top.equalTo(titleView)
+            make.top.equalTo(self).offset(134.0)
             make.left.right.bottom.equalTo(self)
         }
     }
