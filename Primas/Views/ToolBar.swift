@@ -181,7 +181,7 @@ class ToolBar: UIToolbar {
               // toController(ViewControllers.group)
               break;
             case pen.customView!:
-              break;
+              toController(ViewControllers.pen)
             case value.customView!:
               toController(.value)
             case myself.customView!:

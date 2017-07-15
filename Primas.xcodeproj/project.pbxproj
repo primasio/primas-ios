@@ -16,6 +16,7 @@
 		2165FB871F11F03D00547588 /* PrimasColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2165FB861F11F03D00547588 /* PrimasColor.swift */; };
 		2165FB891F12000C00547588 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2165FB881F12000C00547588 /* Define.swift */; };
 		217CC6E71F18A20800B8D2BA /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217CC6E61F18A20800B8D2BA /* SegmentView.swift */; };
+		217CC6E91F18CB8200B8D2BA /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217CC6E81F18CB8200B8D2BA /* EditorViewController.swift */; };
 		2190CC641F0A5FAF0091778A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2190CC631F0A5FAF0091778A /* AppDelegate.swift */; };
 		2190CC661F0A5FAF0091778A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2190CC651F0A5FAF0091778A /* ViewController.swift */; };
 		2190CC6B1F0A5FAF0091778A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2190CC6A1F0A5FAF0091778A /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		2165FB861F11F03D00547588 /* PrimasColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrimasColor.swift; path = Common/PrimasColor.swift; sourceTree = "<group>"; };
 		2165FB881F12000C00547588 /* Define.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Define.swift; path = Common/Define.swift; sourceTree = "<group>"; };
 		217CC6E61F18A20800B8D2BA /* SegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
+		217CC6E81F18CB8200B8D2BA /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditorViewController.swift; path = Controllers/EditorViewController.swift; sourceTree = "<group>"; };
 		2190CC601F0A5FAF0091778A /* Primas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Primas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2190CC631F0A5FAF0091778A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2190CC651F0A5FAF0091778A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				21AB3F6F1F14FB1D00F6C4FF /* HomeViewController.swift */,
 				21AB3F701F14FB1D00F6C4FF /* TestViewController.swift */,
 				21AB3F6C1F14FAAE00F6C4FF /* TestSubViewController.swift */,
+				217CC6E81F18CB8200B8D2BA /* EditorViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				21AB3F871F16686E00F6C4FF /* ValueTopTableViewCell.swift in Sources */,
 				21AB3F731F14FB1D00F6C4FF /* TestViewController.swift in Sources */,
 				215720B71F0C7E240081B0DB /* HomeListCell.swift in Sources */,
+				217CC6E91F18CB8200B8D2BA /* EditorViewController.swift in Sources */,
 				2190CC661F0A5FAF0091778A /* ViewController.swift in Sources */,
 				21AB3F6B1F14991200F6C4FF /* ArticleDetailToolBar.swift in Sources */,
 				21AB3F711F14FB1D00F6C4FF /* ArticleDetailViewController.swift in Sources */,

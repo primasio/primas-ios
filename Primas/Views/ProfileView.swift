@@ -240,7 +240,7 @@ class ProfileView: UIView {
       profileIndex.text = " 个人指数 \(profile.profileIndex) "
       hpValue.text = "\(profile.hp)"
       pstValue.text = "\(profile.pst)"
-      segment.bind(leftTitle: "贡献内容", rightTitle: "我的社群", "236", "36")
+      segment.bind(leftTitle: "贡献内容", rightTitle: "我的社群", "\(profile.contentCount)", "\(profile.group)")
     }
     
     required init?(coder aDecoder: NSCoder) {

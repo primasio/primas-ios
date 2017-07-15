@@ -31,6 +31,7 @@ class TestViewController: UIViewController {
         let segment = SegmentView(style: .single)
         segment.currentActive = .left
         segment.normalColor = UIColor.yellow
+        segment.padding = 0.0
         segment.bind(leftTitle: "中国玩大了", rightTitle: "先锋队员", "222", "555")
         segment.bind(leftTitle: "中国玩22大了", rightTitle: "先锋s队员", "2212", "555")
 
