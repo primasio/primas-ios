@@ -34,12 +34,6 @@ class GroupView: UIView {
         titleView.addSubview(titleNameView)
         
         
-        let titleLabel = UILabel()
-        titleLabel.text = "社群"
-        titleLabel.textColor = UIColor.black
-        
-        titleNameView.addSubview(titleLabel)
-        
         let navView = UIView()
         titleView.addSubview(navView)
         
@@ -82,22 +76,16 @@ class GroupView: UIView {
         
         self.addSubview(groupCollection)
         
-        titleView.snp.makeConstraints {
-            make in
-            make.top.left.right.equalTo(self)
-            make.size.height.equalTo(134.0)
-        }
+         titleView.snp.makeConstraints {
+             make in
+             make.top.left.right.equalTo(self)
+             make.size.height.equalTo(50.0)
+         }
         
         titleNameView.snp.makeConstraints {
             make in
-            make.top.left.right.equalTo(titleView)
+            make.top.left.right.equalTo(self)
             make.size.height.equalTo(67.0)
-        }
-        
-        titleLabel.snp.makeConstraints {
-            make in
-            make.centerX.equalTo(titleNameView)
-            make.centerY.equalTo(titleNameView).offset(10)
         }
         
         navView.snp.makeConstraints {
@@ -144,7 +132,7 @@ class GroupView: UIView {
         
         groupCollection.snp.makeConstraints {
             make in
-            make.top.equalTo(self).offset(134.0)
+            make.top.equalTo(self).offset(70.0)
             make.left.right.bottom.equalTo(self)
         }
     }

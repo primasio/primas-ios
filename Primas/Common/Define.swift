@@ -6,6 +6,7 @@
 //  Copyright © 2017 wang. All rights reserved.
 //
 import UIKit
+import SnapKit
 import Foundation
 
 let SCREEN_WIDTH = UIScreen.main.bounds.size.width
@@ -72,3 +73,13 @@ func toController(_ type: ViewControllers) {
   }
   
 }
+
+func popViewController() {
+    if app().navigation.viewControllers.count != 0 {
+        app().navigation.popViewController(animated: true)
+    }
+}
+
+
+
+

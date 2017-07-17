@@ -17,6 +17,9 @@
 		2165FB891F12000C00547588 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2165FB881F12000C00547588 /* Define.swift */; };
 		217CC6E71F18A20800B8D2BA /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217CC6E61F18A20800B8D2BA /* SegmentView.swift */; };
 		217CC6E91F18CB8200B8D2BA /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217CC6E81F18CB8200B8D2BA /* EditorViewController.swift */; };
+		217CC6EC1F19ED4D00B8D2BA /* ArticleGroupComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217CC6EB1F19ED4D00B8D2BA /* ArticleGroupComponent.swift */; };
+		217CC6EE1F19F92600B8D2BA /* ArticleInfringementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217CC6ED1F19F92600B8D2BA /* ArticleInfringementComponent.swift */; };
+		218555DB1F1B3568000BBAF7 /* ModalViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218555DA1F1B3568000BBAF7 /* ModalViewComponent.swift */; };
 		2190CC641F0A5FAF0091778A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2190CC631F0A5FAF0091778A /* AppDelegate.swift */; };
 		2190CC661F0A5FAF0091778A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2190CC651F0A5FAF0091778A /* ViewController.swift */; };
 		2190CC6B1F0A5FAF0091778A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2190CC6A1F0A5FAF0091778A /* Assets.xcassets */; };
@@ -62,6 +65,9 @@
 		2165FB881F12000C00547588 /* Define.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Define.swift; path = Common/Define.swift; sourceTree = "<group>"; };
 		217CC6E61F18A20800B8D2BA /* SegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
 		217CC6E81F18CB8200B8D2BA /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditorViewController.swift; path = Controllers/EditorViewController.swift; sourceTree = "<group>"; };
+		217CC6EB1F19ED4D00B8D2BA /* ArticleGroupComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleGroupComponent.swift; path = Components/ArticleGroupComponent.swift; sourceTree = "<group>"; };
+		217CC6ED1F19F92600B8D2BA /* ArticleInfringementComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleInfringementComponent.swift; path = Components/ArticleInfringementComponent.swift; sourceTree = "<group>"; };
+		218555DA1F1B3568000BBAF7 /* ModalViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModalViewComponent.swift; path = Components/ModalViewComponent.swift; sourceTree = "<group>"; };
 		2190CC601F0A5FAF0091778A /* Primas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Primas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2190CC631F0A5FAF0091778A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2190CC651F0A5FAF0091778A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +161,23 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
+		217CC6EA1F19ED0300B8D2BA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				217CC6EB1F19ED4D00B8D2BA /* ArticleGroupComponent.swift */,
+				217CC6ED1F19F92600B8D2BA /* ArticleInfringementComponent.swift */,
+				218555DA1F1B3568000BBAF7 /* ModalViewComponent.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		218555DC1F1C5051000BBAF7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		2190CC571F0A5FAF0091778A = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +200,8 @@
 		2190CC621F0A5FAF0091778A /* Primas */ = {
 			isa = PBXGroup;
 			children = (
+				218555DC1F1C5051000BBAF7 /* Data */,
+				217CC6EA1F19ED0300B8D2BA /* Components */,
 				21AB3F511F122CD200F6C4FF /* Assets */,
 				2165FB851F11EFD900547588 /* Common */,
 				21419E611F0B335800006255 /* Views */,
@@ -399,16 +424,19 @@
 				21AB3F771F15C58500F6C4FF /* ValueModel.swift in Sources */,
 				215720BF1F0DD0590081B0DB /* ToolBar.swift in Sources */,
 				21AB3F7D1F15C64900F6C4FF /* ValueTopViewController.swift in Sources */,
+				217CC6EC1F19ED4D00B8D2BA /* ArticleGroupComponent.swift in Sources */,
 				2165FB871F11F03D00547588 /* PrimasColor.swift in Sources */,
 				21AB3F831F15CAB800F6C4FF /* PrimasAwardType.swift in Sources */,
 				F6E684361F18B7F5008F4304 /* GroupView.swift in Sources */,
 				21AB3F691F147B4500F6C4FF /* ViewTool.swift in Sources */,
 				215720C31F0E232A0081B0DB /* ArticleDetailView.swift in Sources */,
+				217CC6EE1F19F92600B8D2BA /* ArticleInfringementComponent.swift in Sources */,
 				21AB3F7F1F15C66800F6C4FF /* ValueTopView.swift in Sources */,
 				21AB3F8B1F171E1900F6C4FF /* ProfileView.swift in Sources */,
 				212DF6871F0B8FCE0036A4B7 /* CellModel.swift in Sources */,
 				2165FB891F12000C00547588 /* Define.swift in Sources */,
 				217CC6E71F18A20800B8D2BA /* SegmentView.swift in Sources */,
+				218555DB1F1B3568000BBAF7 /* ModalViewComponent.swift in Sources */,
 				21AB3F671F146EE400F6C4FF /* Extensions.swift in Sources */,
 				21AB3F6D1F14FAAE00F6C4FF /* TestSubViewController.swift in Sources */,
 				21AB3F791F15C5E100F6C4FF /* ValueView.swift in Sources */,

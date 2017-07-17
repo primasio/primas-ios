@@ -17,7 +17,7 @@ class TestView: UIView {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
-
+    self.backgroundColor = UIColor.red
     viewContainer.backgroundColor = UIColor.white
 
     addSubview(viewContainer)
@@ -25,21 +25,15 @@ class TestView: UIView {
 
     viewContainer.snp.makeConstraints {
       make in 
+      make.left.right.top.equalTo(self)
       make.size.equalTo(CGSize(width: 200, height: 200))
-      make.center.equalTo(self)
     }
 
     testLabel.text = "Test, Tap Me"
     testLabel.snp.makeConstraints {
       make in 
-      make.center.equalTo(self)
+      make.center.equalTo(viewContainer)
     }
-
-    let tapRecognizer = UITapGestureRecognizer(target: self.delegate, action: #selector(TestSubViewController.test))
-    tapRecognizer.numberOfTapsRequired = 1
-    testLabel.backgroundColor = .blue
-    testLabel.isUserInteractionEnabled = true
-    testLabel.addGestureRecognizer(tapRecognizer)
   }
      
   required init?(coder aDecoder: NSCoder) {

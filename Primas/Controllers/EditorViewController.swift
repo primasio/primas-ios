@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UITextView_Placeholder
 
 class EditorViewController: UIViewController {
 
@@ -14,22 +15,56 @@ class EditorViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navigationItem.leftBarButtonItem = ViewTool.generateNavigationBarItem(Iconfont.closed, PrimasColor.shared.main.main_font_color)
-        let button = UIBarButtonItem(title: "发布", style: .done, target: nil, action: nil)
+        self.view.backgroundColor = .white
+        self.navigationItem.leftBarButtonItem = ViewTool.generateNavigationBarItem(Iconfont.closed, PrimasColor.shared.main.main_font_color, self, #selector(back))
+        let button = UIBarButtonItem(title: "发布", style: .done, target: self, action: #selector(back))
         button.setTitleTextAttributes([NSForegroundColorAttributeName: PrimasColor.shared.main.red_font_color], for: .normal)
         self.navigationItem.rightBarButtonItem = button
 
         let title = UITextView()
-        title.font = primasFont(20)
+        title.font = primasFont(18)
+        title.placeholder = "请输入标题"
+        title.placeholderColor = PrimasColor.shared.main.line_background_color
         
         self.view.addSubview(title)
-        
+
+        let line = ViewTool.generateDashLine(width: SCREEN_WIDTH - SIDE_MARGIN - SIDE_MARGIN, height: 0.5)
+        self.view.addSubview(line)
+
         title.snp.makeConstraints {
             make in
-            make.left.top.right.equalTo(self.view)
+            make.left.equalTo(self.view).offset(SIDE_MARGIN)
+            make.right.equalTo(self.view).offset(-SIDE_MARGIN)
+            make.top.equalTo(self.view).offset(SIDE_MARGIN)
             make.size.height.equalTo(30)
         }
+
+        line.snp.makeConstraints {
+            make in 
+            make.left.right.equalTo(title)
+            make.top.equalTo(title.snp.bottom).offset(SIDE_MARGIN)
+        }
         
+        
+        let content = UITextView()
+        content.font = primasFont(14)
+        content.placeholder = "请输入正文"
+        content.placeholderColor = PrimasColor.shared.main.line_background_color
+
+        self.view.addSubview(content)
+
+        content.snp.makeConstraints {
+            make in 
+            make.left.equalTo(self.view).offset(SIDE_MARGIN)
+            make.right.equalTo(self.view).offset(-SIDE_MARGIN)
+            make.bottom.equalTo(self.view)
+            make.top.equalTo(line.snp.bottom).offset(SIDE_MARGIN)
+        }
+
+    }
+
+    func back() {
+        self.navigationController?.popViewController(animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +79,7 @@ class EditorViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(color: PrimasColor.shared.main.light_font_color)
+        self.navigationController?.setToolbarHidden(true, animated: true)
     }
     
 

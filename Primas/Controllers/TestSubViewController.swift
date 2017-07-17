@@ -3,6 +3,8 @@ import SnapKit
 import Foundation
 
 class TestSubViewController: UIViewController {
+  var testView: TestView = TestView()
+    
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -10,11 +12,12 @@ class TestSubViewController: UIViewController {
   }
 
   func setup() {
-    let testView = TestView()
+    
     testView.delegate = self
+
     self.view.addSubview(testView)
     
-    self.view.backgroundColor = colorWith255RGBA(255, 255, 255, 0.7)
+    self.view.backgroundColor = colorWith255RGBA(0, 0, 0, 100)
     
     self.view.snp.makeConstraints {
         make in
@@ -30,8 +33,5 @@ class TestSubViewController: UIViewController {
     }
   }
     
-    func test() {
-        print("testtttttttt")
-    }
 
 }

@@ -48,27 +48,11 @@ class HomeViewController: UIViewController {
 
     self.navigationController?.toolbar.contentMode = .scaleToFill
     self.toolbarItems = app().toolbar.getItems()
-
-    forTest()
   }
 
-  func forTest() {
-//    let button = homeView.search.viewWithTag(1)
-//    let tapedEvent = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.showTestViewController))
-//    tapedEvent.numberOfTapsRequired = 1
-//    
-//    button?.isUserInteractionEnabled = true
-//    button?.addGestureRecognizer(tapedEvent)
+  func showTestViewController() {
+      self.navigationController?.pushViewController(TestViewController(), animated: false)
   }
-    
-    func showTestViewController() {
-        self.navigationController?.pushViewController(TestViewController(), animated: true)
-    }
-
-    func selectTaped() {
-      print("taped.........")
-    }
-
 }
 
 

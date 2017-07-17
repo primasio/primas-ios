@@ -13,7 +13,7 @@ class ValueView: UIView {
 
     let headerViewContainer: UIView = {
       let _view = UIView()
-      _view.backgroundColor = UIColor(patternImage: UIImage(named: "value-bg")!)
+      _view.layer.contents = UIImage(named: "value-bg")?.cgImage
       return _view
     }()
 

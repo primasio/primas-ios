@@ -9,4 +9,5 @@ target 'Primas' do
   pod 'SnapKit', '~> 3.2.0'
   pod 'SwiftIconFont', '~> 2.6'
   pod 'Kingfisher', '~> 3.0'
+  pod 'UITextView+Placeholder', '~> 1.2'
 end

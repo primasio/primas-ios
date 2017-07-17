@@ -8,6 +8,11 @@
 import SnapKit
 
 class ArticleDetailView: UIView {
+    
+  var isInfringement: Bool = false  
+    
+  let infringementView = ArticleInfringementComponent()
+    
   let title: UILabel = {
     let _label = UILabel()
     _label.font = primasFont(18)
@@ -36,6 +41,30 @@ class ArticleDetailView: UIView {
     return _label
   }()
 
+  let DNA: UIView = {
+    let _view = UIView()
+    _view.backgroundColor = hexStringToUIColor("#34dc28")
+
+    let _label = UILabel()
+    _label.textColor = UIColor.white
+    _label.font = primasFont(14)
+
+    _view.addSubview(_label)
+
+    _label.snp.makeConstraints {
+      make in 
+      make.center.equalTo(_view)
+    }
+
+    return _view
+  }()
+
+  let groupLabel: UILabel = {
+    return ViewTool.generateLabel("文章来自社群", 14.0, PrimasColor.shared.main.light_font_color)
+  }()
+
+  let group = ArticleGroupComponent()
+
   let content: UILabel = {
     let _label = UILabel()
     _label.textColor = PrimasColor.shared.main.main_font_color
@@ -45,17 +74,30 @@ class ArticleDetailView: UIView {
   }()
 
   func setupViews() {
+    addSubview(infringementView)
+    
     addSubview(title)
     addSubview(userImage)
     addSubview(username)
     addSubview(createdAt)
+    addSubview(DNA)
     addSubview(content)
+    
+    addSubview(groupLabel)
+    addSubview(group)
   }
 
   func setupLayout() {
+    infringementView.snp.makeConstraints {
+      make in
+      make.left.right.equalTo(self)
+      make.top.equalTo(self)
+      make.size.height.equalTo(0.01)
+    }
+    
     title.snp.makeConstraints({
       make in 
-      make.top.equalTo(self)
+      make.top.equalTo(infringementView.snp.bottom).offset(25)
       make.left.right.equalTo(self)
     })
 
@@ -69,13 +111,20 @@ class ArticleDetailView: UIView {
     username.snp.makeConstraints {
       make in 
       make.top.equalTo(userImage)
-      make.left.equalTo(userImage.snp.right).offset(MAIN_PADDING)
+      make.left.equalTo(userImage.snp.right).offset(SIDE_MARGIN)
     }
 
     createdAt.snp.makeConstraints {
       make in
       make.bottom.equalTo(userImage.snp.bottom)
       make.left.equalTo(username)
+    }
+    
+    DNA.snp.makeConstraints {
+      make in 
+      make.bottom.equalTo(createdAt)
+      make.right.equalTo(self)
+      make.size.equalTo(CGSize(width: 110, height: 29))
     }
 
     let _line = ViewTool.generateLine()
@@ -93,12 +142,10 @@ class ArticleDetailView: UIView {
       make.right.equalTo(self)
       make.top.equalTo(_line.snp.bottom).offset(18)
     }
-
   }
 
   func setup() {
     setupViews()
-
     setupLayout()
   }
 
@@ -116,5 +163,46 @@ class ArticleDetailView: UIView {
     let attrString = NSMutableAttributedString(string: article.content)
     attrString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
     content.attributedText = attrString
+
+    if article.DNA == "" {
+      DNA.snp.remakeConstraints {
+        make in 
+        make.size.equalTo(0)
+      }
+    } else {
+       let _label =  DNA.subviews[0] as! UILabel
+        _label.text = "DNA \(article.DNA)"
+    }
   }
+
+  func bindInfringement(title: String) {
+    infringementView.bind(title: title)
+
+    infringementView.snp.remakeConstraints {
+      make in
+      make.left.right.equalTo(self)
+      make.top.equalTo(self).offset(SIDE_MARGIN)
+      make.size.height.equalTo(70)
+    }
+  }
+
+  func bindGroup(imageUrl: String, name: String, contentNumber: Int, peopleNumber: Int) {
+    self.group.bind(imageUrl: imageUrl, name: name, contentNumber: contentNumber, peopleNumber: peopleNumber)
+
+    groupLabel.snp.remakeConstraints {
+      make in 
+      make.left.equalTo(content)
+      make.top.equalTo(content.snp.bottom).offset(60)
+    }
+
+    group.snp.remakeConstraints {
+      make in 
+      make.top.equalTo(groupLabel.snp.bottom).offset(20)
+      make.left.equalTo(self)
+      make.right.equalTo(self)
+      make.size.height.equalTo(60.0)
+    }
+
+  }
+
 }

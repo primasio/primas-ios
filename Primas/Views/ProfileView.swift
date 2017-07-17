@@ -13,7 +13,7 @@ class ProfileView: UIView {
 
     let headerViewContainer: UIView = {
       let _view = UIView()
-      _view.backgroundColor = UIColor(patternImage: UIImage(named: "profile-bg")!)
+      _view.layer.contents = UIImage(named: "profile-bg")?.cgImage
       return _view
     }()
 

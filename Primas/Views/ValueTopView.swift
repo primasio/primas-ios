@@ -12,6 +12,7 @@ class ValueTopView: UIView {
   let headerViewContainer: UIView = {
     let _view = UIView()
     _view.backgroundColor = UIColor(patternImage: UIImage(named: "value-top-bg")!)
+    _view.layer.contents = UIImage(named: "value-top-bg")?.cgImage
     return _view
   }()
 

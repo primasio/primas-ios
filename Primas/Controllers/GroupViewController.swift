@@ -74,12 +74,22 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
         groupView!.snp.makeConstraints { (make) in
             make.top.right.bottom.left.equalTo(self.view)
         }
+
+        app().toolbar.current = .group
+
+    self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+        self.navigationItem.rightBarButtonItem = ViewTool.generateNavigationBarItem(Iconfont.search, PrimasColor.shared.main.main_font_color)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.title = "社群"
         self.toolbarItems = self.navigationController?.toolbar.items
         self.navigationController?.setToolbarHidden(false, animated: false)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.isTranslucent = false
+
     }
     
     override func viewDidAppear(_ animated: Bool) {

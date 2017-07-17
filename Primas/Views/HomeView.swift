@@ -13,7 +13,7 @@ import SwiftIconFont
 class HomeView: UIView {
     let logoSection: UIView = {
         let _view = UIView(frame: UIApplication.shared.statusBarFrame)
-        let _logo = UIImageView(image: UIImage(named: "logo.png"))
+        let _logo = UIImageView(image: UIImage(named: "logo"))
         let _search = UISearchBar()
         
 

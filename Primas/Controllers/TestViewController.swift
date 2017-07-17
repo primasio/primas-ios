@@ -13,44 +13,45 @@ import Foundation
 // Just for test something...
 class TestViewController: UIViewController {
     let testView = TestView()
+    let subView = TestSubViewController()
+    var modalComponent: ModalViewComponent?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setToolbarHidden(false, animated: false)
+        self.navigationController?.toolbar.isTranslucent = true
         setup()
     }
     
     func setup() {
         self.title = "测试专供"
 
-        // self.view.backgroundColor = UIColor.yellow
-        // let subView = TestSubViewController()
-        // subView.modalTransitionStyle = .crossDissolve
+        self.view.backgroundColor = UIColor.white
+        // subView.modalTransitionStyle = .coverVertical
         // subView.modalPresentationStyle = .overCurrentContext
-        // present(subView, animated: true)
-
-        let segment = SegmentView(style: .single)
-        segment.currentActive = .left
-        segment.normalColor = UIColor.yellow
-        segment.padding = 0.0
-        segment.bind(leftTitle: "中国玩大了", rightTitle: "先锋队员", "222", "555")
-        segment.bind(leftTitle: "中国玩22大了", rightTitle: "先锋s队员", "2212", "555")
-
-
-        // segment.backgroundColor = UIColor.yellow
-        self.view.addSubview(segment)
+        // present(subView, animated: true, completion: nil)
+        // let tap = UITapGestureRecognizer(target: self, action: #selector(test))
+        // tap.numberOfTapsRequired = 1
+        // subView.testView.testLabel.isUserInteractionEnabled = true
+        // subView.testView.testLabel.addGestureRecognizer(tap)
         
-        segment.snp.makeConstraints {
-            make in
-            make.left.right.bottom.equalTo(self.view)
-            make.size.height.equalTo(50)
-        }
+//        let image = UIImageView(image: UIImage(named: "profile-bg"))
         
-
+        self.modalComponent = ModalViewComponent(subView: testView, height: 512)
+        app().window?.addSubview(modalComponent!)
+        
+         let seeTap = UITapGestureRecognizer(target: self, action: #selector(see))
+         seeTap.numberOfTapsRequired = 1
+         self.view.addGestureRecognizer(seeTap)
     }
     
     func test() {
-        print("test")
-//        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func see() {
+//        present(subView, animated: true, completion: nil)
+        modalComponent?.show()
     }
 
 }

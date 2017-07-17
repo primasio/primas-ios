@@ -14,7 +14,7 @@ class ProfileViewController: UIViewController {
     var profileModel: ProfileModel = {
         return ProfileModel.generateTestData()
     }()
-    // var profileView: ProfileView = ProfileView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
