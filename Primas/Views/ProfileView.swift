@@ -65,11 +65,15 @@ class ProfileView: UIView {
     }()
 
     let hpValue: UILabel = {
-      return ViewTool.generateLabel("", 16.0)
+      let _label = ViewTool.generateLabel("", 16.0)
+      _label.font = primasNumberFont(16.0)
+      return _label
     }()
 
     let pstValue: UILabel = {
-      return ViewTool.generateLabel("", 16.0)
+      let _label = ViewTool.generateLabel("", 16.0)
+      _label.font = primasNumberFont(16.0)
+      return _label
     }()
 
     let segment: SegmentView = {

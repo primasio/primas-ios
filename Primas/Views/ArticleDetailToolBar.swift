@@ -5,7 +5,7 @@ import SnapKit
 class ArticleDetailToolBar: ToolBar {
   enum ArticleDetailToolBarItemType: Int {
     case share = 1
-    case rights, good, at 
+    case transfer, praise, at 
   }
 
   let share: UIBarButtonItem = {
@@ -15,16 +15,16 @@ class ArticleDetailToolBar: ToolBar {
     return _bar
   }()
 
-  let rights: UIBarButtonItem = {
-    let _bar = ToolBar.makeButtonItem(Iconfont.rights.rawValue, "转载 1.1k")
-    _bar.tag = ArticleDetailToolBarItemType.rights.rawValue
+  let transfer: UIBarButtonItem = {
+    let _bar = ToolBar.makeButtonItem(Iconfont.transfer.rawValue, "转载 1.1k")
+    _bar.tag = ArticleDetailToolBarItemType.transfer.rawValue
 
     return _bar
   }()
 
-  let good: UIBarButtonItem = {
-    let _bar = ToolBar.makeButtonItem(Iconfont.good_off.rawValue, "赞563")
-    _bar.tag = ArticleDetailToolBarItemType.good.rawValue
+  let praise: UIBarButtonItem = {
+    let _bar = ToolBar.makeButtonItem(Iconfont.praise_off.rawValue, "赞563")
+    _bar.tag = ArticleDetailToolBarItemType.praise.rawValue
 
     return _bar
   }()
@@ -38,15 +38,45 @@ class ArticleDetailToolBar: ToolBar {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
-
-    let title = popular.customView!.subviews[0] as! UILabel
-    title.textColor = UIColor.red
-
-    self.setItems([share, rights, good, trend], animated: false)
+    let tap = UITapGestureRecognizer(target: self, action: #selector(praised))
+    tap.numberOfTapsRequired = 1
+    praise.customView?.isUserInteractionEnabled = true
+    praise.customView?.addGestureRecognizer(tap)
+    self.setItems([share, transfer, praise, trend], animated: false)
   }
-    
+
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
 
+  override func getItems() -> Array<UIBarButtonItem> {
+      if fixedItems.count != 0 {
+        return fixedItems
+      }
+
+      let flexible = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
+        
+      var arr: Array<UIBarButtonItem> = []
+
+      for  item in self.items! {
+          arr.append(item)
+        if item != trend  {
+            arr.append(flexible)
+        }
+      }
+        
+      return arr
+  }
+
+  func bind(shared: Int, transfered: Int, praised: Int) {
+    (self.share.customView?.subviews[1] as! UILabel).text = "转发" + shared.toHumanString()
+    (self.transfer.customView?.subviews[1] as! UILabel).text = "转载" + transfered.toHumanString()
+    (self.praise.customView?.subviews[1] as! UILabel).text = "赞" + praised.toHumanString()
+  }
+
+  func praised() {
+    let _icon = self.praise.customView?.subviews[0] as! UILabel
+    _icon.text = Iconfont.praise_on.rawValue
+    _icon.textColor = PrimasColor.shared.main.red_font_color
+  }
 }

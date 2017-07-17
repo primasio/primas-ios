@@ -65,12 +65,9 @@ class ArticleDetailView: UIView {
 
   let group = ArticleGroupComponent()
 
-  let content: UILabel = {
-    let _label = UILabel()
-    _label.textColor = PrimasColor.shared.main.main_font_color
-    _label.font = primasFont(15)
-    _label.numberOfLines = 0
-    return _label
+  let content: UIWebView = {
+    let view = UIWebView()
+    return view
   }()
 
   func setupViews() {
@@ -141,6 +138,7 @@ class ArticleDetailView: UIView {
       make.left.equalTo(self).offset(3)
       make.right.equalTo(self)
       make.top.equalTo(_line.snp.bottom).offset(18)
+      make.size.width.equalTo(self)
     }
   }
 
@@ -157,12 +155,8 @@ class ArticleDetailView: UIView {
 
     createdAt.text = primasDate("YYYY.MM.dd", article.createdAt)
 
-    let paragraphStyle = NSMutableParagraphStyle()
-    //line height size
-    paragraphStyle.lineSpacing = 4
-    let attrString = NSMutableAttributedString(string: article.content)
-    attrString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
-    content.attributedText = attrString
+   
+    content.loadHTMLString(article.content, baseURL: nil)
 
     if article.DNA == "" {
       DNA.snp.remakeConstraints {
@@ -205,4 +199,14 @@ class ArticleDetailView: UIView {
 
   }
 
+}
+
+
+// Mark UIWebViewDelegate
+
+
+extension ArticleDetailView: UIWebViewDelegate {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        webView.frame.size.height = webView.scrollView.contentSize.height
+    }
 }

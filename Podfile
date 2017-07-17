@@ -10,4 +10,5 @@ target 'Primas' do
   pod 'SwiftIconFont', '~> 2.6'
   pod 'Kingfisher', '~> 3.0'
   pod 'UITextView+Placeholder', '~> 1.2'
+  pod 'Networking', '~> 3'
 end

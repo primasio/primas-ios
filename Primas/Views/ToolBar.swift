@@ -40,7 +40,7 @@ class ToolBar: UIToolbar {
     static let itemSize: CGFloat = 20.0
 
     static func makeButtonItem(_ code: String, _ title: String, size: CGFloat? = ToolBar.itemSize) -> UIBarButtonItem {
-      let _view = UIView(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
+      let _view = UIView(frame: CGRect(x: 0, y: 0, width: 37, height: 37))
       let _icon = UILabel()
       let _title = UILabel()
 
@@ -64,7 +64,7 @@ class ToolBar: UIToolbar {
       _title.snp.makeConstraints {
           make in
           make.centerX.equalTo(_view)
-          make.bottom.equalTo(_view).offset(0)
+          make.bottom.equalTo(_view)
       }
       
       let _bar = UIBarButtonItem(customView: _view)
@@ -74,13 +74,13 @@ class ToolBar: UIToolbar {
     
     static func makeActivedButtonItem(_ code: String, size: CGFloat? = 26.0) -> UIBarButtonItem {
     
-      let _view = UIView(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
+      let _view = UIView(frame: CGRect(x: 0, y: 0, width: 37, height: 37))
       let _icon = UILabel()
 
       _view.addSubview(_icon)
       _view.backgroundColor = UIColor.red
       _view.clipsToBounds = true
-      _view.layer.cornerRadius = 35.0 / 2
+      _view.layer.cornerRadius = 37.0 / 2
 
       _icon.text = code
       _icon.textColor = UIColor.white
@@ -153,13 +153,13 @@ class ToolBar: UIToolbar {
 
       let flexible = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
         
-      var arr = [flexible]
+      var arr: Array<UIBarButtonItem> = []
 
-      for item in items! {
-
-
-          arr.append(item)
-          arr.append(flexible)
+      for  item in self.items! {
+        arr.append(item)
+        if item != myself  {
+            arr.append(flexible)
+        }
       }
         
       return arr

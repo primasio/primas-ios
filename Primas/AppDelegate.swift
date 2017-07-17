@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor.white
         self.window?.addSubview(modal)
 
+        let client = Client()
+
         let homeViewController = ViewControllers.home.map()
         self.cachedViewControllers[ViewControllers.home] =  homeViewController
 

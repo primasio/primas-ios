@@ -15,6 +15,7 @@
 		215720C31F0E232A0081B0DB /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215720C21F0E232A0081B0DB /* ArticleDetailView.swift */; };
 		2165FB871F11F03D00547588 /* PrimasColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2165FB861F11F03D00547588 /* PrimasColor.swift */; };
 		2165FB891F12000C00547588 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2165FB881F12000C00547588 /* Define.swift */; };
+		216FB3EC1F1CA53D0076C94B /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FB3EB1F1CA53D0076C94B /* Client.swift */; };
 		217CC6E71F18A20800B8D2BA /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217CC6E61F18A20800B8D2BA /* SegmentView.swift */; };
 		217CC6E91F18CB8200B8D2BA /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217CC6E81F18CB8200B8D2BA /* EditorViewController.swift */; };
 		217CC6EC1F19ED4D00B8D2BA /* ArticleGroupComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217CC6EB1F19ED4D00B8D2BA /* ArticleGroupComponent.swift */; };
@@ -63,6 +64,7 @@
 		215720C21F0E232A0081B0DB /* ArticleDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 		2165FB861F11F03D00547588 /* PrimasColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrimasColor.swift; path = Common/PrimasColor.swift; sourceTree = "<group>"; };
 		2165FB881F12000C00547588 /* Define.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Define.swift; path = Common/Define.swift; sourceTree = "<group>"; };
+		216FB3EB1F1CA53D0076C94B /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Client.swift; path = Common/Client.swift; sourceTree = "<group>"; };
 		217CC6E61F18A20800B8D2BA /* SegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
 		217CC6E81F18CB8200B8D2BA /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditorViewController.swift; path = Controllers/EditorViewController.swift; sourceTree = "<group>"; };
 		217CC6EB1F19ED4D00B8D2BA /* ArticleGroupComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleGroupComponent.swift; path = Components/ArticleGroupComponent.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				2165FB861F11F03D00547588 /* PrimasColor.swift */,
 				2165FB881F12000C00547588 /* Define.swift */,
 				21AB3F821F15CAB800F6C4FF /* PrimasAwardType.swift */,
+				216FB3EB1F1CA53D0076C94B /* Client.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -313,7 +316,7 @@
 				TargetAttributes = {
 					2190CC5F1F0A5FAF0091778A = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 8U7K5G3ZZF;
+						DevelopmentTeam = UZSKPGH9WM;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -442,6 +445,7 @@
 				21AB3F791F15C5E100F6C4FF /* ValueView.swift in Sources */,
 				21AB3F751F14FB3000F6C4FF /* ArticleDetailModel.swift in Sources */,
 				21AB3F5A1F129C2B00F6C4FF /* IconFont+Extensions.swift in Sources */,
+				216FB3EC1F1CA53D0076C94B /* Client.swift in Sources */,
 				F6E6843A1F18B837008F4304 /* GroupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,10 +564,10 @@
 			baseConfigurationReference = 3A9FCD820F0968EFF113D929 /* Pods-Primas.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8U7K5G3ZZF;
+				DEVELOPMENT_TEAM = UZSKPGH9WM;
 				INFOPLIST_FILE = Primas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.primas;
+				PRODUCT_BUNDLE_IDENTIFIER = io.primas1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -575,10 +579,10 @@
 			baseConfigurationReference = 38EC2C6AA6F5FFBAE888AD4E /* Pods-Primas.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8U7K5G3ZZF;
+				DEVELOPMENT_TEAM = UZSKPGH9WM;
 				INFOPLIST_FILE = Primas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.primas;
+				PRODUCT_BUNDLE_IDENTIFIER = io.primas1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -21,7 +21,7 @@ class ArticleInfringementComponent: UIView {
     let _icon = UILabel()
     _icon.text = Iconfont.exclamatory.rawValue
     _icon.textColor = PrimasColor.shared.main.red_font_color
-    _icon.font = UIFont.iconfont(ofSize: 20)
+    _icon.font = UIFont.iconfont(ofSize: 14)
     return _icon
   }()
 

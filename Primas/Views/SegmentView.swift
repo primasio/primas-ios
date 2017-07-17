@@ -51,11 +51,15 @@ class SegmentView: UIView {
     }()
 
     var leftSubTitleLabel: UILabel = {
-      return ViewTool.generateLabel("", 12.0, PrimasColor.shared.main.light_font_color)
+      let _label = ViewTool.generateLabel("", 12.0, PrimasColor.shared.main.light_font_color)
+      _label.font = primasNumberFont(12.0)
+      return _label
     }()
 
     var rightSubTitleLabel: UILabel = {
-      return ViewTool.generateLabel("", 12.0, PrimasColor.shared.main.light_font_color)
+      let _label = ViewTool.generateLabel("", 12.0, PrimasColor.shared.main.light_font_color)
+      _label.font = primasNumberFont(12.0)
+      return _label
     }()
 
     var leftActiveLine: UIView = {

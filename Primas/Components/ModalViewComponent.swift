@@ -60,8 +60,9 @@ class ModalViewComponent: UIView {
     isShow = true
 
     app().window?.bringSubview(toFront: self)
+    self.frame.origin.y = 0
     UIView.animate(withDuration: 0.5, animations: {
-      self.frame.origin.y = 0
+      self.subView?.frame.origin.y = 0
     })
   }
 
@@ -71,11 +72,13 @@ class ModalViewComponent: UIView {
     }
 
     UIView.animate(withDuration: 0.5, animations: {
-      self.frame.origin.y = SCREEN_HEIGHT 
+      self.subView?.frame.origin.y = SCREEN_HEIGHT 
     }, completion: {
         done in
         if done {
             self.isShow = false
+            self.frame.origin.y = SCREEN_HEIGHT 
+
         }
     })
   }
@@ -92,6 +95,7 @@ class ModalViewComponent: UIView {
       self.addSubview(subView)
       self.subviewHeight = height
 
+      self.subView?.frame.origin.y = SCREEN_HEIGHT
       subView.snp.makeConstraints {
         make in
         make.left.right.equalTo(self)
@@ -104,6 +108,7 @@ class ModalViewComponent: UIView {
       self.subView = subView
       self.subviewHeight = height
       setup()
+      self.subView?.frame.origin.y = SCREEN_HEIGHT
       self.cached.append(subView)
     }
 
