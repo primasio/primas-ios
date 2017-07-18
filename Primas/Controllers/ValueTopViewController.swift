@@ -11,6 +11,7 @@ import UIKit
 class ValueTopViewController: UIViewController {
     var valueList: [ValueTopModel] = []
     var valueView: ValueTopView = ValueTopView()
+    var oldContentOffset = CGPoint.zero
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,5 +80,31 @@ extension ValueTopViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return ValueTableViewCell.rowHeight
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let delta =  scrollView.contentOffset.y - oldContentOffset.y
+        
+        let topConstant = valueView.headerViewTopConstraint!.layoutConstraints[0].constant
+        let topConstantAbs = 0 - topConstant
+        
+        if delta > 0 && topConstantAbs < CGFloat(125.0) && scrollView.contentOffset.y > 0 {
+            
+            let offsetDelta = topConstant - delta < -125.0 ? -125.0 : topConstant - delta
+            
+            valueView.headerViewTopConstraint!.update(offset: offsetDelta)
+            scrollView.contentOffset.y -= delta
+        }
+        
+        if delta < 0 && topConstantAbs > CGFloat(0.0) && scrollView.contentOffset.y < 0 {
+            
+            let offsetDelta = topConstant - delta >= 0 ? 0 : topConstant - delta
+            
+            valueView.headerViewTopConstraint!.update(offset: offsetDelta)
+            scrollView.contentOffset.y -= delta
+        }
+        
+        oldContentOffset = scrollView.contentOffset
     }
 }

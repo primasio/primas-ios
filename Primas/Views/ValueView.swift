@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import SnapKit
 
 class ValueView: UIView {
     var controler: ValueViewController?
 
+    var headerViewTopConstraint: Constraint?
+    
     let headerViewContainer: UIView = {
       let _view = UIView()
       _view.layer.contents = UIImage(named: "value-bg")?.cgImage
@@ -87,8 +90,9 @@ class ValueView: UIView {
     
     func setupLayout() {
         headerViewContainer.snp.makeConstraints {
-          make in 
-          make.top.left.right.equalTo(self)
+          make in
+            headerViewTopConstraint = make.top.equalTo(self).constraint
+          make.left.right.equalTo(self)
           make.size.height.equalTo(230.0)
         }
 
