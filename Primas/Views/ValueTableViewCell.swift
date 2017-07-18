@@ -165,11 +165,11 @@ class ValueTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func bind(_ value: ValueModel) {
-      self.value.text = "\(value.award)"
+    func bind(_ value: UserAmountDetailItem) {
+      self.value.text = "\(value.amount)"
       self.title.text = value.title
-      self.createdAt.text = primasDate("yyyy-MM-dd", value.createdAt)
-      self.valueBadge.backgroundColor = getPrimasAwardBackgroundColor(value.awardType)
-      self.valueBadge.text = PrimasAwardTypeDictionary[value.awardType]
+      self.createdAt.text = value.date
+      self.valueBadge.backgroundColor = getPrimasAwardBackgroundColor(value.type)
+      self.valueBadge.text = PrimasAwardTypeDictionary[value.type]
     }
 }

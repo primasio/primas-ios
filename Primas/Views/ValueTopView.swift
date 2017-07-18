@@ -11,7 +11,7 @@ import SnapKit
 
 class ValueTopView: UIView {
     
-    var headerViewTopConstraint: Constraint?
+  var headerViewTopConstraint: Constraint?
     
   let headerViewContainer: UIView = {
     let _view = UIView()
@@ -31,7 +31,7 @@ class ValueTopView: UIView {
 
   let yesterdayValue: UILabel = {
     let _label = UILabel()
-    _label.font = primasFont(36)
+    _label.font = primasNumberFont(36)
     _label.textAlignment = .center
     _label.textColor = hexStringToUIColor("#ed5f4b")
     return _label
@@ -107,7 +107,7 @@ class ValueTopView: UIView {
   }
 
   func headerBind() {
-     yesterdayValue.text = "36541.23"
+     yesterdayValue.text = "\(app().client.system?.pstYesterday ?? 0)"
   }
 
 }

@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 class ValueViewController: UIViewController {
-    var valueList: [Array<ValueModel>] = []
+    var valueList: [AmountDetail] = []
     var valueView: ValueView = ValueView()
     var oldContentOffset = CGPoint.zero
 
@@ -18,7 +18,7 @@ class ValueViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.valueList = ValueModel.generateTestData()
+        self.valueList = (app().client.user?.amountDetail)!
         self.valueView.table.delegate = self
         self.valueView.table.dataSource = self
         self.valueView.headerBind()
@@ -30,7 +30,6 @@ class ValueViewController: UIViewController {
             make in 
             make.edges.equalTo(self.view)
         }
-
        
         self.automaticallyAdjustsScrollViewInsets = false
         
@@ -76,7 +75,7 @@ class ValueViewController: UIViewController {
 extension ValueViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return valueList[section].count
+        return valueList[section].items.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -85,7 +84,7 @@ extension ValueViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ValueTableViewCell.registerIdentifier) as! ValueTableViewCell
-        cell.bind(valueList[indexPath.section][indexPath.row])
+        cell.bind(valueList[indexPath.section].items[indexPath.row])
         return cell
     }
     
@@ -94,7 +93,8 @@ extension ValueViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = ValueTableViewCell.generateSection("2017年6月")
+        let date = valueList[section].date
+        let headerView = ValueTableViewCell.generateSection(date)
         let _label = headerView.subviews[0] as! UILabel
         _label.snp.makeConstraints {
             make in

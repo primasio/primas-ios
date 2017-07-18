@@ -41,7 +41,7 @@ class ValueView: UIView {
     let myToken: UILabel = {
       let _label = UILabel()
       _label.textAlignment = .center
-      _label.font = primasFont(12)
+      _label.font = primasNumberFont(12)
       _label.textColor = PrimasColor.shared.main.light_white_font_color
       return _label
     }()
@@ -49,7 +49,7 @@ class ValueView: UIView {
     let yesterdayToken: UILabel = {
       let _label = UILabel()
       _label.textAlignment = .center
-      _label.font = primasFont(12)
+      _label.font = primasNumberFont(12)
       _label.textColor = hexStringToUIColor("#ffb3b3")
       return _label
     }()
@@ -152,9 +152,12 @@ class ValueView: UIView {
     }
     
     func headerBind() {
-      myToken.text = "我的Token总额 +560PST"
-      yesterdayValue.text = "+136.233"
-      yesterdayToken.text = "昨日Token发放数 56465.34"
+      let token = (app().client.user?.balance) ?? 0
+      let _value = (app().client.user?.amountYesterday) ?? 0
+      let _yesterdayToken = (app().client.system?.pstYesterday) ?? 0
+      myToken.text = "我的Token总额 +\(String(describing: token))PST"
+      yesterdayValue.text = "+\(String(describing: _value))"
+      yesterdayToken.text = "昨日Token发放数 \(String(describing: _yesterdayToken))"
     }
     
     required init?(coder aDecoder: NSCoder) {
