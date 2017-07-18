@@ -9,6 +9,9 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    
+    var oldContentOffset = CGPoint.zero
+    
     var cellList: Array<CellModel>?
     var profile: ProfileView = ProfileView()
     var profileModel: ProfileModel = {
@@ -96,5 +99,31 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 10))
         view.backgroundColor = PrimasColor.shared.main.light_background_color
         return view
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let delta =  scrollView.contentOffset.y - oldContentOffset.y
+        
+        let topConstant = profile.headerViewTopConstraint!.layoutConstraints[0].constant
+        let topConstantAbs = 0 - topConstant
+        
+        if delta > 0 && topConstantAbs < CGFloat(240.0) && scrollView.contentOffset.y > 0 {
+            
+            let offsetDelta = topConstant - delta < -240.0 ? -240.0 : topConstant - delta
+            
+            profile.headerViewTopConstraint!.update(offset: offsetDelta)
+            scrollView.contentOffset.y -= delta
+        }
+        
+        if delta < 0 && topConstantAbs > CGFloat(0.0) && scrollView.contentOffset.y < 0 {
+            
+            let offsetDelta = topConstant - delta >= 0 ? 0 : topConstant - delta
+            
+            profile.headerViewTopConstraint!.update(offset: offsetDelta)
+            scrollView.contentOffset.y -= delta
+        }
+        
+        oldContentOffset = scrollView.contentOffset
     }
 }
