@@ -358,7 +358,7 @@
 				TargetAttributes = {
 					2190CC5F1F0A5FAF0091778A = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = UZSKPGH9WM;
+						DevelopmentTeam = 8U7K5G3ZZF;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -620,10 +620,10 @@
 			baseConfigurationReference = 3A9FCD820F0968EFF113D929 /* Pods-Primas.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UZSKPGH9WM;
+				DEVELOPMENT_TEAM = 8U7K5G3ZZF;
 				INFOPLIST_FILE = Primas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.primas1;
+				PRODUCT_BUNDLE_IDENTIFIER = io.primas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -635,10 +635,10 @@
 			baseConfigurationReference = 38EC2C6AA6F5FFBAE888AD4E /* Pods-Primas.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UZSKPGH9WM;
+				DEVELOPMENT_TEAM = 8U7K5G3ZZF;
 				INFOPLIST_FILE = Primas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.primas1;
+				PRODUCT_BUNDLE_IDENTIFIER = io.primas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
