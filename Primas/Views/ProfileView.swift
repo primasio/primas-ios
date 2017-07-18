@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import SnapKit
 
 class ProfileView: UIView {
     var controler: ValueViewController?
 
+    var headerViewTopConstraint: Constraint?
+    
     let headerViewContainer: UIView = {
       let _view = UIView()
       _view.layer.contents = UIImage(named: "profile-bg")?.cgImage
@@ -117,8 +120,9 @@ class ProfileView: UIView {
     
     func setupLayout() {
         headerViewContainer.snp.makeConstraints {
-          make in 
-          make.top.left.right.equalTo(self)
+          make in
+            headerViewTopConstraint = make.top.equalTo(self).constraint
+          make.left.right.equalTo(self)
           make.size.height.equalTo(265.0)
         }
 
