@@ -133,7 +133,7 @@ class GroupView: UIView {
         
         groupCollection.snp.makeConstraints {
             make in
-            make.top.equalTo(self).offset(70.0)
+            make.top.equalTo(titleView.snp.bottom)
             make.left.right.bottom.equalTo(self)
         }
     }

@@ -74,13 +74,13 @@ class ToolBar: UIToolbar {
     
     static func makeActivedButtonItem(_ code: String, size: CGFloat? = 26.0) -> UIBarButtonItem {
     
-      let _view = UIView(frame: CGRect(x: 0, y: 0, width: 37, height: 37))
+      let _view = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
       let _icon = UILabel()
 
       _view.addSubview(_icon)
       _view.backgroundColor = UIColor.red
       _view.clipsToBounds = true
-      _view.layer.cornerRadius = 37.0 / 2
+      _view.layer.cornerRadius = 30.0
 
       _icon.text = code
       _icon.textColor = UIColor.white
