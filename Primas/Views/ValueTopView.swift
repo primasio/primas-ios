@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import SnapKit
 
 class ValueTopView: UIView {
+    
+    var headerViewTopConstraint: Constraint?
+    
   let headerViewContainer: UIView = {
     let _view = UIView()
     _view.backgroundColor = UIColor(patternImage: UIImage(named: "value-top-bg")!)
@@ -69,8 +73,9 @@ class ValueTopView: UIView {
   func setupLayout() {
 
     headerViewContainer.snp.makeConstraints {
-      make in 
-      make.left.right.top.equalTo(self)
+      make in
+        headerViewTopConstraint = make.top.equalTo(self).constraint
+      make.left.right.equalTo(self)
       make.size.height.equalTo(150)
     }
     
