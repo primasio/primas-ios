@@ -41,7 +41,7 @@ class HomeViewController: UIViewController {
   func setup() {
     self.title = "Home"
 
-    cellList = CellModel.generateTestData()
+    // cellList = CellModel.generateTestData()
     
     homeView.tableView.dataSource = self
     homeView.tableView.delegate = self
@@ -61,7 +61,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.cellList?.count != 0 {
-            return (cellList?.count)!
+            return (cellList?.count) ?? 0
         }
         
         return 0

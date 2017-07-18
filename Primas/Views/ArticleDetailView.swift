@@ -69,6 +69,9 @@ class ArticleDetailView: UIView {
     let view = UIWebView()
     return view
   }()
+    
+  let _line = ViewTool.generateLine()
+
 
   func setupViews() {
     addSubview(infringementView)
@@ -78,6 +81,7 @@ class ArticleDetailView: UIView {
     addSubview(username)
     addSubview(createdAt)
     addSubview(DNA)
+    addSubview(_line)
     addSubview(content)
     
     addSubview(groupLabel)
@@ -124,8 +128,6 @@ class ArticleDetailView: UIView {
       make.size.equalTo(CGSize(width: 110, height: 29))
     }
 
-    let _line = ViewTool.generateLine()
-    addSubview(_line)
 
     _line.snp.makeConstraints {
       make in
@@ -202,11 +204,3 @@ class ArticleDetailView: UIView {
 }
 
 
-// Mark UIWebViewDelegate
-
-
-extension ArticleDetailView: UIWebViewDelegate {
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        webView.frame.size.height = webView.scrollView.contentSize.height
-    }
-}

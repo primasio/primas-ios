@@ -14,9 +14,11 @@ import SwiftIconFont
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var client: Client = Client()
     var navigation: UINavigationController!
     var cachedViewControllers: [ViewControllers: UIViewController] = [:]
     var modal: ModalViewComponent = ModalViewComponent(subView: UIView(), height: 99)
+
     lazy var toolbar: ToolBar = { ToolBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: (self.navigation!.toolbar.frame.height))) }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -26,9 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.makeKeyAndVisible()
         self.window?.backgroundColor = UIColor.white
         self.window?.addSubview(modal)
-
-        let client = Client()
-
+        
         let homeViewController = ViewControllers.home.map()
         self.cachedViewControllers[ViewControllers.home] =  homeViewController
 

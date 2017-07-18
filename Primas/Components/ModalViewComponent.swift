@@ -84,7 +84,6 @@ class ModalViewComponent: UIView {
   }
 
   func reload(subView: UIView, height: CGFloat) {
-    print(cached.count)
     if self.subView == subView {
       return 
     }
@@ -95,13 +94,13 @@ class ModalViewComponent: UIView {
       self.addSubview(subView)
       self.subviewHeight = height
 
-      self.subView?.frame.origin.y = SCREEN_HEIGHT
       subView.snp.makeConstraints {
         make in
         make.left.right.equalTo(self)
         make.size.height.equalTo(subviewHeight!)
         make.bottom.equalTo(self)
       }
+      self.subView?.frame.origin.y = SCREEN_HEIGHT
       
     } else {
       self.subView?.removeFromSuperview()

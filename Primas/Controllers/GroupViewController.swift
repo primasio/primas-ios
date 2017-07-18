@@ -12,7 +12,7 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     var groupView: GroupView?
     
-    let groups = [
+    var groups = [
         [
             "name": "天才实验室",
             "image": "group1",
@@ -75,9 +75,7 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
             make.top.right.bottom.left.equalTo(self.view)
         }
 
-        app().toolbar.current = .group
-
-    self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
         self.navigationItem.rightBarButtonItem = ViewTool.generateNavigationBarItem(Iconfont.search, PrimasColor.shared.main.main_font_color)
     }
     
@@ -90,6 +88,8 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.isTranslucent = false
 
+        self.groups = app().client.data?["groups"] as! Array<[String: Any]>
+        app().toolbar.current = .group
     }
     
     override func viewDidAppear(_ animated: Bool) {

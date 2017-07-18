@@ -28,6 +28,18 @@ class ProfileModel: NSObject {
   }
 
   static func generateTestData() -> ProfileModel {
-    return ProfileModel("飞奔的🐟", "https://pic1.zhimg.com/v2-5dbfdbd17c41fd25abcd659849409b64_xl.jpg", 168.365, 120359.26, 5665.856, 236, 36)
+    let user = app().client.data!["user"] as! [String: Any]
+    let username = user["nickname"] as! String
+    let userImage = user["avatar"] as! String
+    let profileIndex = user["credit"] as! Double
+    let hp = user["hp"] as! Double
+    let pst = user["balance"] as! Double
+    let articles = user["articles"] as! [String: Any]
+    let contentCount = articles["total"] as! Int
+    let baseUrl = app().client.baseURL
+    let group = user["groups"] as! [String: Any]
+    let groupCount = group["total"] as! Int
+    
+    return ProfileModel(username, baseUrl + userImage, profileIndex, hp, pst, contentCount, groupCount)
   }
 }

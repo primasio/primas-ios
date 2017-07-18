@@ -16,6 +16,20 @@
 		2165FB871F11F03D00547588 /* PrimasColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2165FB861F11F03D00547588 /* PrimasColor.swift */; };
 		2165FB891F12000C00547588 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2165FB881F12000C00547588 /* Define.swift */; };
 		216FB3EC1F1CA53D0076C94B /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FB3EB1F1CA53D0076C94B /* Client.swift */; };
+		216FB3FC1F1DD47E0076C94B /* AmountDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FB3EF1F1DD47E0076C94B /* AmountDetail.swift */; };
+		216FB3FD1F1DD47E0076C94B /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FB3F01F1DD47E0076C94B /* Article.swift */; };
+		216FB3FE1F1DD47E0076C94B /* ArticleAuthor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FB3F11F1DD47E0076C94B /* ArticleAuthor.swift */; };
+		216FB4001F1DD47E0076C94B /* ArticleSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FB3F31F1DD47E0076C94B /* ArticleSource.swift */; };
+		216FB4011F1DD47E0076C94B /* ArticleStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FB3F41F1DD47E0076C94B /* ArticleStatistics.swift */; };
+		216FB4021F1DD47E0076C94B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FB3F51F1DD47E0076C94B /* Group.swift */; };
+		216FB4031F1DD47E0076C94B /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FB3F61F1DD47E0076C94B /* System.swift */; };
+		216FB4041F1DD47E0076C94B /* SystemArticleRanking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FB3F71F1DD47E0076C94B /* SystemArticleRanking.swift */; };
+		216FB4051F1DD47E0076C94B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FB3F81F1DD47E0076C94B /* User.swift */; };
+		216FB4061F1DD47E0076C94B /* UserAmountDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FB3F91F1DD47E0076C94B /* UserAmountDetailItem.swift */; };
+		216FB4071F1DD47E0076C94B /* UserArticleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FB3FA1F1DD47E0076C94B /* UserArticleItem.swift */; };
+		216FB4081F1DD47E0076C94B /* UserGroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FB3FB1F1DD47E0076C94B /* UserGroupItem.swift */; };
+		216FB40B1F1DE1DF0076C94B /* ArticleLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FB4091F1DE1DF0076C94B /* ArticleLicense.swift */; };
+		216FB40C1F1DE1DF0076C94B /* SystemGroupRanking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FB40A1F1DE1DF0076C94B /* SystemGroupRanking.swift */; };
 		217CC6E71F18A20800B8D2BA /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217CC6E61F18A20800B8D2BA /* SegmentView.swift */; };
 		217CC6E91F18CB8200B8D2BA /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217CC6E81F18CB8200B8D2BA /* EditorViewController.swift */; };
 		217CC6EC1F19ED4D00B8D2BA /* ArticleGroupComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217CC6EB1F19ED4D00B8D2BA /* ArticleGroupComponent.swift */; };
@@ -65,6 +79,20 @@
 		2165FB861F11F03D00547588 /* PrimasColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrimasColor.swift; path = Common/PrimasColor.swift; sourceTree = "<group>"; };
 		2165FB881F12000C00547588 /* Define.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Define.swift; path = Common/Define.swift; sourceTree = "<group>"; };
 		216FB3EB1F1CA53D0076C94B /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Client.swift; path = Common/Client.swift; sourceTree = "<group>"; };
+		216FB3EF1F1DD47E0076C94B /* AmountDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AmountDetail.swift; path = Data/AmountDetail.swift; sourceTree = "<group>"; };
+		216FB3F01F1DD47E0076C94B /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Article.swift; path = Data/Article.swift; sourceTree = "<group>"; };
+		216FB3F11F1DD47E0076C94B /* ArticleAuthor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleAuthor.swift; path = Data/ArticleAuthor.swift; sourceTree = "<group>"; };
+		216FB3F31F1DD47E0076C94B /* ArticleSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleSource.swift; path = Data/ArticleSource.swift; sourceTree = "<group>"; };
+		216FB3F41F1DD47E0076C94B /* ArticleStatistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleStatistics.swift; path = Data/ArticleStatistics.swift; sourceTree = "<group>"; };
+		216FB3F51F1DD47E0076C94B /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Group.swift; path = Data/Group.swift; sourceTree = "<group>"; };
+		216FB3F61F1DD47E0076C94B /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = System.swift; path = Data/System.swift; sourceTree = "<group>"; };
+		216FB3F71F1DD47E0076C94B /* SystemArticleRanking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemArticleRanking.swift; path = Data/SystemArticleRanking.swift; sourceTree = "<group>"; };
+		216FB3F81F1DD47E0076C94B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Data/User.swift; sourceTree = "<group>"; };
+		216FB3F91F1DD47E0076C94B /* UserAmountDetailItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserAmountDetailItem.swift; path = Data/UserAmountDetailItem.swift; sourceTree = "<group>"; };
+		216FB3FA1F1DD47E0076C94B /* UserArticleItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserArticleItem.swift; path = Data/UserArticleItem.swift; sourceTree = "<group>"; };
+		216FB3FB1F1DD47E0076C94B /* UserGroupItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserGroupItem.swift; path = Data/UserGroupItem.swift; sourceTree = "<group>"; };
+		216FB4091F1DE1DF0076C94B /* ArticleLicense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleLicense.swift; path = Data/ArticleLicense.swift; sourceTree = "<group>"; };
+		216FB40A1F1DE1DF0076C94B /* SystemGroupRanking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemGroupRanking.swift; path = Data/SystemGroupRanking.swift; sourceTree = "<group>"; };
 		217CC6E61F18A20800B8D2BA /* SegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
 		217CC6E81F18CB8200B8D2BA /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditorViewController.swift; path = Controllers/EditorViewController.swift; sourceTree = "<group>"; };
 		217CC6EB1F19ED4D00B8D2BA /* ArticleGroupComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleGroupComponent.swift; path = Components/ArticleGroupComponent.swift; sourceTree = "<group>"; };
@@ -177,6 +205,20 @@
 		218555DC1F1C5051000BBAF7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				216FB4091F1DE1DF0076C94B /* ArticleLicense.swift */,
+				216FB40A1F1DE1DF0076C94B /* SystemGroupRanking.swift */,
+				216FB3EF1F1DD47E0076C94B /* AmountDetail.swift */,
+				216FB3F01F1DD47E0076C94B /* Article.swift */,
+				216FB3F11F1DD47E0076C94B /* ArticleAuthor.swift */,
+				216FB3F31F1DD47E0076C94B /* ArticleSource.swift */,
+				216FB3F41F1DD47E0076C94B /* ArticleStatistics.swift */,
+				216FB3F51F1DD47E0076C94B /* Group.swift */,
+				216FB3F61F1DD47E0076C94B /* System.swift */,
+				216FB3F71F1DD47E0076C94B /* SystemArticleRanking.swift */,
+				216FB3F81F1DD47E0076C94B /* User.swift */,
+				216FB3F91F1DD47E0076C94B /* UserAmountDetailItem.swift */,
+				216FB3FA1F1DD47E0076C94B /* UserArticleItem.swift */,
+				216FB3FB1F1DD47E0076C94B /* UserGroupItem.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -412,6 +454,7 @@
 				21AB3F731F14FB1D00F6C4FF /* TestViewController.swift in Sources */,
 				215720B71F0C7E240081B0DB /* HomeListCell.swift in Sources */,
 				217CC6E91F18CB8200B8D2BA /* EditorViewController.swift in Sources */,
+				216FB40C1F1DE1DF0076C94B /* SystemGroupRanking.swift in Sources */,
 				2190CC661F0A5FAF0091778A /* ViewController.swift in Sources */,
 				21AB3F6B1F14991200F6C4FF /* ArticleDetailToolBar.swift in Sources */,
 				21AB3F711F14FB1D00F6C4FF /* ArticleDetailViewController.swift in Sources */,
@@ -421,9 +464,13 @@
 				21AB3F7B1F15C61100F6C4FF /* ValueViewController.swift in Sources */,
 				21AB3F851F15EBAD00F6C4FF /* ValueTableViewCell.swift in Sources */,
 				21AB3F8D1F171E3300F6C4FF /* ProfileViewController.swift in Sources */,
+				216FB4011F1DD47E0076C94B /* ArticleStatistics.swift in Sources */,
+				216FB3FD1F1DD47E0076C94B /* Article.swift in Sources */,
+				216FB4031F1DD47E0076C94B /* System.swift in Sources */,
 				215720BB1F0CBCF00081B0DB /* HomeView.swift in Sources */,
 				F6E684381F18B82C008F4304 /* GroupViewCollectionCell.swift in Sources */,
 				21AB3F811F15C68C00F6C4FF /* ValueTopModel.swift in Sources */,
+				216FB4021F1DD47E0076C94B /* Group.swift in Sources */,
 				21AB3F771F15C58500F6C4FF /* ValueModel.swift in Sources */,
 				215720BF1F0DD0590081B0DB /* ToolBar.swift in Sources */,
 				21AB3F7D1F15C64900F6C4FF /* ValueTopViewController.swift in Sources */,
@@ -432,7 +479,9 @@
 				21AB3F831F15CAB800F6C4FF /* PrimasAwardType.swift in Sources */,
 				F6E684361F18B7F5008F4304 /* GroupView.swift in Sources */,
 				21AB3F691F147B4500F6C4FF /* ViewTool.swift in Sources */,
+				216FB4071F1DD47E0076C94B /* UserArticleItem.swift in Sources */,
 				215720C31F0E232A0081B0DB /* ArticleDetailView.swift in Sources */,
+				216FB3FC1F1DD47E0076C94B /* AmountDetail.swift in Sources */,
 				217CC6EE1F19F92600B8D2BA /* ArticleInfringementComponent.swift in Sources */,
 				21AB3F7F1F15C66800F6C4FF /* ValueTopView.swift in Sources */,
 				21AB3F8B1F171E1900F6C4FF /* ProfileView.swift in Sources */,
@@ -442,11 +491,18 @@
 				218555DB1F1B3568000BBAF7 /* ModalViewComponent.swift in Sources */,
 				21AB3F671F146EE400F6C4FF /* Extensions.swift in Sources */,
 				21AB3F6D1F14FAAE00F6C4FF /* TestSubViewController.swift in Sources */,
+				216FB4061F1DD47E0076C94B /* UserAmountDetailItem.swift in Sources */,
+				216FB4041F1DD47E0076C94B /* SystemArticleRanking.swift in Sources */,
+				216FB4051F1DD47E0076C94B /* User.swift in Sources */,
 				21AB3F791F15C5E100F6C4FF /* ValueView.swift in Sources */,
+				216FB4081F1DD47E0076C94B /* UserGroupItem.swift in Sources */,
 				21AB3F751F14FB3000F6C4FF /* ArticleDetailModel.swift in Sources */,
+				216FB4001F1DD47E0076C94B /* ArticleSource.swift in Sources */,
 				21AB3F5A1F129C2B00F6C4FF /* IconFont+Extensions.swift in Sources */,
 				216FB3EC1F1CA53D0076C94B /* Client.swift in Sources */,
 				F6E6843A1F18B837008F4304 /* GroupViewController.swift in Sources */,
+				216FB40B1F1DE1DF0076C94B /* ArticleLicense.swift in Sources */,
+				216FB3FE1F1DD47E0076C94B /* ArticleAuthor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
