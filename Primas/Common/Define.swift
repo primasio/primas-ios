@@ -43,6 +43,10 @@ func primasFont(_ fontSize: CGFloat, _ bold: Bool? = false) -> UIFont {
   return UIFont.systemFont(ofSize: fontSize)
 }
 
+func primasNumberFont(_ fontSize: CGFloat) -> UIFont {
+  return UIFont(name: "Helvetica Neue", size: fontSize)!
+}
+
 // "yyyy-MM-dd"
 func primasDate(_ format: String, _ time: Int) -> String {
   let date = Date(timeIntervalSince1970: TimeInterval(time))

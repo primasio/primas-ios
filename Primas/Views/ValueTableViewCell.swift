@@ -48,7 +48,7 @@ class ValueTableViewCell: UITableViewCell {
 
     let value: UILabel = {
       let _label = UILabel()
-      _label.font = primasFont(15)
+      _label.font = primasNumberFont(15)
       _label.textColor = PrimasColor.shared.main.red_font_color 
       return _label
     }()
@@ -100,7 +100,7 @@ class ValueTableViewCell: UITableViewCell {
     func setupLayout() {
       viewContainer.snp.makeConstraints {
         make in 
-        make.edges.equalTo(self).inset(SIDE_MARGIN)
+        make.edges.equalTo(self).inset(UIEdgeInsetsMake(11, SIDE_MARGIN, 11, SIDE_MARGIN))
       }
 
       plus.snp.makeConstraints {

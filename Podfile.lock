@@ -1,21 +1,24 @@
 PODS:
   - Kingfisher (3.10.2)
+  - Networking (3.0.3)
   - SnapKit (3.2.0)
   - SwiftIconFont (2.6.0)
   - UITextView+Placeholder (1.2.0)
 
 DEPENDENCIES:
   - Kingfisher (~> 3.0)
+  - Networking (~> 3)
   - SnapKit (~> 3.2.0)
   - SwiftIconFont (~> 2.6)
   - UITextView+Placeholder (~> 1.2)
 
 SPEC CHECKSUMS:
   Kingfisher: 7297492bf8cec9b2e2dee3519f2219948580d98e
+  Networking: e2c42013296d093e4249f8247acb08e36958a11a
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftIconFont: bbe1f32e1e16bac87dad8566afc80132cb8d072c
   UITextView+Placeholder: 77680995fcdd07c3f52ec92fe1150874a2ac89ff
 
-PODFILE CHECKSUM: a8b111d31e1932c933ddd9968fcfa4745708f980
+PODFILE CHECKSUM: 7d0645b0f0a4de5205a5c71b04c2b8caf65976ec
 
 COCOAPODS: 1.2.1

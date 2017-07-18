@@ -209,6 +209,6 @@ class HomeListCell: UITableViewCell {
     
     shared.text = model.shared.toHumanString() + " 转发"
     transfered.text = model.transfered.toHumanString() + " 转载"
-    self.date.text = primasDate("MM.dd", model.date)
+    self.date.text = primasDate("MM-dd", model.date)
   }
 }

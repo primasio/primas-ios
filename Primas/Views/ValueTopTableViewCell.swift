@@ -106,7 +106,7 @@ class ValueTopTableViewCell: UITableViewCell {
     func setupLayout() {
       viewContainer.snp.makeConstraints {
         make in 
-        make.edges.equalTo(self).inset(SIDE_MARGIN)
+        make.edges.equalTo(self).inset(UIEdgeInsetsMake(11, SIDE_MARGIN, 11, SIDE_MARGIN))
       }
 
       PST.snp.makeConstraints {

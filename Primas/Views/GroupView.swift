@@ -13,6 +13,8 @@ class GroupView: UIView {
     
     var collectionViewDataSource: UICollectionViewDataSource?
     var collectionViewDelegate: UICollectionViewDelegate?
+    let groupLayout = UICollectionViewFlowLayout()
+
     
     init(frame: CGRect, dataSource: UICollectionViewDataSource, delegate: UICollectionViewDelegate) {
         super.init(frame: frame)
@@ -63,7 +65,6 @@ class GroupView: UIView {
         navView.addSubview(navGroupsView)
         
         
-        let groupLayout = UICollectionViewFlowLayout()
         groupLayout.scrollDirection = UICollectionViewScrollDirection.vertical
         
         let groupCollection = UICollectionView.init(frame: self.frame, collectionViewLayout: groupLayout)

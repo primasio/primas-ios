@@ -20,15 +20,16 @@ class GroupViewCollectionCell: UICollectionViewCell
     
     func setItem(item: [String: Any]) -> Void {
         name?.text = item["name"] as? String
-        image?.image = UIImage(named: item["image"] as! String)
+        let _url = URL(string: app().client.baseURL + (item["image"] as! String))
+        image?.kf.setImage(with: _url)
         
-        let totalContent = item["totalContent"] as! Int
-        let totalPeople = item["totalPeople"] as! Int
+        let totalContent = item["content_total"] as! Int
+        let totalPeople = item["member_total"] as! Int
         
         info?.text = "内容：\(totalContent)  人数：\(totalPeople)"
         info?.font = UIFont(name: (info?.font.fontName)!, size: 12)
         
-        let totalNews = item["newContent"] as! Int
+        let totalNews = item["content_new"] as! Int
         news?.text = "\(totalNews)条新内容"
         news?.font = UIFont(name: (news?.font.fontName)!, size: 14)
     }
