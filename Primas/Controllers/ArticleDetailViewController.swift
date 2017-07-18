@@ -27,28 +27,6 @@ class ArticleDetailViewController: UIViewController {
         scroll.showsVerticalScrollIndicator = true
         self.view.addSubview(scroll)
         
-        // load view
-        articleView = ArticleDetailView(frame: CGRect(x: SIDE_MARGIN, y: SIDE_MARGIN, width: SCREEN_WIDTH - SIDE_MARGIN - SIDE_MARGIN, height: SCREEN_HEIGHT))
-        articleView.setup()
-
-        articleView.content.delegate = self
-
-        // bind model to view
-        let model = ArticleDetailModel.generateTestData()
-        articleView.bind(model)
-
-        self.view.backgroundColor = UIColor.white
-
-        self.toolbarItems = toolbar.getItems()
-        scroll.addSubview(articleView)
-        articleView.bindInfringement(title: "鲁迅 \"人们币在越南可以花多久！现金汇率？\"")
-
-       articleView.bindGroup(imageUrl: "https://ps.ssl.qhimg.com/t01323fc0361c7ad6c7.jpg", name: "无人时代", contentNumber: 5468, peopleNumber: 5869)
-
-       initShare()
-       initTransfer()
-        
-       scroll.contentSize = CGSize(width: SCREEN_WIDTH,height: 2000.0)
 
     }
 
@@ -61,6 +39,40 @@ class ArticleDetailViewController: UIViewController {
         self.navigationController?.toolbar.isTranslucent = false
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(color: PrimasColor.shared.main.light_font_color)
+        
+        articleView = ArticleDetailView(frame: CGRect(x: SIDE_MARGIN, y: SIDE_MARGIN, width: SCREEN_WIDTH - SIDE_MARGIN - SIDE_MARGIN, height: SCREEN_HEIGHT))
+        articleView.backgroundColor = .white
+        articleView.setup()
+
+        let articleId = ((app().cachedViewControllers[ViewControllers.home] as! HomeViewController).selectedArticleId ?? 0)
+        let article = app().client.getArticleById(articleId)
+        // bind model to view
+        let model = ArticleDetailModel(title: (article?.title)!, content: (article?.content)!, username: (article?.author.name)!, userImageUrl: app().client.baseURL + (article?.author.avatar)!, createdAt: (article?.createdAt)!, shared: (article?.statistics.share)!, transfered: (article?.statistics.reproduction)!, stared: (article?.statistics.like)!, DNA: (article?.dna)!)
+        articleView.bind(model)
+        
+        self.view.backgroundColor = UIColor.white
+        
+        self.toolbarItems = toolbar.getItems()
+        
+        
+        scroll.addSubview(articleView)
+        scroll.bringSubview(toFront: articleView)
+        scroll.setContentOffset(.zero , animated: false)
+        
+        initShare()
+        initTransfer()
+        
+        scroll.contentSize = CGSize(width: SCREEN_WIDTH,height: 2000.0)
+
+        
+        
+        if !(article?.source.licensed)! {
+            articleView.bindInfringement(title: (article?.source.title)!)
+            self.navigationController?.setToolbarHidden(true, animated: false)
+        } else {
+            let _group = app().client.getGroupById((article?.groupId)!)
+            articleView.bindGroup(imageUrl: app().client.baseURL + (_group?.image)!, name: (_group?.name)!, contentNumber: (_group?.contentTotal)!, peopleNumber: (_group?.memberTotal)!)
+        }
         
     }
 
@@ -90,21 +102,3 @@ class ArticleDetailViewController: UIViewController {
         app().modal.show()
     }
 }
-
-
-// Mark UIWebViewDelegate
-
-
-extension ArticleDetailViewController: UIWebViewDelegate {
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        webView.frame.size.height = webView.scrollView.contentSize.height
-        if self.isInfringement {
-            self.scroll.contentSize = CGSize(width: SCREEN_WIDTH,height: webView.scrollView.contentSize.height + webView.frame.origin.y + 110 + 60 + 40 + 20 + 14 + 2)
-        } else {
-            self.scroll.contentSize = CGSize(width: SCREEN_WIDTH,height: webView.scrollView.contentSize.height + webView.frame.origin.y + 110)
-        }
-        
-        print("ssssssssssssss: \(webView.frame) \(webView.frame.origin.y) \(webView.bounds)")
-    }
-}
-

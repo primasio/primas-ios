@@ -65,8 +65,8 @@ class ArticleDetailView: UIView {
 
   let group = ArticleGroupComponent()
 
-  let content: UIWebView = {
-    let view = UIWebView()
+  let content: UILabel = {
+    let view = UILabel()
     return view
   }()
     
@@ -158,7 +158,7 @@ class ArticleDetailView: UIView {
     createdAt.text = primasDate("YYYY.MM.dd", article.createdAt)
 
    
-    content.loadHTMLString(article.content, baseURL: nil)
+    content.text = article.content
 
     if article.DNA == "" {
       DNA.snp.remakeConstraints {

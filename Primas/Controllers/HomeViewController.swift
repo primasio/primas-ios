@@ -10,6 +10,7 @@ import Foundation
 
 class HomeViewController: UIViewController {
   var cellList: Array<CellModel>?
+  var selectedArticleId: Int?
 
   var homeView: HomeView = {
     let _homeView = HomeView(frame: .zero)
@@ -80,7 +81,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // show article detail
-        self.navigationController?.pushViewController(ArticleDetailViewController(), animated: true)
+        self.selectedArticleId = cellList?[indexPath.row].id
+        
+        toController(.article)
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

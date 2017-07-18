@@ -2,16 +2,16 @@ class User {
   var nickname: String
   var hp: Double
   var avatar: String
-  var credit: String
+  var credit: Double
   var articlesTotal: Int
   var articles: [UserArticleItem]
   var groupsTotal: Int
   var groups: [UserGroupItem]
   var balance: Double
   var amountYesterday: Double
-  var amountDetail: AmountDetail
+  var amountDetail: [AmountDetail]
 
-  init(nickname: String, hp: Double, avatar: String, credit: String, articlesTotal: Int, articles: [UserArticleItem], groupsTotal: Int, groups: [UserGroupItem], balance: Double, amountYesterday: Double, amountDetail: AmountDetail) {
+  init(nickname: String, hp: Double, avatar: String, credit: Double, articlesTotal: Int, articles: [UserArticleItem], groupsTotal: Int, groups: [UserGroupItem], balance: Double, amountYesterday: Double, amountDetail: [AmountDetail]) {
     self.nickname = nickname
     self.hp = hp
     self.avatar = avatar

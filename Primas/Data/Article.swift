@@ -10,9 +10,9 @@ class Article {
   var dna: String
   var outline: String
   var groupId: Int
-  var created_at: Int
+  var createdAt: Int
   
-  init(id: Int, title: String, author: ArticleAuthor, coverImage: String, content: String, license: ArticleLicense, source: ArticleSource, statistics: ArticleStatistics, dna: String, outline: String, groupId: Int, created_at: Int) {
+  init(id: Int, title: String, author: ArticleAuthor, coverImage: String, content: String, license: ArticleLicense, source: ArticleSource, statistics: ArticleStatistics, dna: String, outline: String, groupId: Int, createdAt: Int) {
     self.id = id
     self.title = title
     self.author = author
@@ -24,6 +24,6 @@ class Article {
     self.dna = dna
     self.outline = outline
     self.groupId = groupId
-    self.created_at = created_at
+    self.createdAt = createdAt
   }
 }

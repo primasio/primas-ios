@@ -28,3 +28,16 @@ func getPrimasAwardBackgroundColor(_ type: PrimasAwardType) -> UIColor {
 let PrimasAwardTypeDictionary: [PrimasAwardType: String] = [
   .praise: "点赞", .share: "转发", .transfer: "转载", .origin: "原创"
 ]
+
+func getPrimasAwardTypeFromString(_ string: String) -> PrimasAwardType {
+    switch string {
+    case "点赞":
+        return .praise
+    case "转发":
+        return .share
+    case "转载":
+        return .transfer
+    default:
+        return .origin
+    }
+}
