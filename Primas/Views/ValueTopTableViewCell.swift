@@ -37,14 +37,14 @@ class ValueTopTableViewCell: UITableViewCell {
 
     let value: UILabel = {
       let _label = UILabel()
-      _label.font = primasFont(15)
+      _label.font = primasNumberFont(15)
       _label.textColor = PrimasColor.shared.main.red_font_color 
       return _label
     }()
 
     let valueBadge: UILabel = {
       let _label = UILabel()
-      _label.font = primasFont(10)
+      _label.font = primasNumberFont(10)
       _label.textColor = UIColor.white
       _label.textAlignment = .center
       return _label
@@ -59,21 +59,21 @@ class ValueTopTableViewCell: UITableViewCell {
 
     let shared: UILabel = {
       let _label = UILabel()
-      _label.font = primasFont(12)
+      _label.font = primasNumberFont(12)
       _label.textColor = PrimasColor.shared.main.sub_font_color
       return _label
     }()
 
     let praised: UILabel = {
       let _label = UILabel()
-      _label.font = primasFont(12)
+      _label.font = primasNumberFont(12)
       _label.textColor = PrimasColor.shared.main.sub_font_color
       return _label
     }()
 
     let transfered: UILabel = {
       let _label = UILabel()
-      _label.font = primasFont(12)
+      _label.font = primasNumberFont(12)
       _label.textColor = PrimasColor.shared.main.sub_font_color
       return _label
     }()
@@ -179,15 +179,17 @@ class ValueTopTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func bind(_ value: ValueTopModel, _ index: Int) {
+    func bind(_ ranking: SystemArticleRanking, _ index: Int) {
       let current = index + 1
 
-      self.value.text = "\(value.award)"
-      self.title.text = value.title
+      let article = app().client.getArticleById(ranking.articleId)
 
-      self.shared.text = value.shared.toHumanString() + "转发"
-      self.praised.text = value.praised.toHumanString() + "赞"
-      self.transfered.text = value.transfered.toHumanString() + "转载"
+      self.value.text = "\(ranking.amount)"
+      self.title.text = article?.title
+
+      self.shared.text = (article?.statistics.share.toHumanString())! + "转发"
+      self.praised.text = (article?.statistics.like.toHumanString())! + "赞"
+      self.transfered.text = (article?.statistics.reproduction.toHumanString())! + "转载"
 
       var backgroundColor: UIColor = PrimasColor.shared.main.gray_font_color
 

@@ -91,8 +91,9 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // show article detail
-        self.navigationController?.pushViewController(ArticleDetailViewController(), animated: true)
+        app().client.selectedArticleId = (cellList?[indexPath.row].id)!
+        
+        toController(.article)
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

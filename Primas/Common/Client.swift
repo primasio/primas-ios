@@ -16,6 +16,7 @@ class Client {
   var groups: [Group] = []
   var articles: [Article] = []
   var system: System?
+  var selectedArticleId: Int = 0
 
   init() {
     let networking = Networking(baseURL: "http://yb-public.oss-cn-shanghai.aliyuncs.com/primas_data/")

@@ -9,7 +9,7 @@
 import UIKit
 
 class ValueTopViewController: UIViewController {
-    var valueList: [ValueTopModel] = []
+    var valueList: [SystemArticleRanking] = []
     var valueView: ValueTopView = ValueTopView()
     var oldContentOffset = CGPoint.zero
 
@@ -17,7 +17,7 @@ class ValueTopViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.valueList = ValueTopModel.generateTestData()
+        self.valueList = (app().client.system?.rankingArticles)!
         self.valueView.table.delegate = self
         self.valueView.table.dataSource = self
         self.valueView.headerBind()

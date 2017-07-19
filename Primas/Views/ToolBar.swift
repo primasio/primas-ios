@@ -79,7 +79,6 @@ class ToolBar: UIToolbar {
 
       _view.addSubview(_icon)
       _view.backgroundColor = UIColor.red
-      _view.clipsToBounds = true
       _view.layer.cornerRadius = 30.0
 
       _icon.text = code
@@ -92,7 +91,6 @@ class ToolBar: UIToolbar {
       }
 
       let _bar = UIBarButtonItem(customView: _view)
-
 
       return _bar
     }
@@ -112,6 +110,7 @@ class ToolBar: UIToolbar {
     let pen: UIBarButtonItem = {
         let _bar = ToolBar.makeActivedButtonItem(Iconfont.pen.rawValue)
         _bar.tag = ToolBar.ItemType.pen.rawValue
+        _bar.customView?.frame.origin.y = -50
         return _bar
     }()
 

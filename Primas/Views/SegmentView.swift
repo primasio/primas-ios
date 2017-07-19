@@ -92,10 +92,6 @@ class SegmentView: UIView {
     }
 
     func setup() {
-      // leftContainer.backgroundColor =  UIColor.red
-      // rightContainer.backgroundColor = UIColor.green
-
-
       self.addSubview(leftContainer)
       self.addSubview(rightContainer)
 

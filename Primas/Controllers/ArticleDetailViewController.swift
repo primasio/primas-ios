@@ -44,7 +44,7 @@ class ArticleDetailViewController: UIViewController {
         articleView.backgroundColor = .white
         articleView.setup()
 
-        let articleId = ((app().cachedViewControllers[ViewControllers.home] as! HomeViewController).selectedArticleId ?? 0)
+        let articleId = app().client.selectedArticleId
         let article = app().client.getArticleById(articleId)
         // bind model to view
         let model = ArticleDetailModel(title: (article?.title)!, content: (article?.content)!, username: (article?.author.name)!, userImageUrl: app().client.baseURL + (article?.author.avatar)!, createdAt: (article?.createdAt)!, shared: (article?.statistics.share)!, transfered: (article?.statistics.reproduction)!, stared: (article?.statistics.like)!, DNA: (article?.dna)!)
