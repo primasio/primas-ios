@@ -3,7 +3,7 @@ class Article {
   var title: String
   var author: ArticleAuthor
   var coverImage: String
-  var content: String
+    var content: [Any]
   var license: ArticleLicense
   var source: ArticleSource
   var statistics: ArticleStatistics
@@ -12,7 +12,7 @@ class Article {
   var groupId: Int
   var createdAt: Int
   
-  init(id: Int, title: String, author: ArticleAuthor, coverImage: String, content: String, license: ArticleLicense, source: ArticleSource, statistics: ArticleStatistics, dna: String, outline: String, groupId: Int, createdAt: Int) {
+  init(id: Int, title: String, author: ArticleAuthor, coverImage: String, content: [Any], license: ArticleLicense, source: ArticleSource, statistics: ArticleStatistics, dna: String, outline: String, groupId: Int, createdAt: Int) {
     self.id = id
     self.title = title
     self.author = author

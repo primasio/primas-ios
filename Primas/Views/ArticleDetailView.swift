@@ -58,54 +58,69 @@ class ArticleDetailView: UIView {
 
     return _view
   }()
-
+    
   let groupLabel: UILabel = {
     return ViewTool.generateLabel("文章来自社群", 14.0, PrimasColor.shared.main.light_font_color)
   }()
 
   let group = ArticleGroupComponent()
-
-  let content: UILabel = {
-    let view = UILabel()
-    return view
-  }()
     
   let _line = ViewTool.generateLine()
 
+    let scrollView = UIScrollView()
+    
 
   func setupViews() {
-    addSubview(infringementView)
     
-    addSubview(title)
-    addSubview(userImage)
-    addSubview(username)
-    addSubview(createdAt)
-    addSubview(DNA)
-    addSubview(_line)
-    addSubview(content)
+    scrollView.isScrollEnabled = true
+    scrollView.isUserInteractionEnabled = true
+    scrollView.showsVerticalScrollIndicator = true
+    scrollView.bounces = true
+    scrollView.alwaysBounceVertical = true
     
-    addSubview(groupLabel)
-    addSubview(group)
+    self.addSubview(scrollView)
+    
+    scrollView.addSubview(infringementView)
+    
+    scrollView.addSubview(title)
+    scrollView.addSubview(userImage)
+    scrollView.addSubview(username)
+    scrollView.addSubview(createdAt)
+    scrollView.addSubview(DNA)
+    scrollView.addSubview(_line)
+    
+    scrollView.addSubview(groupLabel)
+    scrollView.addSubview(group)
+    
   }
 
   func setupLayout() {
+    
+    scrollView.snp.makeConstraints {
+        make in
+        make.left.right.equalTo(self).inset(MAIN_PADDING)
+        make.top.bottom.equalTo(self)
+    }
+    
     infringementView.snp.makeConstraints {
       make in
-      make.left.right.equalTo(self)
-      make.top.equalTo(self)
+      make.left.right.equalTo(scrollView)
+      make.top.equalTo(scrollView).offset(MAIN_PADDING)
+        
       make.size.height.equalTo(0.01)
     }
     
     title.snp.makeConstraints({
       make in 
       make.top.equalTo(infringementView.snp.bottom).offset(25)
-      make.left.right.equalTo(self)
+      make.left.right.equalTo(scrollView)
+        make.size.width.equalTo(self.snp.width).inset(MAIN_PADDING)
     })
 
     userImage.snp.makeConstraints({
       make in 
       make.top.equalTo(title.snp.bottom).offset(20)
-      make.left.equalTo(self)
+      make.left.equalTo(scrollView)
       make.size.equalTo(CGSize(width: 35, height: 35))
     })
 
@@ -124,23 +139,14 @@ class ArticleDetailView: UIView {
     DNA.snp.makeConstraints {
       make in 
       make.bottom.equalTo(createdAt)
-      make.right.equalTo(self)
+      make.right.equalTo(scrollView)
       make.size.equalTo(CGSize(width: 110, height: 29))
     }
 
-
     _line.snp.makeConstraints {
       make in
-      make.left.right.equalTo(self)
+      make.left.right.equalTo(scrollView)
       make.top.equalTo(userImage.snp.bottom).offset(MAIN_PADDING)
-    }
-
-    content.snp.makeConstraints {
-      make in
-      make.left.equalTo(self).offset(3)
-      make.right.equalTo(self)
-      make.top.equalTo(_line.snp.bottom).offset(18)
-      make.size.width.equalTo(self)
     }
   }
 
@@ -157,27 +163,75 @@ class ArticleDetailView: UIView {
 
     createdAt.text = primasDate("YYYY.MM.dd", article.createdAt)
 
-   
-    content.text = article.content
-
     if article.DNA == "" {
       DNA.snp.remakeConstraints {
-        make in 
+        make in
         make.size.equalTo(0)
       }
     } else {
        let _label =  DNA.subviews[0] as! UILabel
         _label.text = "DNA \(article.DNA)"
     }
+    
+    var prev:UIView? = nil
+    
+    article.content.forEach {
+        body in
+        
+        let item = body as! [String: String]
+        
+        if(item["type"] == "p")
+        {
+            let p = UILabel()
+            p.text = item["text"]
+            p.numberOfLines = 0
+            p.font = primasFont(16)
+            p.textColor = PrimasColor.shared.main.main_font_color
+            
+            scrollView.addSubview(p)
+            
+            p.snp.makeConstraints {
+                make in
+                
+                make.left.right.equalTo(scrollView)
+                
+                if let pr = prev
+                {
+                    make.top.equalTo(pr.snp.bottom).offset(5.0)
+                }else{
+                    make.top.equalTo(_line.snp.bottom).offset(MAIN_PADDING)
+                }
+            }
+            
+            prev = p
+            
+        }else{
+        
+        }
+    }
+    
+    if let pr = prev
+    {
+        pr.snp.makeConstraints {
+            make in
+            make.bottom.equalTo(scrollView)
+        }
+    }else{
+        _line.snp.makeConstraints {
+            make in
+            make.bottom.equalTo(scrollView)
+        }
+    }
+    
   }
 
   func bindInfringement(title: String) {
     infringementView.bind(title: title)
-
+    
     infringementView.snp.remakeConstraints {
       make in
-      make.left.right.equalTo(self)
-      make.top.equalTo(self).offset(SIDE_MARGIN)
+      make.left.right.equalTo(scrollView)
+      make.top.equalTo(scrollView).offset(SIDE_MARGIN)
       make.size.height.equalTo(70)
     }
   }
@@ -187,20 +241,18 @@ class ArticleDetailView: UIView {
 
     groupLabel.snp.remakeConstraints {
       make in 
-      make.left.equalTo(content)
-      make.top.equalTo(content.snp.bottom).offset(60)
+      make.left.equalTo(scrollView)
+      make.top.equalTo(_line.snp.bottom).offset(60)
     }
 
     group.snp.remakeConstraints {
       make in 
       make.top.equalTo(groupLabel.snp.bottom).offset(20)
-      make.left.equalTo(self)
-      make.right.equalTo(self)
+      make.left.equalTo(scrollView)
+      make.right.equalTo(scrollView)
       make.size.height.equalTo(60.0)
     }
-
   }
-
 }
 
 

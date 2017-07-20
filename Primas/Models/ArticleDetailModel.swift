@@ -10,7 +10,7 @@ import Foundation
 
 class ArticleDetailModel {
     var title: String
-    var content: String
+    var content: [Any]
 
     var username: String
     var userImageUrl: String
@@ -22,7 +22,7 @@ class ArticleDetailModel {
     var stared: Int
     var DNA: String
 
-    init(title: String, content: String, username: String, userImageUrl: String, createdAt: Int, shared: Int, transfered: Int,  stared: Int, DNA: String ) {
+    init(title: String, content: [Any], username: String, userImageUrl: String, createdAt: Int, shared: Int, transfered: Int,  stared: Int, DNA: String ) {
       self.title = title
       self.content = content
       self.username = username
