@@ -22,7 +22,7 @@ class HomeView: UIView {
         
         _search.tintColor = PrimasColor.shared.main.main_font_color
         _search.searchBarStyle = .minimal
-        _search.placeholder = "铸钢大桥今日开通"
+        _search.placeholder = "Primas尝试打破垄断"
 
         _logo.snp.makeConstraints {
             make in 

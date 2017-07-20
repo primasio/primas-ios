@@ -16,22 +16,14 @@ class ArticleDetailViewController: UIViewController {
     var shareView: UIImageView = UIImageView(image: UIImage(named: "modal-share"))
     var toolbar: ArticleDetailToolBar = ArticleDetailToolBar()
     var transferView: UIImageView = UIImageView(image: UIImage(named: "modal-transfer"))
-    var scroll = UIScrollView(frame: CGRect(x:0, y:0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
     var isInfringement: Bool = true
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        scroll.isScrollEnabled = true
-        scroll.isUserInteractionEnabled = true
-        scroll.showsVerticalScrollIndicator = true
-        self.view.addSubview(scroll)
-        
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        self.title = "文章详情"
+        
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: primasFont(15)]
         self.navigationController?.navigationBar.tintColor = PrimasColor.shared.main.main_font_color
         self.navigationController?.navigationBar.topItem?.title = "";
@@ -40,8 +32,7 @@ class ArticleDetailViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(color: PrimasColor.shared.main.light_font_color)
         
-        articleView = ArticleDetailView(frame: CGRect(x: SIDE_MARGIN, y: SIDE_MARGIN, width: SCREEN_WIDTH - SIDE_MARGIN - SIDE_MARGIN, height: SCREEN_HEIGHT))
-        articleView.backgroundColor = .white
+        articleView = ArticleDetailView()
         articleView.setup()
 
         let articleId = app().client.selectedArticleId
@@ -50,21 +41,22 @@ class ArticleDetailViewController: UIViewController {
         let model = ArticleDetailModel(title: (article?.title)!, content: (article?.content)!, username: (article?.author.name)!, userImageUrl: app().client.baseURL + (article?.author.avatar)!, createdAt: (article?.createdAt)!, shared: (article?.statistics.share)!, transfered: (article?.statistics.reproduction)!, stared: (article?.statistics.like)!, DNA: (article?.dna)!)
         articleView.bind(model)
         
+        self.title = article!.title
+        
         self.view.backgroundColor = UIColor.white
         
         self.toolbarItems = toolbar.getItems()
         
+        self.view.addSubview(articleView)
         
-        scroll.addSubview(articleView)
-        scroll.bringSubview(toFront: articleView)
-        scroll.setContentOffset(.zero , animated: false)
+        articleView.snp.makeConstraints {
+            make in
+            make.left.top.equalTo(self.view)
+            make.right.bottom.equalTo(self.view)
+        }
         
         initShare()
         initTransfer()
-        
-        scroll.contentSize = CGSize(width: SCREEN_WIDTH,height: 2000.0)
-
-        
         
         if !(article?.source.licensed)! {
             articleView.bindInfringement(title: (article?.source.title)!)

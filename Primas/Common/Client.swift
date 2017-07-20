@@ -87,7 +87,7 @@ class Client {
       let id = item["id"] as! Int
       let title = item["title"] as! String
       let coverImage = item["cover_image"] as! String
-      let content = item["content"] as! String
+        let content = item["content"] as! [Any]
       let groupId = item["group_id"] as! Int
       let dna = item["dna"] as! String
       let outline = item["outline"] as! String
