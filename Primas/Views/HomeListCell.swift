@@ -157,7 +157,8 @@ class HomeListCell: UITableViewCell {
     shared.snp.makeConstraints {
       make in 
       make.left.equalTo(viewContainer)
-      make.bottom.equalTo(contentView.snp.bottom).offset(-27)
+      make.top.equalTo(desc.snp.bottom).offset(SIDE_MARGIN)
+      make.bottom.equalTo(contentView.snp.bottom).offset(-20)
     }
 
     transfered.snp.makeConstraints {

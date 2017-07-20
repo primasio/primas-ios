@@ -32,6 +32,10 @@ class ArticleDetailViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(color: PrimasColor.shared.main.light_font_color)
         
+        if articleView != nil {
+            articleView.removeFromSuperview()
+        }
+        
         articleView = ArticleDetailView()
         articleView.setup()
 
@@ -69,7 +73,7 @@ class ArticleDetailViewController: UIViewController {
     }
 
     func initShare() {
-        shareView.backgroundColor = UIColor.green
+        shareView.contentMode = .scaleToFill
         let tap = UITapGestureRecognizer(target: self, action: #selector(shareTaped))
         tap.numberOfTapsRequired = 1
         toolbar.share.customView?.isUserInteractionEnabled = true
@@ -77,20 +81,19 @@ class ArticleDetailViewController: UIViewController {
     }
 
     func initTransfer() {
-        transferView.backgroundColor = UIColor.red
+        transferView.contentMode = .scaleToFill
         let tap = UITapGestureRecognizer(target: self, action: #selector(transferTaped))
         tap.numberOfTapsRequired = 1
-        toolbar.transfer.customView?.isUserInteractionEnabled = true
         toolbar.transfer.customView?.addGestureRecognizer(tap)
     }
 
     func shareTaped() {
-        app().modal.reload(subView: self.shareView, height: 412)
+        app().modal.reload(subView: self.shareView, height: self.shareView.intrinsicContentSize.height)
         app().modal.show()
     }
 
     func transferTaped() {
-        app().modal.reload(subView: self.transferView, height: 512)
+        app().modal.reload(subView: self.transferView, height: self.transferView.intrinsicContentSize.height)
         app().modal.show()
     }
 }

@@ -49,6 +49,21 @@ func primasNumberFont(_ fontSize: CGFloat) -> UIFont {
   return UIFont(name: "Helvetica Neue", size: fontSize)!
 }
 
+func primasFontSpace(text: String, font: UIFont, _ space: CGFloat? = 5.0, _ zSpace: CGFloat? = 1.2) -> NSAttributedString {
+  let style = NSMutableParagraphStyle()
+  style.alignment = .left
+  style.lineSpacing = space!
+  style.hyphenationFactor = 1.0
+  style.firstLineHeadIndent = 0.0
+  style.paragraphSpacingBefore = 0.0
+  style.headIndent = 0
+  style.tailIndent = 0
+
+  let dic = [NSFontAttributeName: font, NSParagraphStyleAttributeName: style, NSKernAttributeName: zSpace!] as [String : Any]
+
+  return NSAttributedString(string: text, attributes: dic)
+}
+
 // "yyyy-MM-dd"
 func primasDate(_ format: String, _ time: Int) -> String {
   let date = Date(timeIntervalSince1970: TimeInterval(time))
