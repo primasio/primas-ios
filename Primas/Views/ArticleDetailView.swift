@@ -10,6 +10,7 @@ import SnapKit
 class ArticleDetailView: UIView {
     
   var isInfringement: Bool = false  
+  var linePadding: CGFloat = 30
     
   let infringementView = ArticleInfringementComponent()
     
@@ -69,8 +70,9 @@ class ArticleDetailView: UIView {
     
   let _line = ViewTool.generateLine()
 
-    let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
-    
+  let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
+  let solidView = UIView()
+
 
   func setupViews() {
     scrollView.isScrollEnabled = true
@@ -83,6 +85,8 @@ class ArticleDetailView: UIView {
     
     self.addSubview(scrollView)
     
+    scrollView.addSubview(solidView)
+
     scrollView.addSubview(infringementView)
 
     scrollView.addSubview(title)
@@ -104,14 +108,20 @@ class ArticleDetailView: UIView {
         make.left.right.equalTo(self)
         make.top.bottom.equalTo(self)
     }
+
+    solidView.snp.makeConstraints {
+      make in 
+      make.left.right.top.equalTo(scrollView)
+      make.size.equalTo(scrollView).inset(UIEdgeInsets(top: 0, left: 0, bottom: scrollView.frame.height, right: 0))
+    }
     
     // notice: remark
     infringementView.snp.makeConstraints {
       make in
       make.left.equalTo(scrollView).offset(SIDE_MARGIN)
       make.right.equalTo(scrollView).offset(-SIDE_MARGIN)
-      make.top.equalTo(scrollView).offset(SIDE_MARGIN)
-  make.size.width.equalTo(scrollView).inset(UIEdgeInsets(top: SIDE_MARGIN, left: SIDE_MARGIN, bottom: scrollView.frame.height, right: SIDE_MARGIN))
+      make.top.equalTo(solidView).offset(SIDE_MARGIN)
+      make.size.width.equalTo(scrollView).inset(UIEdgeInsets(top: SIDE_MARGIN, left: SIDE_MARGIN, bottom: scrollView.frame.height, right: SIDE_MARGIN))
     }
     
     title.snp.makeConstraints({
@@ -213,31 +223,45 @@ class ArticleDetailView: UIView {
                 {
                     make.top.equalTo(pr.snp.bottom).offset(MAIN_PADDING)
                 }else{
-                    make.top.equalTo(_line.snp.bottom).offset(18)
+                    make.top.equalTo(_line.snp.bottom).offset(linePadding)
                 }
             }
             
             prev = p
             
         } else {
-            let _image  = UIImageView()
+            let imageWidth = CONTENT_WIDTH
+            let imageHeight = CONTENT_WIDTH / 4 * 3
+            let _image  = UIImageView(frame: CGRect(x: 0, y: 0, width: imageWidth, height: imageHeight))
             let url = URL(string: app().client.baseURL + item["src"]!)
             _image.backgroundColor = UIColor.red
-            _image.kf.setImage(with: url)
             _image.contentMode = .scaleAspectFit
+            _image.contentScaleFactor = UIScreen.main.scale
+            _image.layer.masksToBounds = true
             _image.clipsToBounds = true
+            
             scrollView.addSubview(_image)
 
             _image.snp.makeConstraints {
                 make in 
                 make.left.right.equalTo(infringementView)
+                make.size.equalTo(CGSize(width: imageWidth, height: imageHeight))
                 make.centerX.equalTo(infringementView)
                 if let pr = prev {
-                    make.top.equalTo(pr.snp.bottom).offset(5.0)
+                    make.top.equalTo(pr.snp.bottom).offset(linePadding / 2)
                 } else {
-                    make.top.equalTo(_line.snp.bottom).offset(18)
+                    make.top.equalTo(_line.snp.bottom).offset(linePadding / 2)
+                }
             }
-            }
+
+            _image.kf.setImage(with: url, placeholder: nil, options: nil, progressBlock: nil, completionHandler: {
+                (image, error, cacheType, imageUrl) in
+                _image.afterDownloadResize(image: image!)
+                _image.snp.makeConstraints {
+                    make in
+                    make.size.equalTo(_image.frame.size)
+                }
+            })
         
          prev = _image
 
@@ -262,15 +286,12 @@ class ArticleDetailView: UIView {
   func bindInfringement(title: String) {
     infringementView.bind(title: title)
     
-    let _height = app().navigation.navigationBar.frame.height
-    let _statusbar_height = UIApplication.shared.statusBarFrame.height
-    
     infringementView.snp.remakeConstraints {
       make in
       make.left.equalTo(scrollView).offset(SIDE_MARGIN)
       make.right.equalTo(scrollView).offset(-SIDE_MARGIN)
-      make.top.equalTo(scrollView).offset(SIDE_MARGIN)
-      make.size.width.equalTo(scrollView).inset(UIEdgeInsets(top: SIDE_MARGIN, left: SIDE_MARGIN, bottom: scrollView.frame.height - 70 - _height - _statusbar_height - SIDE_MARGIN, right: SIDE_MARGIN))
+      make.top.equalTo(solidView).offset(SIDE_MARGIN)
+      make.size.height.equalTo(70)
     }
 
     DNA.snp.remakeConstraints {
@@ -278,7 +299,7 @@ class ArticleDetailView: UIView {
         make.size.equalTo(0)
     }
   }
-    
+  
   func bindGroup(imageUrl: String, name: String, contentNumber: Int, peopleNumber: Int) {
     self.group.bind(imageUrl: imageUrl, name: name, contentNumber: contentNumber, peopleNumber: peopleNumber)
 
@@ -299,6 +320,7 @@ class ArticleDetailView: UIView {
     }
 
   }
+    
 }
 
 

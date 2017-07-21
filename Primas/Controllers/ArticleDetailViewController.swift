@@ -64,7 +64,6 @@ class ArticleDetailViewController: UIViewController {
         
         if !(article?.source.licensed)! {
             articleView.bindInfringement(title: (article?.source.title)!)
-            self.navigationController?.setToolbarHidden(true, animated: false)
         } else {
             let _group = app().client.getGroupById((article?.groupId)!)
             articleView.bindGroup(imageUrl: app().client.baseURL + (_group?.image)!, name: (_group?.name)!, contentNumber: (_group?.contentTotal)!, peopleNumber: (_group?.memberTotal)!)

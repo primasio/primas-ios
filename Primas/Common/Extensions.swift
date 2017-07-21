@@ -29,3 +29,22 @@ extension UIImage {
     return image!
   }
 }
+
+extension UIImageView {
+    func afterDownloadResize(image: UIImage) {
+    let imageRatio = image.size.width / image.size.height
+    let viewRatio = self.frame.size.width / self.frame.size.height
+    
+    if imageRatio < viewRatio {
+      let scale = self.frame.size.height / image.size.height
+      let width = scale * image.size.width 
+      let height = width / imageRatio
+      self.frame.size = CGSize(width: width, height: height)
+    } else {
+      let scale = self.frame.size.width / image.size.width
+      let height = scale * image.size.height
+      let width = height * imageRatio
+      self.frame.size = CGSize(width: width, height: height)
+    }
+  }
+}

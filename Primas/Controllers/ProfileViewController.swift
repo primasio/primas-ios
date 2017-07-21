@@ -86,10 +86,6 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
       return cell
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-      return HomeListCell.height
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         app().client.selectedArticleId = (cellList?[indexPath.row].id)!
         

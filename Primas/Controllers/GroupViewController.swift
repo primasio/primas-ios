@@ -75,8 +75,7 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
             make.top.right.bottom.left.equalTo(self.view)
         }
 
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
-        self.navigationItem.rightBarButtonItem = ViewTool.generateNavigationBarItem(Iconfont.search, PrimasColor.shared.main.main_font_color)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,6 +86,9 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.isTranslucent = false
+
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+        self.navigationItem.rightBarButtonItem = ViewTool.generateNavigationBarItem(Iconfont.search, PrimasColor.shared.main.main_font_color)
 
         self.groups = app().client.data?["groups"] as! Array<[String: Any]>
         app().toolbar.current = .group

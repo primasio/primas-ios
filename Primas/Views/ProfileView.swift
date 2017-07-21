@@ -89,6 +89,7 @@ class ProfileView: UIView {
         
       tableView.register(HomeListCell.self, forCellReuseIdentifier: HomeListCell.registerIdentifier)
       tableView.separatorStyle = .none
+      tableView.estimatedRowHeight = HomeListCell.height
         
       return tableView
     }()
@@ -123,11 +124,12 @@ class ProfileView: UIView {
     }
     
     func setupLayout() {
+        let headerHeight: CGFloat = 265.0
         headerViewContainer.snp.makeConstraints {
           make in
-            headerViewTopConstraint = make.top.equalTo(self).constraint
+          headerViewTopConstraint = make.top.equalTo(self).constraint
           make.left.right.equalTo(self)
-          make.size.height.equalTo(265.0)
+          make.size.height.equalTo(headerHeight)
         }
 
         userImage.snp.makeConstraints {
@@ -148,12 +150,20 @@ class ProfileView: UIView {
           make.top.equalTo(username.snp.bottom).offset(8)
           make.centerX.equalTo(self)
         }
+        
+        let restContainer = UIView()
+        headerViewContainer.addSubview(restContainer)
+        
+        restContainer.snp.makeConstraints {
+            make in
+            make.top.equalTo(profileIndex.snp.bottom)
+            make.left.right.bottom.equalTo(headerViewContainer)
+        }
 
         vline.snp.makeConstraints {
           make in 
-          make.top.equalTo(profileIndex.snp.bottom).offset(25)
           make.size.equalTo(CGSize(width: 0.5, height: 36.0))
-          make.centerX.equalTo(self)
+          make.center.equalTo(restContainer)
         }
 
         let width = SCREEN_WIDTH / 2

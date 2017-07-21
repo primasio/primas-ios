@@ -40,12 +40,9 @@ class HomeViewController: UIViewController {
 
   func setup() {
     self.title = "Home"
-
-    // cellList = CellModel.generateTestData()
     
     homeView.tableView.dataSource = self
     homeView.tableView.delegate = self
-    homeView.tableView.estimatedRowHeight = HomeListCell.height
     
     self.navigationController?.toolbar.contentMode = .scaleToFill
     self.toolbarItems = app().toolbar.getItems()
@@ -75,9 +72,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
       return cell
     }
 
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//      return HomeListCell.height
-//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // show article detail

@@ -51,6 +51,7 @@ class HomeView: UIView {
         
         tableView.register(HomeListCell.self, forCellReuseIdentifier: HomeListCell.registerIdentifier)
         tableView.separatorStyle = .none
+        tableView.estimatedRowHeight = HomeListCell.height
         
         return tableView
     }()

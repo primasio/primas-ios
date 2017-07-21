@@ -15,6 +15,8 @@ let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 let SIDE_MARGIN: CGFloat = 12.0
 let MAIN_PADDING: CGFloat = 10.0
 
+let CONTENT_WIDTH = SCREEN_WIDTH - SIDE_MARGIN * 2
+
 enum ViewControllers {
   case home, group, value, valueTop, profile, pen, article
     func map() -> UIViewController {
@@ -49,7 +51,7 @@ func primasNumberFont(_ fontSize: CGFloat) -> UIFont {
   return UIFont(name: "Helvetica Neue", size: fontSize)!
 }
 
-func primasFontSpace(text: String, font: UIFont, _ space: CGFloat? = 5.0, _ zSpace: CGFloat? = 1.2) -> NSAttributedString {
+func primasFontSpace(text: String, font: UIFont, _ space: CGFloat? = 8.0, _ zSpace: CGFloat? = 1.2) -> NSAttributedString {
   let style = NSMutableParagraphStyle()
   style.alignment = .left
   style.lineSpacing = space!
