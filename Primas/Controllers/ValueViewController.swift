@@ -49,7 +49,7 @@ class ValueViewController: UIViewController {
     }
     
     func tap() {
-        toController(.valueTop)
+        toController(.valueTop, true)
     }
 
     override func didReceiveMemoryWarning() {

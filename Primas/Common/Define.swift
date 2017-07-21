@@ -82,7 +82,7 @@ func app() -> AppDelegate {
   return UIApplication.shared.delegate as! AppDelegate
 }
 
-func toController(_ type: ViewControllers) {
+func toController(_ type: ViewControllers, _ animated: Bool? = false) {
   var _controller = app().cachedViewControllers[type]
   if _controller == nil {
     app().cachedViewControllers[type] = type.map()
@@ -90,9 +90,9 @@ func toController(_ type: ViewControllers) {
   }
 
   if app().navigation.viewControllers.contains(_controller!) {
-    app().navigation.popToViewController(_controller!, animated: false)
+    app().navigation.popToViewController(_controller!, animated: animated!)
   } else {
-    app().navigation.pushViewController(_controller!, animated: false)
+    app().navigation.pushViewController(_controller!, animated: animated!)
   }
   
 }
