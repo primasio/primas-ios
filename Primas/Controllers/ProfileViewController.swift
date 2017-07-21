@@ -32,7 +32,7 @@ class ProfileViewController: UIViewController {
         profile.table.dataSource = self
         profile.table.delegate = self
 
-        cellList = CellModel.generateTestData()
+        cellList = CellModel.generateProfileData()
         
         self.navigationItem.leftBarButtonItem = ViewTool.generateNavigationBarItem(Iconfont.setting)
         self.navigationItem.rightBarButtonItem = ViewTool.generateNavigationBarItem(Iconfont.add)

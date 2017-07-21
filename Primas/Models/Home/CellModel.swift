@@ -39,4 +39,20 @@ class CellModel {
 
     return data
   }
+
+  static func generateProfileData() -> Array<CellModel> {
+    var data: Array<CellModel> = []
+
+    let articles = app().client.user?.articles
+    let _baseURL = app().client.baseURL
+
+    for item in articles! {
+        let group = app().client.getGroupById(item.groupId)
+        let article = app().client.getArticleById(item.articleId)
+
+        data.append(CellModel(id: article!.id ,title: article!.title, description: article!.outline, imageUrl: _baseURL + article!.coverImage, groupImageUrl: _baseURL + (group?.image)!, groupName: (group?.name)! , date: (article?.createdAt)!, shared: (article?.statistics.share)! , transfered: (article?.statistics.reproduction)!))
+   }
+
+    return data
+  }
 }
