@@ -29,7 +29,7 @@ class ArticleDetailViewController: UIViewController {
         self.navigationController?.navigationBar.topItem?.title = "";
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.toolbar.isTranslucent = false
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(color: PrimasColor.shared.main.light_font_color)
         
         if articleView != nil {

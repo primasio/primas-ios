@@ -70,6 +70,8 @@ class ValueView: UIView {
       return _table
     }()
 
+    let yesterdayTouchView = UIView()
+
     override init(frame: CGRect) {
       super.init(frame: frame)
 
@@ -84,6 +86,7 @@ class ValueView: UIView {
       self.headerViewContainer.addSubview(self.myToken)
       self.headerViewContainer.addSubview(self.yesterdayToken)
       self.headerViewContainer.addSubview(self.detail)
+      self.headerViewContainer.addSubview(self.yesterdayTouchView)
 
       setupLayout()
     }
@@ -149,15 +152,36 @@ class ValueView: UIView {
             make.top.equalTo(headerViewContainer.snp.bottom)
             make.left.right.bottom.equalTo(self)
         }
+
+        yesterdayTouchView.snp.makeConstraints {
+          make in 
+          make.left.right.bottom.equalTo(headerViewContainer)
+          make.top.equalTo(line.snp.top)
+        }
     }
     
     func headerBind() {
       let token = (app().client.user?.balance) ?? 0
       let _value = (app().client.user?.amountYesterday) ?? 0
       let _yesterdayToken = (app().client.system?.pstYesterday) ?? 0
-      myToken.text = "我的Token总额 +\(String(describing: token)) PST"
-      yesterdayValue.text = "+\(String(describing: _value)) PST"
-      yesterdayToken.text = "昨日Token发放数 \(String(describing: _yesterdayToken)) PST"
+      
+      let mytokenString = "我的Token总额 +\(String(describing: token)) PST"
+      var attr = NSMutableAttributedString(string: mytokenString)
+      attr.addAttributes([NSFontAttributeName: myToken.font], range: NSRange(location: 0, length: mytokenString.utf16.count - 3))
+      attr.addAttributes([NSFontAttributeName: primasFont(8)], range: NSRange(location: mytokenString.utf16.count - 3, length: 3))
+      myToken.attributedText = attr
+        
+      let yesterdayValueString = "+\(String(describing: _value)) PST"
+      attr = NSMutableAttributedString(string: yesterdayValueString)
+      attr.addAttributes([NSFontAttributeName: yesterdayValue.font], range: NSRange(location: 0, length: yesterdayValueString.utf16.count - 3))
+      attr.addAttributes([NSFontAttributeName: primasFont(18)], range: NSRange(location: yesterdayValueString.utf16.count - 3, length: 3))
+      yesterdayValue.attributedText = attr
+
+      let yesterdayTokenString = "昨日Token发放数 \(String(describing: _yesterdayToken)) PST"
+      attr = NSMutableAttributedString(string: yesterdayTokenString)
+      attr.addAttributes([NSFontAttributeName: yesterdayToken.font], range: NSRange(location: 0, length: yesterdayTokenString.utf16.count - 3))
+      attr.addAttributes([NSFontAttributeName: primasFont(8)], range: NSRange(location: yesterdayTokenString.utf16.count - 3, length: 3))
+      yesterdayToken.attributedText = attr
     }
     
     required init?(coder aDecoder: NSCoder) {

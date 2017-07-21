@@ -35,8 +35,8 @@ class ValueViewController: UIViewController {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(ValueViewController.tap))
         tap.numberOfTapsRequired = 1
-        self.valueView.detail.isUserInteractionEnabled = true
-        self.valueView.detail.addGestureRecognizer(tap)
+        self.valueView.yesterdayTouchView.isUserInteractionEnabled = true
+        self.valueView.yesterdayTouchView.addGestureRecognizer(tap)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +49,7 @@ class ValueViewController: UIViewController {
     }
     
     func tap() {
-        self.navigationController?.pushViewController(ValueTopViewController(), animated: true)
+        toController(.valueTop)
     }
 
     override func didReceiveMemoryWarning() {
