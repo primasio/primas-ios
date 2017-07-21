@@ -107,7 +107,12 @@ class ValueTopView: UIView {
   }
 
   func headerBind() {
-     yesterdayValue.text = "\(app().client.system?.pstYesterday ?? 0)"
+    let yesterdayValueString = "\(app().client.system?.pstYesterday ?? 0) PST"
+    let attr = NSMutableAttributedString(string: yesterdayValueString)
+      attr.addAttributes([NSFontAttributeName: yesterdayValue.font], range: NSRange(location: 0, length: yesterdayValueString.utf16.count - 3))
+      attr.addAttributes([NSFontAttributeName: primasFont(18)], range: NSRange(location: yesterdayValueString.utf16.count - 3, length: 3))
+      yesterdayValue.attributedText = attr
   }
+    
 
 }
