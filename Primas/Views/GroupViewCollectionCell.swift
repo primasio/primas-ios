@@ -48,6 +48,9 @@ class GroupViewCollectionCell: UICollectionViewCell
         name = UILabel()
         info = UILabel()
         news = UILabel()
+
+        image?.clipsToBounds = true
+        image?.layer.cornerRadius = 4
         
         name?.textAlignment = .center
         info?.textAlignment = .center

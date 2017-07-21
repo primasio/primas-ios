@@ -42,6 +42,7 @@ class ArticleDetailToolBar: ToolBar {
     tap.numberOfTapsRequired = 1
     praise.customView?.isUserInteractionEnabled = true
     praise.customView?.addGestureRecognizer(tap)
+
     self.setItems([share, transfer, praise, trend], animated: false)
   }
 
@@ -55,14 +56,21 @@ class ArticleDetailToolBar: ToolBar {
       }
 
       let flexible = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
-        
-      var arr: Array<UIBarButtonItem> = []
+      let fixed = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: self, action: nil)
+    
+      fixed.width = -10
+      var arr: Array<UIBarButtonItem> = [fixed, flexible]
 
       for  item in self.items! {
           arr.append(item)
-        if item != trend  {
+        
+          if item == trend  {
             arr.append(flexible)
-        }
+            arr.append(fixed)
+          } else {
+            arr.append(flexible)
+            arr.append(flexible)
+          }
       }
         
       return arr
@@ -78,5 +86,8 @@ class ArticleDetailToolBar: ToolBar {
     let _icon = self.praise.customView?.subviews[0] as! UILabel
     _icon.text = Iconfont.praise_on.rawValue
     _icon.textColor = PrimasColor.shared.main.red_font_color
+    
+    let _title = self.praise.customView?.subviews[1] as! UILabel
+    _title.textColor = PrimasColor.shared.main.red_font_color
   }
 }

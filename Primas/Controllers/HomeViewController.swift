@@ -43,13 +43,18 @@ class HomeViewController: UIViewController {
     
     homeView.tableView.dataSource = self
     homeView.tableView.delegate = self
-    
+
     self.navigationController?.toolbar.contentMode = .scaleToFill
     self.toolbarItems = app().toolbar.getItems()
-  }
+}
 
   func showTestViewController() {
       self.navigationController?.pushViewController(TestViewController(), animated: false)
+  }
+
+  func hideKeyboard() {
+    let searchbar = homeView.logoSection.subviews[1] as! UISearchBar
+    searchbar.resignFirstResponder()
   }
 }
 
@@ -76,7 +81,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // show article detail
         app().client.selectedArticleId = (cellList?[indexPath.row].id)!
-        
+        hideKeyboard()
         toController(.article)
     }
     

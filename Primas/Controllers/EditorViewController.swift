@@ -64,7 +64,7 @@ class EditorViewController: UIViewController {
     }
 
     func back() {
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,9 +77,9 @@ class EditorViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = PrimasColor.shared.main.main_font_color
         self.navigationController?.navigationBar.topItem?.title = "";
         self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(color: PrimasColor.shared.main.light_font_color)
-        self.navigationController?.setToolbarHidden(true, animated: true)
+        self.navigationController?.setToolbarHidden(true, animated: false)
     }
     
 

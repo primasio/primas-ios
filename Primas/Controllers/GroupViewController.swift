@@ -74,8 +74,6 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
         groupView!.snp.makeConstraints { (make) in
             make.top.right.bottom.left.equalTo(self.view)
         }
-
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,7 +85,10 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.isTranslucent = false
 
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+        let _item =  UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+        _item.tintColor = PrimasColor.shared.main.main_font_color
+        self.navigationItem.leftBarButtonItem = _item
+        
         self.navigationItem.rightBarButtonItem = ViewTool.generateNavigationBarItem(Iconfont.search, PrimasColor.shared.main.main_font_color)
 
         self.groups = app().client.data?["groups"] as! Array<[String: Any]>

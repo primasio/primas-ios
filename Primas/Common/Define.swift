@@ -51,7 +51,7 @@ func primasNumberFont(_ fontSize: CGFloat) -> UIFont {
   return UIFont(name: "Helvetica Neue", size: fontSize)!
 }
 
-func primasFontSpace(text: String, font: UIFont, _ space: CGFloat? = 8.0, _ zSpace: CGFloat? = 1.2) -> NSAttributedString {
+func primasFontSpace(text: String, font: UIFont, _ space: CGFloat? = 6.0, _ zSpace: CGFloat? = 1.2) -> NSAttributedString {
   let style = NSMutableParagraphStyle()
   style.alignment = .left
   style.lineSpacing = space!
@@ -90,9 +90,9 @@ func toController(_ type: ViewControllers) {
   }
 
   if app().navigation.viewControllers.contains(_controller!) {
-    app().navigation.popToViewController(_controller!, animated: true)
+    app().navigation.popToViewController(_controller!, animated: false)
   } else {
-    app().navigation.pushViewController(_controller!, animated: true)
+    app().navigation.pushViewController(_controller!, animated: false)
   }
   
 }

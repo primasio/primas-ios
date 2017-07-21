@@ -109,7 +109,7 @@ class PrimasDefaultColor: PrimasColorProtocol {
 
   var home_tool_bar_item_color: UIColor {
     get {
-      return hexStringToUIColor("#666666")
+      return hexStringToUIColor("#333333")
     }
   }
   

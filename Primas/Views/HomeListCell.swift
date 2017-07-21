@@ -41,7 +41,7 @@ class HomeListCell: UITableViewCell {
 
   let title: UILabel = {
     let _label = UILabel()
-    _label.font = primasFont(17)
+    _label.font = primasFont(17, true)
     _label.textColor = PrimasColor.shared.main.main_font_color
     _label.numberOfLines = 2
     return _label
@@ -151,14 +151,14 @@ class HomeListCell: UITableViewCell {
     desc.snp.makeConstraints {
       make in 
       make.left.right.equalTo(viewContainer)
-      make.top.equalTo(title.snp.bottom).offset(10)
+      make.top.equalTo(title.snp.bottom).offset(8)
     }
 
     shared.snp.makeConstraints {
       make in 
       make.left.equalTo(viewContainer)
-      make.top.equalTo(desc.snp.bottom).offset(SIDE_MARGIN)
-      make.bottom.equalTo(contentView.snp.bottom).offset(-20)
+      make.top.equalTo(desc.snp.bottom).offset(12)
+      make.bottom.equalTo(contentView.snp.bottom).offset(-24)
     }
 
     transfered.snp.makeConstraints {
@@ -189,7 +189,7 @@ class HomeListCell: UITableViewCell {
     }
 
     groupName.text = model.groupName
-    groupSubtitle.text = "圈子"
+    groupSubtitle.text = "社群"
 
     let bannerURL = URL(string: model.imageUrl)
     if bannerURL != nil {

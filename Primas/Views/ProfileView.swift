@@ -160,9 +160,11 @@ class ProfileView: UIView {
             make.left.right.bottom.equalTo(headerViewContainer)
         }
 
+        let lineHeight: CGFloat = 43
+
         vline.snp.makeConstraints {
           make in 
-          make.size.equalTo(CGSize(width: 0.5, height: 36.0))
+          make.size.equalTo(CGSize(width: 0.5, height: lineHeight))
           make.center.equalTo(restContainer)
         }
 
@@ -186,7 +188,7 @@ class ProfileView: UIView {
           make in 
           make.top.equalTo(vline)
           make.left.equalTo(headerViewContainer)
-          make.size.equalTo(CGSize(width: width, height: 38.0))
+          make.size.equalTo(CGSize(width: width, height: lineHeight))
         }
 
         let x = hpLabel.intrinsicContentSize.width / 2.0 
@@ -208,7 +210,7 @@ class ProfileView: UIView {
           make in 
           make.top.equalTo(vline)
           make.right.equalTo(headerViewContainer)
-          make.size.equalTo(CGSize(width: width, height: 36.0))
+          make.size.equalTo(CGSize(width: width, height: lineHeight))
         }
 
         hpIcon.contentMode = .scaleToFill

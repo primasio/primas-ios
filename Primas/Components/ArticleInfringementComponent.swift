@@ -14,14 +14,12 @@ class ArticleInfringementComponent: UIView {
     let _view = UIView()
     _view.layer.borderColor = PrimasColor.shared.main.red_font_color.cgColor
     _view.layer.borderWidth = 0.5
+    _view.layer.cornerRadius = 2
     return _view
   }()
 
-  let icon: UILabel = {
-    let _icon = UILabel()
-    _icon.text = Iconfont.exclamatory.rawValue
-    _icon.textColor = PrimasColor.shared.main.red_font_color
-    _icon.font = UIFont.iconfont(ofSize: 14)
+  let icon: UIImageView = {
+    let _icon = UIImageView(image: UIImage(named: "notice-icon"))
     return _icon
   }()
 

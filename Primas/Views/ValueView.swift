@@ -23,9 +23,9 @@ class ValueView: UIView {
     let yesterdayLabel: UILabel = {
       let _label = UILabel()
       _label.text = "昨日新增"
-      _label.font = primasFont(13)
+      _label.font = primasFont(14)
       _label.textAlignment = .center
-      _label.textColor = PrimasColor.shared.main.light_white_font_color
+      _label.textColor = UIColor.white
 
       return _label
     }()
@@ -155,9 +155,9 @@ class ValueView: UIView {
       let token = (app().client.user?.balance) ?? 0
       let _value = (app().client.user?.amountYesterday) ?? 0
       let _yesterdayToken = (app().client.system?.pstYesterday) ?? 0
-      myToken.text = "我的Token总额 +\(String(describing: token))PST"
-      yesterdayValue.text = "+\(String(describing: _value))"
-      yesterdayToken.text = "昨日Token发放数 \(String(describing: _yesterdayToken))"
+      myToken.text = "我的Token总额 +\(String(describing: token)) PST"
+      yesterdayValue.text = "+\(String(describing: _value)) PST"
+      yesterdayToken.text = "昨日Token发放数 \(String(describing: _yesterdayToken)) PST"
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -16,7 +16,7 @@ class ArticleDetailView: UIView {
     
   let title: UILabel = {
     let _label = UILabel()
-    _label.font = primasFont(18)
+    _label.font = primasFont(20, true)
     _label.textColor = PrimasColor.shared.main.main_font_color
     _label.numberOfLines = 0
     
@@ -126,13 +126,13 @@ class ArticleDetailView: UIView {
     
     title.snp.makeConstraints({
       make in 
-      make.top.equalTo(infringementView.snp.bottom).offset(25)
+      make.top.equalTo(infringementView.snp.bottom).offset(32)
       make.left.right.equalTo(infringementView)
     })
 
     userImage.snp.makeConstraints({
       make in 
-      make.top.equalTo(title.snp.bottom).offset(20)
+      make.top.equalTo(title.snp.bottom).offset(18)
       make.left.equalTo(infringementView)
       make.size.equalTo(CGSize(width: 35, height: 35))
     })
@@ -164,7 +164,7 @@ class ArticleDetailView: UIView {
 
     group.snp.makeConstraints {
         make in 
-        make.bottom.equalTo(scrollView).offset(-SIDE_MARGIN)
+        make.bottom.equalTo(scrollView).offset(-50)
         make.size.height.equalTo(0)
     }
 
@@ -181,7 +181,7 @@ class ArticleDetailView: UIView {
   }
 
   func bind(_ article: ArticleDetailModel) {
-    self.title.text = article.title
+    self.title.attributedText = primasFontSpace(text: article.title, font: primasFont(20, true), 8.0)
     username.text = article.username
     let imageUrl = URL(string: article.userImageUrl)
     self.userImage.kf.setImage(with: imageUrl)
@@ -306,7 +306,7 @@ class ArticleDetailView: UIView {
     
     group.snp.remakeConstraints {
       make in 
-      make.bottom.equalTo(scrollView.snp.bottom).offset(-SIDE_MARGIN)
+      make.bottom.equalTo(scrollView.snp.bottom).offset(-50)
       make.left.equalTo(infringementView)
       make.right.equalTo(infringementView)
       make.size.height.equalTo(60.0)

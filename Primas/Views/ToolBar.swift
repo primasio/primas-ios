@@ -37,7 +37,7 @@ class ToolBar: UIToolbar {
     }
 
     static let itemColor: UIColor = PrimasColor.shared.main.home_tool_bar_item_color
-    static let itemSize: CGFloat = 20.0
+    static let itemSize: CGFloat = 22.0
 
     static func makeButtonItem(_ code: String, _ title: String, size: CGFloat? = ToolBar.itemSize) -> UIBarButtonItem {
       let _view = UIView(frame: CGRect(x: 0, y: 0, width: 37, height: 37))
@@ -73,13 +73,23 @@ class ToolBar: UIToolbar {
     }
     
     static func makeActivedButtonItem(_ code: String, size: CGFloat? = 26.0) -> UIBarButtonItem {
-    
-      let _view = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
+        let _viewWidth: CGFloat = 40
+      let _container = UIView(frame: CGRect(x: 0, y: 0, width: _viewWidth, height: _viewWidth))
+      let _view = UIView(frame: CGRect(x: 0, y: 0, width: _viewWidth, height: _viewWidth))
       let _icon = UILabel()
+
+      _container.addSubview(_view)
 
       _view.addSubview(_icon)
       _view.backgroundColor = UIColor.red
-      _view.layer.cornerRadius = 30.0
+      _view.layer.cornerRadius = _viewWidth / 2
+
+      _view.snp.makeConstraints {
+        make in
+        make.centerX.equalTo(_container)
+        make.centerY.equalTo(_container)
+        make.size.equalTo(CGSize(width: _viewWidth, height: _viewWidth))
+      }
 
       _icon.text = code
       _icon.textColor = UIColor.white
@@ -90,13 +100,14 @@ class ToolBar: UIToolbar {
         make.center.equalTo(_view)
       }
 
-      let _bar = UIBarButtonItem(customView: _view)
+        
+      let _bar = UIBarButtonItem(customView: _container)
 
       return _bar
     }
     
     let popular: UIBarButtonItem = {
-        let _bar = ToolBar.makeButtonItem(Iconfont.popular.rawValue, "推荐")
+        let _bar = ToolBar.makeButtonItem(Iconfont.popular.rawValue, "首页")
         _bar.tag = ToolBar.ItemType.popular.rawValue
         return _bar
     }()
@@ -110,7 +121,6 @@ class ToolBar: UIToolbar {
     let pen: UIBarButtonItem = {
         let _bar = ToolBar.makeActivedButtonItem(Iconfont.pen.rawValue)
         _bar.tag = ToolBar.ItemType.pen.rawValue
-        _bar.customView?.frame.origin.y = -50
         return _bar
     }()
 
@@ -128,7 +138,7 @@ class ToolBar: UIToolbar {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
         let items = [popular, group, pen, value, myself]
 
         for item in items {
@@ -151,12 +161,19 @@ class ToolBar: UIToolbar {
       }
 
       let flexible = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
+      let fixed = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: self, action: nil)
         
-      var arr: Array<UIBarButtonItem> = []
+      var arr: Array<UIBarButtonItem> = [fixed, flexible]
 
+      fixed.width = -10
       for  item in self.items! {
         arr.append(item)
-        if item != myself  {
+
+        if item == myself  {
+            arr.append(flexible)
+            arr.append(fixed)
+          } else {
+            arr.append(flexible)
             arr.append(flexible)
         }
       }
