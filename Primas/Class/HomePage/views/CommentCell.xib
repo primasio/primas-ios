@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="CommentCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="133" id="KGk-i7-Jjw" customClass="CommentCell" customModule="Primas" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="133"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="132.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userLogo" translatesAutoresizingMaskIntoConstraints="NO" id="gk6-K3-8K9">
+                        <rect key="frame" x="15" y="15" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="JDm-0U-a6f"/>
+                            <constraint firstAttribute="width" secondItem="gk6-K3-8K9" secondAttribute="height" id="xUN-UN-Rpt"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="深海小松鼠" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Gf-EG-54X">
+                        <rect key="frame" x="55" y="21" width="82" height="19.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="前半段特别像作文,导致我没看后半段.翻到最后又往上瞄了一眼,好像还好.不死亡或者就没有意义." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="869-kc-nHH">
+                        <rect key="frame" x="55" y="52.5" width="339" height="36"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今天09:23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23Z-eq-zJE">
+                        <rect key="frame" x="144" y="24" width="54" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="869-kc-nHH" firstAttribute="leading" secondItem="7Gf-EG-54X" secondAttribute="leading" id="4r0-M7-9V9"/>
+                    <constraint firstItem="gk6-K3-8K9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="5hT-J4-U5A"/>
+                    <constraint firstItem="gk6-K3-8K9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="6Q5-NO-v9Q"/>
+                    <constraint firstItem="23Z-eq-zJE" firstAttribute="leading" secondItem="7Gf-EG-54X" secondAttribute="trailing" constant="7" id="aWg-aC-o8x"/>
+                    <constraint firstAttribute="trailing" secondItem="869-kc-nHH" secondAttribute="trailing" constant="20" id="c18-id-sI8"/>
+                    <constraint firstItem="7Gf-EG-54X" firstAttribute="centerY" secondItem="gk6-K3-8K9" secondAttribute="centerY" id="gBH-CC-R37"/>
+                    <constraint firstItem="7Gf-EG-54X" firstAttribute="leading" secondItem="gk6-K3-8K9" secondAttribute="trailing" constant="10" id="hWR-q7-G3r"/>
+                    <constraint firstItem="869-kc-nHH" firstAttribute="top" secondItem="7Gf-EG-54X" secondAttribute="bottom" constant="12" id="ivu-Nn-TZF"/>
+                    <constraint firstItem="23Z-eq-zJE" firstAttribute="centerY" secondItem="7Gf-EG-54X" secondAttribute="centerY" id="zaS-FF-18s"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="contentLabel" destination="869-kc-nHH" id="Ngk-2U-HYf"/>
+                <outlet property="timeLabel" destination="23Z-eq-zJE" id="W1Y-hp-zJV"/>
+                <outlet property="userIcon" destination="gk6-K3-8K9" id="yhZ-SV-ibr"/>
+                <outlet property="userName" destination="7Gf-EG-54X" id="oya-h9-29x"/>
+            </connections>
+            <point key="canvasLocation" x="-136" y="-75"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="userLogo" width="120" height="120"/>
+    </resources>
+</document>

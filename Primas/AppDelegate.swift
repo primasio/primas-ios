@@ -2,46 +2,38 @@
 //  AppDelegate.swift
 //  Primas
 //
-//  Created by wang on 03/07/2017.
-//  Copyright © 2017 wang. All rights reserved.
+//  Created by xuxiwen on 2017/12/18.
+//  Copyright © 2017年 xuxiwen. All rights reserved.
 //
 
 import UIKit
-import SnapKit
-import SwiftIconFont
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var client: Client = Client()
-    var navigation: UINavigationController!
-    var cachedViewControllers: [ViewControllers: UIViewController] = [:]
-    var modal: ModalViewComponent = ModalViewComponent(subView: UIView(), height: 99)
-
-    lazy var toolbar: ToolBar = { ToolBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: (self.navigation!.toolbar.frame.height))) }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        self.window = UIWindow()
-        self.window!.frame = UIScreen.main.bounds
-        self.window!.makeKeyAndVisible()
-        self.window?.backgroundColor = UIColor.white
-        self.window?.addSubview(modal)
-        
-        let homeViewController = ViewControllers.home.map()
-        self.cachedViewControllers[ViewControllers.home] =  homeViewController
 
-        self.navigation = UINavigationController(navigationBarClass: UINavigationBar.self, toolbarClass: ToolBar.self)
-        self.navigation.pushViewController(homeViewController, animated: false)
-        self.navigation.navigationBar.isTranslucent = false
-        self.navigation.toolbar.isTranslucent = false
+        // Crashlytics
+        CrashTool.setUp()
+        // Basic setting
+        appBasicSet()
+        // Network monitoring
+        NetWorkTool.startNetworkObserver()
         
-        self.window!.rootViewController = navigation
-
         return true
     }
+    
+    // MARK: - Basic setting
+    func appBasicSet()  {
+        UITextField.appearance().tintColor = Rcolor.ed5634()
+        UITextView.appearance().tintColor = Rcolor.ed5634()
+        UINavigationBar.appearance().tintColor = Rcolor.ed5634()
+        KeyboardManager.enAbleMannager()
+    }
 
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -63,6 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+
 
 }
 

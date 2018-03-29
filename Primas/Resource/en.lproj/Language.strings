@@ -1,0 +1,344 @@
+/* 
+  Language.strings
+  Primas
+
+  Created by xuxiwen on 2017/12/18.
+  Copyright © 2017年 xuxiwen. All rights reserved.
+*/
+
+
+// MARK : - Common String
+
+"common_Load" = "Loading";
+"common_Delete" = "Delete";
+"common_Nextstep" = "Next";
+"common_Prpmpt" = "Notice";
+"common_Confirm" = "Complete";
+"common_Cancel" = "Cancel";
+"common_Pst" = "PST";
+"common_Post" = "Post";
+"common_dtcp" = "DTCP";
+"common_add_tags" = "Add Tags";
+"common_network_error" = "Network connections are unavailable";
+"common_unknow_network" = "Unknown network error";
+"common_yes" = "Yes";
+"common_no" = "No";
+"common_edit" = "Edit";
+"common_tags" = "Tags";
+"common_comment" = "Comment";
+"common_create_account" = "Create account";
+"common_create_prompt" = "Set up your account \nfocus on what you are interested in.";
+"common_create_prompt2" = "Set up your account \nGet rewards immediately.";
+"comomon_try_again" = "Try again";
+"common_username" = "User name";
+"common_register_time" = "Registration time";
+"common_account_address" = "Account address";
+"common_account_qrcode" = "Account QR Code";
+"common_quick_look" = "Quick view";
+"common_pst_notice" = "100 PST has been grant.";
+"common_no_subscription" = "No subscription";
+"share_to_circle_success" = "Successfully transmited to the circle";
+"blockchain_info" = "Block chain information";
+"common_author" = "Author";
+"common_publish_time" = "Release time";
+"common_dna" = "DNA";
+"blockchain_address" = "Block chain address";
+"article_hash" = "Article hash";
+"common_signature" = "Digital signature";
+"common_change_data" = "Another batch";
+"common_no_more_data" = "No more data";
+"common_pull_load" = "Click or drag up to refresh";
+"time_just_ago" = "just";
+"time_min_ago" = "%d minutes ago";
+"time_hour_ago" = "%d hours ago";
+"time_day_ago" = "%d days ago";
+"time_mouths_ago" = "%d months ago";
+"time_year_ago" = "%d years ago";
+"common_orignal_author" = "Original";
+"common_like" = "Thumbs-up";
+"common_transimit" = "Forward";
+"common_unknown" = "Unknown";
+"common_home" = "Home";
+
+// MARK : - Post article
+"post_article_title" = "Publishing a content will be locked";
+"post_transfor_pst" = "Current available PST: ";
+"lock_pst_warn" = "Locked PST will unlock after 1 hour";
+"lock_pst_time" = "Qualifying period";
+"article_blockChain_address" = "Block chain address of the article: ";
+"look_article_info" = "View the details of the article";
+"no_pst_warn" = "No enough PST";
+"go_to_charge" = "Recharge";
+"agreeMent_nav_title" = "Copyright agreement";
+"agreeMent_title1" = "1.Choice of reprint license agreement";
+"agreeMent_title2" = "2.Do you allow your article to be adapted";
+"agreeMent_title3" = "3.Whether commercial use is allowed";
+"agreeMent_select1" = "Knowledge sharing license agreement";
+"agreeMent_select2" = "Business license agreement";
+"agreeMent_select3" = "Yes, as long as the others share the same way";
+"post_title_place" = "Title";
+"post_content_place" = "Content";
+"article_content_info" = "Article information";
+"article_format_agressment" = "Typesetting protocol";
+"normal_use_tags" = "Common tags";
+"article_content_agree" = "The use of this Ariticle <red>Knowledge sharing signature - sharing 4 international licensing agreements in the same way</red> Permissions<gray>\n\n● Permission to copy, distribute, show, and perform a work, but the work must be signed in a specified manner.\n\n● Allow duplication, distribution, exhibition, and performance, including these activities for business purposes\n\n● It is allowed to copy and distribute the deductive works, but the deductive works must be permitted to permit the agreement of the same or compatible agreement with this agreement.</gray>\n\n<black>Hint: the copyright agreement does not include the pictures in the article</black>";
+"article_change_agree" = "Change the protocol >";
+"post_no_title" = "Please enter the title";
+"post_no_content" = "Please enter the content";
+"post_no_des" = "Please enther brief introduction ";
+"post_to_circle" = "Post to the circle";
+"set_backup_title" = "Backup";
+"set_backup_content" = "A key is the only information to confirm your identity. It is a string of complex strings. For your convenience, you only need to use the key protection code you set in operation. \n\n in order to protect the security of the account, please immediately backup the private key so that the account will be re imported after the exception.";
+"set_safe_level" = "Safety index：";
+"set_convenient_level" = "Convenience index：";
+"use_nmonnic_backup" = "Using mnemonic words backup";
+"use_keystore_backup" = "Keystore backup";
+"use_privatekey_backup" = "Exporting private key";
+"set_level_high" = "High";
+"set_level_middle" = "Middle";
+"set_level_low" = "Low";
+"post_to_auditting" = "Pendding";
+
+// MARK : - NoticeView page
+"notice_addTags_limit" = "Enter the name of the tags (up to 24 characters)";
+"notice_addTags" = "Input tags name";
+"notice_count_limit" = "Up to 24 characters";
+"notice_input_pwd" = "Please enter the secret key protection code";
+"post_usdHp_warn" = "This operation will consume HP";
+"notice_current_hp" = "Current HP: ";
+"notice_hp_prompt" = "When your HP is tooP low, your operation will not affect the evaluation of the content.";
+"select_zero_circle" = "Unselected any circle";
+"notice_liked" = "A little praise";
+"notice_like_success" = "Praise success";
+"notice_empty_comment" = "Enter the comment content";
+"notice_comment_success" = "Comment on success";
+
+// MARK : - COMMON STRING
+"COMMON_LOAD" = "Loading";
+"COMMON_DELETE" = "Delete";
+"COMMOM_NEXT_STEP" = "Next";
+"COMMOM_PRPMPT" = "Notice";
+"CONFIRM_BUTTON" = "Done";
+"FINISH_BUTTON" = "Complete";
+"CANCEL_BUTTON" = "Cancel";
+"NOTHING_INPUT" = "No content was entered";
+"WALLET_ADDRESS" = "Wallet address";
+"GET_FUNDS_ERROR" = "Request Assets error";
+"COMMON_APP_VERSION" = "Version";
+"COMMON_INPUT_ERROR" = "Input error";
+"COMMON_ALL_TRANSCATION" = "All transaction";
+"COMMON_NOTICE" = "Notice";
+
+// MARK : - BUILT WALLET PAGE
+"built_create_username" = "Create a username";
+"username_formated_error" = "Username is unlawful";
+"built_input_username" = "Enter username";
+"built_username_limit" = "The username is up to 30 characters, supports English, numbers, and does not support repeated usernames";
+"BUILT_WALLET" = "Create account";
+"RESTORE_WALLET" = "Import account";
+"BUILT_WALLET_WARN" = "This password is very important. It is a voucher for important operations such as the transfer payment and the backup of the wallet. Please set up the high strength password and even make a local backup.";
+"SETTING_PWD" = "Input password";
+"REPEAT_PWD" = "Repeat password";
+"PWD_ERROR" = "Password error";
+"AGREEMENT_WARN" = "I have read and agreed to the terms and privacy policies.";
+"PWD_LIMIT" = "At least 8 characters of combination of upper、 lower case letters, numbers and special characters.";
+"TEXT_ENTERED" = "Already inputted";
+"SOME_CHARACTER" = "characters";
+"DIFFERENT_PWD" = "Passwords do not match";
+"BUILTWALLET" = "Import wallet";
+"SUCCEESD_CREATION_WALLET" = "Wallet created!";
+"SUCCEESD_WALLET_IMPORT" = "Wallet imported";
+"BACKUP_NOW" = "Backup";
+"BACKUP_WARN" = "You can backup wallets in settings,";
+"CLICK_PASTE" = "Click to copy";
+"PASTE_SUCCEED" = "Copied to clipboard";
+"IMPORT_KEYSTORE" = "Import Keystore";
+"KEYSTORE_TEXT" = "Keystore text";
+"INPUT_KEYSTORE_TEXT" = "Input Keystore Text";
+"IMPORT_PRIVATYKE" = "Privaty key";
+"IMPORT_MNEMONIC" = "Import Mnemonic";
+"BEGIN_IMPORT" = "Import wallet";
+"PWD_LEVEL1" = "weak";
+"PWD_LEVEL2" = "middle";
+"PWD_LEVEL3" = "strong";
+"PWD_DEAL1" = "The creation of a purse is a representative of TokenUp";
+"PWD_DEAL2" = "Terms of service";
+"PWD_DEAL3" = "and";
+"PWD_DEAL4" = "Privacy agreement";
+"MNEMONIC_TEXT_WARN" = "Correctly enter the 12 mnemonic words of your wallet, between words and words in space, and set a new wallet password.";
+"MNEMONIC_TEXT_ERROR" = "Mnemonic words is not Correct";
+"MNEMONIC_SUB_TITLE" = "12 mnemonic words";
+"MNEMONIC_SUB_Holder" = "Enter 12 mnemonic words";
+"KEYSTORE_SUB_CONTENT" = "Enter or paste the Keystore text and provide the corresponding password for the wallet address.";
+"CHECK_MNEMONIC_TITLE" = "Check mnemonic words";
+
+
+// MARK : - MAIN PAGE
+"MAIN_SCAN" = "Scan";
+"MAIN_GETMONEY" = "Receive";
+"MAIN_TRANSFOR" = "Send";
+"MAIN_FUNDS" = "Assets";
+"RECENT_PAYMENT" = "Transactions";
+"NO_PAYMENT" = "No transactions";
+"GETMONEY_PROMPT" = "Scan QR Code to send";
+"SCAN_PROMPT" = "The viewfinder is aligned with a two-dimensional code, which can be automatically scanned";
+"GETMONEY_ADDRESS" = "To address";
+"SCAN_ERROE1" = "Unrecognized";
+"SCAN_ERROE2" = "Camera is not available";
+"SCAN_ERROE3" = "Flashing light is not available";
+
+// MARK : - TRANSFOR ACCOUNTS
+"TRANSFOR_ADDRESS" = "To address";
+"TRANSFOR_FROM_ADDRESS" = "From address";
+"PAYMENT_DETERMINE" = "Confirm transaction";
+"POW_MONEY" = "Transaction fee";
+"TRANSFOR_SUCCEED" = "Send Transaction succeed";
+"TRANSFOR_COIN" = "Currency";
+"TRANSFOR_INFO" = "Remarks";
+"TRANSFOR_INFO_NONE" = "None";
+"TRANSFOR_NO_ADDRESS" = "Input to address";
+"ADDRESS_UNAVAILABLITY" = "Invalid address";
+"NO_SELECT_COIN" = "Select currency";
+"NO_SELECT_TRANSFOR_VALUE" = "Transfer amount";
+"NO_ENOUGH_FUNDS" = "Insufficient amount";
+"TEST_PAYMNT_PROMPT" = "Receipient confirm notice";
+"TEST_PAYMNT" = "Receipient confirm";
+"TEST_PAYMNT_WARN" = "Your're transferring a large amount of tokens to a new address. For security reasons we require a small transaction of 0.000001ETH to confirm the receipient address before large amount being sent.";
+"TEST_PAYMNT_SUCCEED" = "Send transaction succeed\nPlease check the entry of the target address";
+"SELECT_CURRENCY" = "Currency";
+"AVIABLE_MONEY" = "Available balance";
+"TRANSFOR_VALUE" = "Transfer amount";
+"COMMOM_FAST" = "Slow";
+"COMMOM_SLOW" = "Fast";
+"INPUT_PWD_TITLE" = "Please input a password";
+"TRANSFOR_ADDRESS_HODER" = "Enter or select a wallet address";
+
+// MARK : - FUNDS PAGE
+"ALL_FUNDS" = "Total amount";
+"FUND_NAME" = "Asset name";
+"NUM_OF_PAYMNET" = "transactions";
+"PAYMNET_LIST" = "Transactions list";
+"PAYMENT_DEATIL" = "Transaction detail";
+"PAYMENT_STATUS_SUCCEED" = "Successful transaction";
+"PAYMENT_TIME" = "Transaction time";
+"TRANSCATION_INDEX" = "Transaction number";
+"TRANSCATION_BLOCK" = "Block";
+"GET_MONEY_ADDRESS" = "To address";
+"SET_MONEY_ADDRESS" = "From address";
+"TRANSFOR_GET_VALUE" = "Get value";
+
+//// MARK : - BACKUP PAGE
+"account_backup" = "Account backup";
+"WALLET_BACKUP_WARN" = "Please set the password and make the local backup in time. It is the voucher for you to use the important operation of the whole Primas.";
+"KEYSTORE_BACKUP" = "Keystore backup";
+"DELETE_SUCCEED" = "Wallet exit success";
+"KEYSTORE_WARN_TITLE" = "Disclaimer";
+"KEYSTORE_WARN_CONTENT" = "Please backup your wallet properly. TokenUp is not responsible for any kind of asset lost due to password lost or stolen.";
+"MNEMONIC_WARN_TITLE" = "Export phrases succeed";
+"MNEMONIC_WARN_CONTENT" = "After the backup phrases backup is completed, it will be removed from the wallet backup item. Please ensure that the help word is saved safely. Once the missing word is lost, it will not be retrieved.";
+"MNEMONIC_BACK_TITLE" = "Mnemonic Backup";
+"MNEMONIC_BACK_WARN" = "Please write down the notes by way of 12 to help you remember the word order, mnemonic word is very important, no one to get your mnemonic get your ownership of assets, so please remember words will help save to a safe place.";
+"MNEMONIC_BACK_NOTICE" = "⚠️ Notice";
+"KEYSTOREBACK_SUB_CONTENT" = "Keystore is an encrypted private key, and you can store it in a U disk or a password management tool. When storing Keystore, the password is stored separately. As long as the password is strong enough, the loss of Keystore is hard to crack and get your wallet assets.";
+
+// MARK : - CONTACT PAGE
+"MAIN_CONTACT" = "Contact";
+"ADD_CONTACT" = "New contact";
+"SET_ABOUTUS_TITLE" = "About us";
+"CONTACT_SURE_NAME" = "Name";
+"CONTACT_NAME" = "Last name";
+"CONTACT_NO_SURENAME" = "Please input first name";
+"CONTACT_NO_NAME" = "Please input last name";
+"CONTACT_NO_ADDRESS" = "Please input wallet address";
+"EXISIT_CONTACT"  = "This contact has already existed and does not need to be added!";
+"ADD_CONTACT_SUCCEED" = "Add contact success";
+"EMPTY_COMTACTLIST" = "You have no contact yet";
+
+// MARK : - SEETING PAGE
+"SETTING_PAGE" = "Settings";
+"HAVE_NOT_BACKUP" = "  No backup  ";
+"SET_CURRENCY_TITLE" = "Currency";
+"SET_FINGERPRINT_TITLE" = "Fingerprint setting";
+"SET_LANGUAGE_TITLE" = "Language";
+"SET_HEPLER_TITLE" = "Help";
+"SET_SUGGES_TITLE" = "Feedback";
+"SWITCH_LANGUAGE_SUCCEED" = "Language setting success";
+"SWITCH_CURRENCY_SUCCEED" = "Currency setting success";
+"TRANSFOR_INFO_TEXT" = "Remake";
+"NO_RATIO_INFO" = "No corresponding exchange rate information";
+"NO_ENOUGH_MONEY" = "Insufficient available balance";
+"COMMON_EMAIL" = "E-mail";
+"FEED_BACK_PROMPT" = "Please describe the problems you have met so that we can provide better help";
+"COMMON_SUBMIT" = "Submit";
+"COMMON_EMPTY_EMAIL" = "Please enter the E-mail address";
+"COMMON_ERROR_EMAIL" = "Incorrect E-mail address";
+"FEEDBACK_NO_CONTENT" = "Please fill in the feedback question";
+"FEEDBACK_SUCCEED" = "Feedback issues have been submitted";
+"GETH_INPUT_ERROR" = "Keystore Formatting error";
+"QUIT_Account" = "Exit account";
+"CONNECT_SEEVER_ERROR" = "Network connection failure";
+"CONNECT_PENDING" = "Pending";
+"QUIT_WALLET_Title" = "Quit your wallet?";
+"QUIT_WALLET_CONTENT" = "The reentry of the wallet requires your Keystore or mnemonic words. Please make sure that you have backed up the Keystore or mnemonic words.";
+
+// MARK : - cycle PAGE
+
+"cycle_create" = "Create";
+"cycle_title" = "Circle";
+"cycle_follow" = "Follow";
+"cycle_discover" = "Discover";
+"cycle_member" = "Members";
+"cycle_member_num" = "Members number";
+"cycle_content" = "Content";
+"cycle_creat_title" = "Create circle";
+"cycle_creat_title_tip" = "Enter the name of the circle (within 20 characters)";
+"cycle_creat_des_tip" = "Introduction of input (within 200 characters)";
+"cycle_des" = "Brief introduction";
+"cycle_creat_confirm" = "Create";
+"cycle_creat_sucess" = "The circle is successful!";
+"cycle_founder" = "Creator";
+"cycle_update" = "Modify";
+"cycle_followed" = "Followed";
+"cycle_un_followed" = "+ Follow";
+"cycle_my_created" = "Created";
+"cycle_my_joined" = "Joined";
+"cycle_exit" = "Exit circle";
+"cycle_exit_tip" = "Sure you want to exit %@ ?";
+"cycle_unfollow_tip" = "Do you want to unfollow the circle ?";
+"cycle_cancel_follow" = "Unfollow";
+"cycle_des_more" = "Load more";
+"cycle_create_lock" = "The creation of a circle will be locked";
+"cycle_join_lock" = "Joining the circle will lock in";
+"cycle_goto" = "Go circle";
+"cycle_join" = "Join the circle";
+"cycle_write_article" = "To publish content";
+"cycle_go_write" = "To publish";
+"record_mine" = "My total Token (PST)";
+"record_available" = "Available(PST)";
+"record_yesterday" = "Yesterday(PST)";
+"record_yesterday2" = "Token issued a number of %0.2f yesterday";
+"mine_grade" = "Index";
+"mine_hp" = "HP";
+"mine_content" = "My content";
+"mine_cycle" = "My circle";
+"mine_cycle_other" = "His circle";
+"mine_content_other" = "His content";
+"common_all" = "All";
+
+"cycle_no_content" = "No content has been published yet";
+"cycle_no_content_tip" = "Release the first content to get PST";
+"cycle_no_content_tip2" = "Get PST";
+
+"cycle_content_num" = "%d content has been published";
+
+"common_no_content" = "No data";
+
+"mine_name_update" = "Modofy name";
+"title_cicrcle_added" = "Joined";
+"join_circle_tip" = "The operation is successful and can be viewed in joined list.";
+"need_join_circle" = "Join the circle to operate, join in ?";
+"article_join_circle" = "Already applied. you can operate it after Audit completion.";
+"create_cicrcle_prompt" = "Create a circle and get more PST.";
+"go_to_create" = "To create";
+"value_pst_locked" = "Locked";
+"common_no_comment" = "There is no comment on \n to comment on getting PST";

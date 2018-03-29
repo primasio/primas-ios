@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="EditToolBar" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="EditToolBar" customModule="Primas" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mH2-Ty-XU6">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="KoS-2I-Kur"/>
+                    </constraints>
+                    <state key="normal" image="jianpan_xia"/>
+                    <connections>
+                        <action selector="endEdit:" destination="iN0-l3-epB" eventType="touchUpInside" id="BoB-3b-GNB"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovL-FJ-eiU">
+                    <rect key="frame" x="270" y="0.0" width="50" height="35"/>
+                    <state key="normal" image="xiangce"/>
+                    <connections>
+                        <action selector="pickPhotoAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="q69-og-50v"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZK-OZ-kdP">
+                    <rect key="frame" x="325" y="0.0" width="50" height="35"/>
+                    <state key="normal" image="xiangji"/>
+                    <connections>
+                        <action selector="openCaremaAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="eF5-NR-0zX"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ovL-FJ-eiU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1wE-e3-xJj"/>
+                <constraint firstItem="mH2-Ty-XU6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3Mn-wE-mzv"/>
+                <constraint firstAttribute="bottom" secondItem="GZK-OZ-kdP" secondAttribute="bottom" id="5dV-UL-bxZ"/>
+                <constraint firstItem="GZK-OZ-kdP" firstAttribute="width" secondItem="mH2-Ty-XU6" secondAttribute="width" id="7E0-ZU-WY0"/>
+                <constraint firstItem="GZK-OZ-kdP" firstAttribute="leading" secondItem="ovL-FJ-eiU" secondAttribute="trailing" constant="5" id="8VP-Gs-e31"/>
+                <constraint firstItem="ovL-FJ-eiU" firstAttribute="width" secondItem="GZK-OZ-kdP" secondAttribute="width" id="BIs-h0-OFU"/>
+                <constraint firstAttribute="bottom" secondItem="ovL-FJ-eiU" secondAttribute="bottom" id="GNH-7d-xmC"/>
+                <constraint firstItem="mH2-Ty-XU6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Hnf-PG-dR7"/>
+                <constraint firstAttribute="trailing" secondItem="GZK-OZ-kdP" secondAttribute="trailing" id="Wh4-Be-WY7"/>
+                <constraint firstItem="ovL-FJ-eiU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="XIH-59-fzY"/>
+                <constraint firstAttribute="bottom" secondItem="ovL-FJ-eiU" secondAttribute="bottom" id="aHS-eJ-szQ"/>
+                <constraint firstItem="GZK-OZ-kdP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="b1G-qo-ZGP"/>
+                <constraint firstItem="mH2-Ty-XU6" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="yj2-vF-eMT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="closeKeyboard" destination="mH2-Ty-XU6" id="cP3-cH-dlJ"/>
+                <outlet property="openCaremaBtn" destination="ovL-FJ-eiU" id="IPM-do-bms"/>
+                <outlet property="pickPhoto" destination="GZK-OZ-kdP" id="Bmk-RO-80l"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="jianpan_xia" width="23" height="23"/>
+        <image name="xiangce" width="23" height="23"/>
+        <image name="xiangji" width="23" height="23"/>
+    </resources>
+</document>

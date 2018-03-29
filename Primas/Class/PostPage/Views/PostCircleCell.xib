@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="PostCircleCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCircleCell" rowHeight="86" id="KGk-i7-Jjw" customClass="PostCircleCell" customModule="Primas" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="337" height="86"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="337" height="85.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userLogo" translatesAutoresizingMaskIntoConstraints="NO" id="YK9-2J-rug">
+                        <rect key="frame" x="15" y="22" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="YK9-2J-rug" secondAttribute="height" id="TP9-oU-uF6"/>
+                            <constraint firstAttribute="width" constant="40" id="b0K-Ef-xrt"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="陌生的城市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7a-IU-ztn">
+                        <rect key="frame" x="71" y="22" width="201" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88成员" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPn-Ra-R8a">
+                        <rect key="frame" x="71" y="52" width="37" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hK8-nZ-NXe">
+                        <rect key="frame" x="292" y="29.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="hK8-nZ-NXe" secondAttribute="height" multiplier="1:1" id="3Ps-2M-Y8G"/>
+                            <constraint firstAttribute="width" constant="25" id="lD3-f7-qct"/>
+                        </constraints>
+                        <state key="normal" image="weixuanze"/>
+                        <state key="selected" image="xuanze"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2373内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vM-bJ-0ua">
+                        <rect key="frame" x="116" y="52" width="49.5" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hK8-nZ-NXe" firstAttribute="centerY" secondItem="YK9-2J-rug" secondAttribute="centerY" id="3w4-xP-dZG"/>
+                    <constraint firstItem="TPn-Ra-R8a" firstAttribute="top" secondItem="U7a-IU-ztn" secondAttribute="bottom" constant="10" id="7E0-Ze-Ksu"/>
+                    <constraint firstItem="2vM-bJ-0ua" firstAttribute="centerY" secondItem="TPn-Ra-R8a" secondAttribute="centerY" id="7PL-Uh-1bi"/>
+                    <constraint firstItem="U7a-IU-ztn" firstAttribute="top" secondItem="YK9-2J-rug" secondAttribute="top" id="FPy-GN-Mvy"/>
+                    <constraint firstItem="TPn-Ra-R8a" firstAttribute="leading" secondItem="U7a-IU-ztn" secondAttribute="leading" id="IsE-ki-29i"/>
+                    <constraint firstItem="YK9-2J-rug" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="QLP-lW-eyA"/>
+                    <constraint firstItem="YK9-2J-rug" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XZD-MH-hl1"/>
+                    <constraint firstItem="hK8-nZ-NXe" firstAttribute="leading" secondItem="U7a-IU-ztn" secondAttribute="trailing" constant="20" id="YKB-OY-ay1"/>
+                    <constraint firstAttribute="trailing" secondItem="hK8-nZ-NXe" secondAttribute="trailing" constant="20" id="e94-s5-WgV"/>
+                    <constraint firstItem="2vM-bJ-0ua" firstAttribute="leading" secondItem="TPn-Ra-R8a" secondAttribute="trailing" constant="8" id="f7s-Eu-6gE"/>
+                    <constraint firstItem="U7a-IU-ztn" firstAttribute="leading" secondItem="YK9-2J-rug" secondAttribute="trailing" constant="16" id="zNY-Fh-Mcz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="contens" destination="2vM-bJ-0ua" id="ibC-Wc-82K"/>
+                <outlet property="icon" destination="YK9-2J-rug" id="wkb-u2-olK"/>
+                <outlet property="menbers" destination="TPn-Ra-R8a" id="305-cE-zpB"/>
+                <outlet property="name" destination="U7a-IU-ztn" id="xTc-Hh-Prt"/>
+                <outlet property="selectButton" destination="hK8-nZ-NXe" id="5Vr-uX-Mn6"/>
+            </connections>
+            <point key="canvasLocation" x="42.5" y="75"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="userLogo" width="75" height="75"/>
+        <image name="weixuanze" width="22" height="22"/>
+        <image name="xuanze" width="22" height="22"/>
+    </resources>
+</document>

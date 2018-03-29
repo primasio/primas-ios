@@ -1,0 +1,6 @@
+framework module RSKGrowingTextView {
+  umbrella header "RSKGrowingTextView-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,345 @@
+/* 
+  Language.strings
+  Primas
+
+  Created by xuxiwen on 2017/12/18.
+  Copyright © 2017年 xuxiwen. All rights reserved.
+*/
+
+// MARK : - Common String
+
+"common_Load" = "加载中";
+"common_Delete" = "删除";
+"common_Nextstep" = "下一步";
+"common_Prpmpt" = "注意";
+"common_Confirm" = "确定";
+"common_Cancel" = "取消";
+"common_Pst" = "PST";
+"common_Post" = "发布";
+"common_dtcp" = "DTCP";
+"common_add_tags" = "添加标签";
+"common_network_error" = "网络连接不可用";
+"common_unknow_network" = "未知网络错误";
+"common_yes" = "是";
+"common_no" = "否";
+"common_edit" = "编辑";
+"common_tags" = "标签";
+"common_comment" = "评论";
+"common_create_account" = "创建账户";
+"common_create_prompt" = "建立你的账户 \n关注你感兴趣的内容";
+"common_create_prompt2" = "建立你的账户 \n立刻获取奖励";
+"comomon_try_again" = "重试";
+"common_username" = "用户名";
+"common_register_time" = "注册时间";
+"common_account_address" = "账户地址";
+"common_account_qrcode" = "账户二维码";
+"common_quick_look" = "快速查看";
+"common_pst_notice" = "100 PST 已放入账户余额中";
+"common_no_subscription" = "暂无关注";
+"blockchain_info" = "区块链信息";
+"common_author" = "作者";
+"common_publish_time" = "发布时间";
+"common_dna" = "DNA";
+"blockchain_address" = "区块链地址";
+"article_hash" = "文章哈希";
+"common_signature" = "数字签名";
+"common_change_data" = "换一批";
+"common_no_more_data" = "暂无更多数据";
+"common_pull_load" = "点击或下拉刷新";
+"time_just_ago" = "刚刚";
+"time_min_ago" = "%d分钟前";
+"time_hour_ago" = "%d小时前";
+"time_day_ago" = "%d天前";
+"time_mouths_ago" = "%d月前";
+"time_year_ago" = "%d年前";
+"common_orignal_author" = "原创";
+"common_like" = "点赞";
+"common_transimit" = "转发";
+"common_unknown" = "未知";
+"common_home" = "首页";
+
+// MARK : - Post article
+
+"post_article_title" = "发布一条内容将锁定";
+"post_transfor_pst" = "当前可用PST: ";
+"lock_pst_warn" = "锁定的PST将在1小时后解锁";
+"lock_pst_time" = "限定期";
+"article_blockChain_address" = "作品区块链地址：";
+"look_article_info" = "查看作品详细信息";
+"no_pst_warn" = "当前PST余额不足";
+"go_to_charge" = "去充值";
+"agreeMent_nav_title" = "版权协议";
+"agreeMent_title1" = "1.选择转载许可协议";
+"agreeMent_title2" = "2.是否允许您的作品被改编";
+"agreeMent_title3" = "3.是否允许商业使用";
+"agreeMent_select1" = "知识共享许可协议";
+"agreeMent_select2" = "商业许可协议";
+"agreeMent_select3" = "是,只要他人以相同方式共享";
+"post_title_place" = "标题";
+"post_content_place" = "内容";
+"article_content_info" = "作品信息";
+"article_format_agressment" = "排版协议";
+"normal_use_tags" = "常用标签";
+"article_content_agree" = "本作品采用 <red>知识共享署名-相同方式共享 4.0 国际许可协议</red> 进行许可。<gray>\n\n● 允许复制、发行、展览和表演作品，但必须按照指定的方式对作品进行署名\n\n● 允许复制、发行、展览和表演作品，包括出于商业目的进行上述活动\n\n● 允许复制、发行演绎作品，但演绎作品必须采用与本协议相同或兼容的协议进行许可</gray>\n\n<black>提示：版权协议不包括文章中的图片</black>";
+"article_change_agree" = "更改协议 >";
+"post_no_title" = "请输入标题";
+"post_no_content" = "请输入内容";
+"post_no_des" = "请输入简介";
+"post_to_circle" = "发布到圈子";
+"set_backup_title" = "备份";
+"set_backup_content" = "密钥是确认您身份的唯一信息，是一串复杂的字符串，为了方便您的使用，您只需要在操作中使用您设置的密钥保护码即可。\n\n为了保护账户安全请立即备份私钥，以便账户异常后重新导入。";
+"set_safe_level" = "安全指数：";
+"set_convenient_level" = "便捷指数：";
+"use_nmonnic_backup" = "使用助记词备份";
+"use_keystore_backup" = "Keystore备份";
+"use_privatekey_backup" = "导出密钥备份";
+"set_level_high" = "高";
+"set_level_middle" = "中";
+"set_level_low" = "低";
+"share_to_circle_success" = "成功转发到圈子";
+"post_to_auditting" = "确认中";
+
+// MARK : - NoticeView page
+"notice_addTags_limit" = "输入标签名称（最多24个字符）";
+"notice_addTags" = "输入标签名称";
+"notice_count_limit" = "最多24个字符";
+"notice_input_pwd" = "请输入密钥保护码";
+"post_usdHp_warn" = "本次操作将消耗HP";
+"notice_current_hp" = "当前HP: ";
+"notice_hp_prompt" = "当你的HP值过低时，你的操作将不对内容的评价产生影响";
+"select_zero_circle" = "未选中任何圈子";
+"notice_liked" = "已点赞";
+"notice_like_success" = "点赞成功";
+"notice_empty_comment" = "输入评论内容";
+"notice_comment_success" = "评论成功";
+
+
+
+
+// MARK : - COMMON STRING
+"COMMON_LOAD" = "加载中";
+"COMMON_DELETE" = "删除";
+"COMMOM_NEXT_STEP" = "下一步";
+"COMMOM_PRPMPT" = "注意";
+"CONFIRM_BUTTON" = "完成";
+"FINISH_BUTTON" = "完成";
+"CANCEL_BUTTON" = "取消";
+"NOTHING_INPUT" = "未输入任何内容";
+"WALLET_ADDRESS" = "钱包地址";
+"GET_FUNDS_ERROR" = "获取资产失败";
+"COMMON_APP_VERSION" = "版本号";
+"COMMON_INPUT_ERROR" = "输入有误";
+"COMMON_ALL_TRANSCATION" = "总交易量";
+"COMMON_NOTICE" = "提示";
+
+// MARK : - BUILT WALLET PAGE
+"built_create_username" = "创建用户名";
+"username_formated_error" = "用户名不合法";
+"built_input_username" = "输入用户名";
+"built_username_limit" = "用户名至多30个字符，支持英文、数字，不支持重复的用户名。";
+"BUILT_WALLET" = "创建账号";
+"RESTORE_WALLET" = "导入账号";
+"BUILT_WALLET_WARN" = "请设置密码, 并及时做好本地备份, 它是您使用整个Primas重要操作的通行凭证。";
+"SETTING_PWD" = "输入密码";
+"REPEAT_PWD" = "重复密码";
+"PWD_ERROR" = "密码错误";
+"AGREEMENT_WARN" = "我已理解并同意服务条款与隐私协议";
+"PWD_LIMIT" = "至少8个字符，请使用使用大小写、数字、字母、字符组合。";
+"TEXT_ENTERED" = "已输入";
+"SOME_CHARACTER" = "个字符";
+"DIFFERENT_PWD" = "两次密码不一致";
+"BUILTWALLET" = "导入钱包";
+"SUCCEESD_CREATION_WALLET" = "钱包创建成功";
+"SUCCEESD_WALLET_IMPORT" = "钱包导入成功";
+"BACKUP_NOW" = "立即备份";
+"BACKUP_WARN" = "可在设置中进行备份,";
+"CLICK_PASTE" = "点击账号可复制";
+"PASTE_SUCCEED" = "已复制到剪切板";
+"IMPORT_KEYSTORE" = "Keystore 导入";
+"KEYSTORE_TEXT" = "Keystore 文本";
+"INPUT_KEYSTORE_TEXT" = "输入 Keystore 文本";
+"IMPORT_PRIVATYKE" = "私钥";
+"IMPORT_MNEMONIC" = "助记词导入";
+"BEGIN_IMPORT" = "开始导入";
+"PWD_LEVEL1" = "弱";
+"PWD_LEVEL2" = "中";
+"PWD_LEVEL3" = "强";
+"PWD_DEAL1" = "创建钱包即代表同意TokenUp";
+"PWD_DEAL2" = "服务条款";
+"PWD_DEAL3" = "与";
+"PWD_DEAL4" = "隐私协议";
+"MNEMONIC_TEXT_WARN" = "正确输入您钱包的12个组记词, 词与词之间用空格表示, 并设置新的钱包密码。";
+"MNEMONIC_TEXT_ERROR" = " 组记词格式错误";
+"MNEMONIC_SUB_TITLE" = "12个助记词";
+"MNEMONIC_SUB_Holder" = "输入12个助记词";
+"KEYSTORE_SUB_CONTENT" = "输入或粘贴Keystore文本, 并提供对应的钱包地址密码。";
+"CHECK_MNEMONIC_TITLE" = "核对助记词";
+
+// MARK : - MAIN PAGE
+"MAIN_SCAN" = "扫一扫";
+"MAIN_GETMONEY" = "收款";
+"MAIN_TRANSFOR" = "转账";
+"MAIN_FUNDS" = "资产";
+"RECENT_PAYMENT" = "交易记录";
+"NO_PAYMENT" = "无任何交易记录";
+"GETMONEY_PROMPT" = "扫描二维码，向我付款";
+"SCAN_PROMPT" = "将取景框对准二维码，即可自动扫描";
+"GETMONEY_ADDRESS" = "收款地址";
+"SCAN_ERROE1" = "无法识别";
+"SCAN_ERROE2" = "摄像头不可用";
+"SCAN_ERROE3" = "闪光灯不可用";
+
+// MARK : - TRANSFOR ACCOUNTS
+"TRANSFOR_ADDRESS" = "转帐地址";
+"TRANSFOR_FROM_ADDRESS" = "付款地址";
+"PAYMENT_DETERMINE" = "转账信息确认";
+"POW_MONEY" = "矿工费用";
+"TRANSFOR_SUCCEED" = "转账成功";
+"TRANSFOR_COIN" = "支付币种";
+"TRANSFOR_INFO" = "备注";
+"TRANSFOR_INFO_NONE" = "无";
+"TRANSFOR_NO_ADDRESS" = "请填写转入地址";
+"ADDRESS_UNAVAILABLITY" = "请输入正确的地址";
+"NO_SELECT_COIN" = "币种选择";
+"NO_SELECT_TRANSFOR_VALUE" = "请填写转出金额";
+"NO_ENOUGH_FUNDS" = "金额不足";
+"TEST_PAYMNT_PROMPT" = "小额试转提醒";
+"TEST_PAYMNT" = "小额试转";
+"TEST_PAYMNT_WARN" = "你的转账金额超过100ETH，鉴于区块链交易的不可逆性，我们为你生成0.000001ETH的小额转账信息，以测试目标地址的正确性。";
+"TEST_PAYMNT_SUCCEED" = "转账成功\n请核对目标地址的入账情况";
+"SELECT_CURRENCY" = "币种";
+"AVIABLE_MONEY" = "可用余额";
+"TRANSFOR_VALUE" = "转账金额";
+"COMMOM_FAST" = "快";
+"COMMOM_SLOW" = "慢";
+"INPUT_PWD_TITLE" = "请输入密码";
+"TRANSFOR_ADDRESS_HODER" = "输入或选择转账地址";
+"TRANSFOR_GET_VALUE" = "收款金额";
+
+// MARK : - FUNDS PAGE
+"ALL_FUNDS" = "总资产";
+"FUND_NAME" = "资产名称";
+"NUM_OF_PAYMNET" = "笔交易";
+"PAYMNET_LIST" = "交易列表";
+"PAYMENT_DEATIL" = "交易详情";
+"PAYMENT_STATUS_SUCCEED" = "交易成功";
+"PAYMENT_TIME" = "转账时间";
+"TRANSCATION_INDEX" = "交易号";
+"TRANSCATION_BLOCK" = "区块";
+"GET_MONEY_ADDRESS" = "收款方地址";
+"SET_MONEY_ADDRESS" = "发送方地址";
+
+//// MARK : - BACKUP PAGE
+"account_backup" = "账户备份";
+"WALLET_BACKUP_WARN" = "区块链钱包是基于密码学的去中心化账号系统。任何意外发生将导致资产丢失，所以我们建议你及时做好钱包的备份。";
+"KEYSTORE_BACKUP" = "Keystore备份";
+"DELETE_SUCCEED" = "账号退出成功";
+"KEYSTORE_WARN_TITLE" = "免责声明";
+"KEYSTORE_WARN_CONTENT" = "请确保钱包已备份至安全的地方， TokenUp将不承担任何钱包丢失，被盗，忘记密码等产生的资产损失！";
+"MNEMONIC_WARN_TITLE" = "助记词备份完成";
+"MNEMONIC_WARN_CONTENT" = "助记词备份完成后将会从钱包备份项移除，请确保已安全保存助记词，助记词一旦遗失将不能找回！";
+"MNEMONIC_BACK_TITLE" = "助记词备份";
+"MNEMONIC_BACK_WARN" = "请按顺序通过手记方式记下您的12个助记词, 助记词非常重要, 任何人得到您的助记词就得到了您资产的所有权,所以请将助记词保存到安全的地方。";
+"MNEMONIC_BACK_NOTICE" = "⚠️ 注意";
+"KEYSTOREBACK_SUB_CONTENT" = "Keystore 是加密后的私钥,你可以存储在U盘或者密码管理工具里。存储Keystore时要和钱包密码分开存储, 只要密码强度足够强, 即时Keystore遗失也很难破解而得到你的钱包资产。";
+
+// MARK : - CONTACT PAGE
+"MAIN_CONTACT" = "联系人";
+"ADD_CONTACT" = "新建联系人";
+"SET_ABOUTUS_TITLE" = "关于我们";
+"CONTACT_SURE_NAME" = "姓名";
+"CONTACT_NAME" = "名";
+"CONTACT_NO_SURENAME" = "请输入姓氏";
+"CONTACT_NO_NAME" = "请输入名字";
+"CONTACT_NO_ADDRESS" = "请输入地址";
+"EXISIT_CONTACT"  = "此联系人已存在，无需添加。";
+"ADD_CONTACT_SUCCEED" = "添加成功";
+"EMPTY_COMTACTLIST" = "你还没有联系人";
+// MARK : - SEETING PAGE
+"SETTING_PAGE" = "设置";
+"HAVE_NOT_BACKUP" = "  未备份  ";
+"SET_CURRENCY_TITLE" = "货币单位";
+"SET_FINGERPRINT_TITLE" = "指纹设置";
+"SET_LANGUAGE_TITLE" = "语言设置";
+"SET_HEPLER_TITLE" = "使用帮助";
+"SET_SUGGES_TITLE" = "意见反馈";
+"SWITCH_LANGUAGE_SUCCEED" = "语言切换成功";
+"SWITCH_CURRENCY_SUCCEED" = "货币单位切换成功";
+"TRANSFOR_INFO_TEXT" = "备注";
+"NO_RATIO_INFO" = "暂无相应汇率信息";
+"NO_ENOUGH_MONEY" = "可用余额不足";
+"COMMON_EMAIL" = "邮箱";
+"FEED_BACK_PROMPT" = "请描述您遇到的问题以便我们提供更好的帮助";
+"COMMON_SUBMIT" = "提交";
+"COMMON_EMPTY_EMAIL" = "请输入邮箱地址";
+"COMMON_ERROR_EMAIL" = "邮箱地址不正确";
+"FEEDBACK_NO_CONTENT" = "请填写反馈问题";
+"FEEDBACK_SUCCEED" = "反馈问题已提交";
+"GETH_INPUT_ERROR" = "Keystore 格式错误";
+"QUIT_Account" = "退出登录";
+"CONNECT_SEEVER_ERROR" = "网络连接失败";
+"CONNECT_PENDING" = "确认中";
+"QUIT_WALLET_Title" = "确定退出钱包?";
+"QUIT_WALLET_CONTENT" = "重新登入钱包需要你的Keystore或组记词,请保证你已备份钱包的Keystore或助记词。";
+
+// MARK : - cycle PAGE
+
+"cycle_create" = "创建";
+"cycle_title" = "圈子";
+"cycle_follow" = "关注";
+"cycle_discover" = "发现";
+"cycle_member" = "成员";
+"cycle_member_num" = "成员数";
+"cycle_content" = "内容";
+"cycle_creat_title" = "创建圈子";
+"cycle_creat_title_tip" = "输入圈子名称(20字符内)";
+"cycle_creat_des_tip" = "输入简介(200字符内)";
+"cycle_des" = "简介";
+"cycle_creat_confirm" = "确定创建";
+"cycle_creat_sucess" = "圈子创建成功!";
+"cycle_founder" = "创建者";
+"cycle_update" = "修改";
+"cycle_followed" = "已关注";
+"cycle_un_followed" = "+ 关注";
+"cycle_cancel_follow" = "取消关注";
+"cycle_my_created" = "我创建的";
+"cycle_my_joined" = "已加入";
+"cycle_exit" = "退出圈子";
+"cycle_exit_tip" = "确定要去退出%@吗？";
+"cycle_unfollow_tip" = "确定要取消对圈子的关注吗？";
+"cycle_goto" = "去圈子";
+"cycle_join" = "加入该圈子";
+"cycle_write_article" = "去发布内容";
+"cycle_go_write" = "去发布";
+"cycle_des_more" = "查看更多";
+"cycle_create_lock" = "创建圈子将锁定";
+"cycle_join_lock" = "加入圈子将锁定";
+"record_mine" = "我的Token总额 (PST)";
+"record_available" = "可用(PST)";
+"record_yesterday" = "昨日(PST)";
+"record_yesterday2" = "昨日Token发放数 %0.2f";
+"mine_grade" = "个人指数";
+"mine_hp" = "HP值";
+"mine_content" = "我的内容";
+"mine_cycle" = "我的圈子";
+"mine_cycle_other" = "他的圈子";
+"mine_content_other" = "他的内容";
+"common_all" = "全部";
+
+"cycle_no_content" = "还没有发布内容";
+"cycle_no_content_tip" = "发布首条内容可获得PST";
+"cycle_no_content_tip2" = "获得PST";
+
+"cycle_content_num" = "已发布%d条内容";
+
+"common_no_content" = "暂无数据";
+
+"mine_name_update" = "修改名字";
+"title_cicrcle_added" = "加入";
+"join_circle_tip" = "操作成功,可在加入列表查看状态。";
+"need_join_circle" = "加入该圈子才能操作，是否申请加入?";
+"article_join_circle" = "已申请加入圈子, 待审核完成后可进行操作。";
+"create_cicrcle_prompt" = "创建圈子 获得更多PST";
+"go_to_create" = "去创建";
+"value_pst_locked" = "冻结";
+"common_no_comment" = "还没有评论\n快来评论获取PST";

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="TagCollectionCell" reuseIdentifier="TagCollectionCell" id="gTV-IL-0wX" customClass="TagCollectionCell" customModule="Primas" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="289" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="289" height="70"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rpp-ah-0Mg">
+                        <rect key="frame" x="0.0" y="0.0" width="289" height="70"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="科技" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbO-hP-Akh">
+                                <rect key="frame" x="10" y="28" width="269" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="IbO-hP-Akh" firstAttribute="centerY" secondItem="rpp-ah-0Mg" secondAttribute="centerY" id="Yfb-TL-d8W"/>
+                            <constraint firstAttribute="trailing" secondItem="IbO-hP-Akh" secondAttribute="trailing" constant="10" id="goL-yw-Amz"/>
+                            <constraint firstItem="IbO-hP-Akh" firstAttribute="leading" secondItem="rpp-ah-0Mg" secondAttribute="leading" constant="10" id="oBH-gV-WxL"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="rpp-ah-0Mg" secondAttribute="bottom" id="1PQ-s0-IJ8"/>
+                <constraint firstItem="rpp-ah-0Mg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1Ti-PQ-Xfg"/>
+                <constraint firstAttribute="trailing" secondItem="rpp-ah-0Mg" secondAttribute="trailing" id="GHz-mv-7cS"/>
+                <constraint firstItem="rpp-ah-0Mg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GO6-zk-nvm"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="289" height="70"/>
+            <connections>
+                <outlet property="contentLabel" destination="IbO-hP-Akh" id="Py5-Yc-koN"/>
+                <outlet property="tagmaskView" destination="rpp-ah-0Mg" id="XhV-LD-tjL"/>
+            </connections>
+            <point key="canvasLocation" x="-106.5" y="22"/>
+        </collectionViewCell>
+    </objects>
+</document>

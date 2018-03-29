@@ -1,3 +1,5 @@
-Primas.xcworkspace/xcuserdata/*
+*.xcuserdatad
+
+.idea/
+*.iml
 .DS_Store
-Pods/
